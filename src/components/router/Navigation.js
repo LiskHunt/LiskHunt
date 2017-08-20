@@ -1,10 +1,11 @@
 import React from 'react';
 import {Route,Switch} from 'react-router-dom';
+
 import Header from '../header/Header';
-import Landing from '../landing/Landing';
+import Landing from '../views/landing/Landing';
 import Footer from '../footer/Footer';
-import Recommended from '../recommended/Recommended';
-import BuildSomething from '../buildSomething/BuildSomething';
+import Recommended from '../views/recommended/Recommended';
+import BuildSomething from '../views/buildSomething/BuildSomething';
 
 
 const Navigation = ()=>{

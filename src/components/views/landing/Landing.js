@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import PropTypes from 'prop-types';
-import { goResourcesList, goBuildSomething } from '../router/router_helpers';
+import AnimationsWrapper from '../../animations-wrapper/AnimationsWrapper'
+import { goResourcesList, goBuildSomething } from '../../router/router_helpers';
 
 class Landing extends Component{
 
@@ -10,7 +11,7 @@ class Landing extends Component{
 
   render(){
     return(
-      <div className="">
+      <AnimationsWrapper>
         <div className="container has-text-centered">
           <h1 className="title is-size-1">
             <span aria-label="rollecoaster" role="img">🎢</span> Hand picked top projects for Lisk
@@ -25,7 +26,7 @@ class Landing extends Component{
 
           </div>
         </div>
-      </div>
+      </AnimationsWrapper>
     );
   }
 }
