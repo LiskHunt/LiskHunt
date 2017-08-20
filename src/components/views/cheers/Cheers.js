@@ -14,7 +14,6 @@ class Cheers extends Component {
               </span>{' '}
               Cheers Mate!
             </h1>
-            <h2 className="subtitle" />
           </div>
           <div className="container has-text-centered top20 bottom20">
             <p className="bottom20">
@@ -27,10 +26,10 @@ class Cheers extends Component {
               like to donate to our App Development fund:
               <br />
               <strong>2247279626890654390L</strong>
-              <p>
-                Carbonara is also looking for votes, if. you would like to keep
-                the mood of carbonara high, feel free to vote him :)
-              </p>
+            </p>
+            <p>
+              Carbonara is also looking for votes, if. you would like to keep
+              the mood of carbonara high, feel free to vote him :)
             </p>
 
             <p className="top20">
