@@ -6,7 +6,6 @@ class BuildSomething extends Component {
 
   render() {
 
-    console.log(this);
     return (
       <AnimationsWrapper>
         <div className="">

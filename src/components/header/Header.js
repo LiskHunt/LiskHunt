@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './img/logo/liskHunt_logo_white_lg.png';
-import { goHome, isActive } from '../router/router_helpers';
+import { goHome, goCheers, isActive } from '../router/router_helpers';
 import PropTypes from 'prop-types';
 
 class Header extends Component {
@@ -22,7 +22,7 @@ class Header extends Component {
               >
                 Home
               </a>
-              <a className={'nav-item ' + isActive.call(this, '/cheers')}>
+              <a className={'nav-item ' + isActive.call(this, '/cheers')} onClick={goCheers.bind(this, '/cheers')}>
                 <span role="img" aria-label="cheers">
                   🍻
                 </span>Cheers
