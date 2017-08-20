@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import FlipMove from 'react-flip-move';
+
 
 import AppTile from '../../apps/AppTile';
 import AnimationsWrapper from '../../animations-wrapper/AnimationsWrapper'
@@ -178,11 +180,21 @@ class Recommended extends Component {
                   </div>
                 </div>
               </section>
-              <section className="columns is-multiline">
-                {this.state.resources.map(app => {
-                  return <AppTile app={app} labels={labels} key={app.app_id} />;
-                })}
-              </section>
+              {/*<section >*/}
+
+                {/*<FlipMove duration={500} easing="ease-out" className="columns is-multiline">*/}
+                <FlipMove staggerDelayBy={150}
+                          appearAnimation="accordionVertical"
+                          enterAnimation="fade"
+                          leaveAnimation="fade"
+                          className="columns is-multiline">
+
+                  {this.state.resources.map(app => {
+                    return <AppTile app={app} labels={labels} key={app.app_id} />;
+                  })}
+
+                </FlipMove>
+              {/*</section>*/}
             </section>
           </div>
         </section>
