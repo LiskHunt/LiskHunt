@@ -62,6 +62,7 @@ class Recommended extends Component {
 
     this.setState({
       resources: resourcesFiltered,
+      filterBy
     });
   };
 
