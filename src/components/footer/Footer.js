@@ -4,6 +4,7 @@ import {
   goHome,
   goResourcesList,
   goBuildSomething,
+  goSubmitHunt,
   isActive,
 } from '../router/router_helpers';
 import PropTypes from 'prop-types';
@@ -33,7 +34,10 @@ class Footer extends Component {
               >
                 <a>Build something</a>
               </li>
-              <li className={isActive.call(this)} onClick={isActive.bind(this)}>
+              <li
+                className={isActive.call(this, '/submit-hunt')}
+                onClick={goSubmitHunt.bind(this)}
+              >
                 <a>Submit new hunt</a>
               </li>
             </ul>
