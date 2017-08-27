@@ -8,6 +8,7 @@ import Landing from '../views/landing/Landing';
 import Recommended from '../views/recommended/Recommended';
 import BuildSomething from '../views/buildSomething/BuildSomething';
 import Cheers from '../views/cheers/Cheers';
+import NewHunt from '../views/newHunt/NewHunt';
 
 
 const Navigation = ()=>{
@@ -19,6 +20,7 @@ const Navigation = ()=>{
         <Route path="/recommended" name="recommended" component={Recommended}/>
         <Route path="/lets-build-something" name="about" component={BuildSomething}/>
         <Route path="/Cheers" name="about" component={Cheers}/>
+        <Route path="/submit-hunt" name="about" component={NewHunt}/>
       </Switch>
       <Footer/>
     </div>

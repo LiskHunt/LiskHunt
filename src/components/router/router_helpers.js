@@ -14,6 +14,10 @@ export const goCheers = function() {
   this.context.router.history.push('/cheers');
 };
 
+export const goSubmitHunt = function() {
+  this.context.router.history.push('/submit-hunt');
+};
+
 export const isActive = function(routeName) {
   return this.context.router.route.location.pathname === routeName ? 'is-active' : '';
 };
