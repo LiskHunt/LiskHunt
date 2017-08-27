@@ -22,7 +22,7 @@ class Header extends Component {
               >
                 Home
               </a>
-              <a className={'nav-item ' + isActive.call(this, '/cheers')} onClick={goCheers.bind(this, '/cheers')}>
+              <a className={'nav-item ' + isActive.call(this, '/cheers')} onClick={goCheers.bind(this)}>
                 <span role="img" aria-label="cheers">
                   🍻
                 </span>Cheers
