@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './img/logo/liskHunt_logo_white_lg.png';
-import { goHome, goCheers, isActive } from '../router/router_helpers';
+import { goHome, goCheers, goSubmitHunt, isActive } from '../router/router_helpers';
 import PropTypes from 'prop-types';
 
 class Header extends Component {
@@ -29,6 +29,7 @@ class Header extends Component {
               </a>
               <span
                 className={'nav-item ' + isActive.call(this, '/submit-hunt')}
+                onClick={goSubmitHunt.bind(this)}
               >
                 <a className="button is-info is-inverted">
                   <span className="icon">
