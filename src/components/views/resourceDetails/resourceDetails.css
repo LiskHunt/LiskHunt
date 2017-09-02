@@ -13,6 +13,7 @@
 
 .carousel,.slick-list,.foo,.slick-slide,.slick-active {
     /*max-height: 60vh!important;*/
+    padding-bottom: 0!important;
 }
 
 
@@ -52,4 +53,17 @@
         transform-origin: 50% 100%;
         opacity: 1;
     }
+}
+
+.visit-website {
+    left: 0;
+    right: 52px;
+}
+
+.title-item {
+    padding-top: 50px;
+}
+
+.category-label  {
+    margin-top: 11px !important;
 }
