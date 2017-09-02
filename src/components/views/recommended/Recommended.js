@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import FlipMove from 'react-flip-move';
 
-
 import AppTile from '../../apps/AppTile';
-import AnimationsWrapper from '../../animations-wrapper/AnimationsWrapper'
+import AnimationsWrapper from '../../animations-wrapper/AnimationsWrapper';
 
-import { resources, labels } from '../../../lib/resources';
+import { resources, labels } from '../../../lib/resources/resources';
 
 class Recommended extends Component {
   constructor(props) {
@@ -62,7 +61,7 @@ class Recommended extends Component {
 
     this.setState({
       resources: resourcesFiltered,
-      filterBy
+      filterBy,
     });
   };
 
@@ -73,7 +72,7 @@ class Recommended extends Component {
           <div className="hero-body padded-content has-text-centered">
             <section className="container">
               <section className="columns">
-                <div className="container has-text-centered">
+                <div className="container has-text-centered bottom30">
                   <div className="column is-12">
                     <h1 className="is-title is-size-1">
                       Recommended Resources
@@ -181,21 +180,18 @@ class Recommended extends Component {
                   </div>
                 </div>
               </section>
-              {/*<section >*/}
 
-                {/*<FlipMove duration={500} easing="ease-out" className="columns is-multiline">*/}
-                <FlipMove staggerDelayBy={150}
-                          appearAnimation="accordionVertical"
-                          enterAnimation="fade"
-                          leaveAnimation="fade"
-                          className="columns is-multiline">
-
-                  {this.state.resources.map(app => {
-                    return <AppTile app={app} labels={labels} key={app.app_id} />;
-                  })}
-
-                </FlipMove>
-              {/*</section>*/}
+              <FlipMove
+                staggerDelayBy={150}
+                appearAnimation="accordionVertical"
+                enterAnimation="fade"
+                leaveAnimation="fade"
+                className="columns is-multiline"
+              >
+                {this.state.resources.map(app => {
+                  return <AppTile app={app} labels={labels} key={app.app_id} />;
+                })}
+              </FlipMove>
             </section>
           </div>
         </section>

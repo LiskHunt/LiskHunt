@@ -1,0 +1,69 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.columns {
+    margin: -35px 0;
+    padding: 0;
+}
+
+.foo {
+    display: block;
+    margin: auto;
+}
+
+.carousel,.slick-list,.foo,.slick-slide,.slick-active {
+    /*max-height: 60vh!important;*/
+    padding-bottom: 0!important;
+}
+
+
+.slide-out-elliptic-top-bck {
+    -webkit-animation: slide-out-elliptic-top-bck 0.7s ease-in both;
+    animation: slide-out-elliptic-top-bck 0.7s ease-in both;
+}
+
+@-webkit-keyframes slide-out-elliptic-top-bck {
+    0% {
+        -webkit-transform: translateY(0) rotateX(0) scale(1);
+        transform: translateY(0) rotateX(0) scale(1);
+        -webkit-transform-origin: 50% 1400px;
+        transform-origin: 50% 1400px;
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+        transform: translateY(-600px) rotateX(-30deg) scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 1;
+    }
+}
+@keyframes slide-out-elliptic-top-bck {
+    0% {
+        -webkit-transform: translateY(0) rotateX(0) scale(1);
+        transform: translateY(0) rotateX(0) scale(1);
+        -webkit-transform-origin: 50% 1400px;
+        transform-origin: 50% 1400px;
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+        transform: translateY(-600px) rotateX(-30deg) scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 1;
+    }
+}
+
+.visit-website {
+    left: 0;
+    right: 52px;
+}
+
+.title-item {
+    padding-top: 50px;
+}
+
+.category-label  {
+    margin-top: 11px !important;
+}
