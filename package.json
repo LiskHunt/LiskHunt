@@ -5,8 +5,9 @@
   "dependencies": {
     "axios": "^0.16.2",
     "bulma": "^0.5.1",
+    "install": "^0.10.1",
+    "npm": "^5.4.0",
     "react": "^15.6.1",
-    "react-disqus-comments": "^1.0.3",
     "react-dom": "^15.6.1",
     "react-easy-transition": "^1.2.5",
     "react-flip-move": "^2.9.14",
