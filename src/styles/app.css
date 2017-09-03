@@ -51,3 +51,12 @@
 .pointer {
     cursor: pointer;
 }
+
+.background-transparent {
+    background-color: transparent;
+}
+
+.is-active,.is-active:hover,.navbar-item:hover {
+    background-color: transparent!important;
+    color: white!important;
+}
