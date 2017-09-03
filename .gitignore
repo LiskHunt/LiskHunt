@@ -28,3 +28,11 @@ build/Release
 node_modules
 
 \.idea/
+
+nginx\.config
+
+deploy\.sh
+
+build/
+
+liskhunt\.tar\.gz
