@@ -24,7 +24,7 @@ class NewHunt extends Component {
   render() {
     return (
       <AnimationsWrapper>
-        <div className="hero-body padded-content">
+        <div className="container hero-body padded-content bottom20">
           <div className="container has-text-centered">
             <h1 className="title is-size-1">Submit something new!</h1>
             <h2 className="subtitle top10">

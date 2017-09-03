@@ -6,16 +6,16 @@ class Cheers extends Component {
   render() {
     return (
       <AnimationsWrapper>
-        <div className="">
-          <div className="container has-text-centered">
+        <div className="container has-text-centered column is-half is-offset-one-quarter">
+          <div className="has-text-centered">
             <h1 className="title is-size-1">
               <span aria-label="nerd" role="img">
                 🎩
-              </span>{' '}
+              </span><br className="is-hidden-desktop"/>{' '}
               Cheers Mate!
             </h1>
           </div>
-          <div className="container has-text-centered top20 bottom20">
+          <div className="has-text-centered top20 bottom20">
             <p className="bottom20">
               <br />
               We are very excited to run LiskHunt a directory of Lisk related

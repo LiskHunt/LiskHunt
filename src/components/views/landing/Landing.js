@@ -12,9 +12,9 @@ class Landing extends Component{
   render(){
     return(
       <AnimationsWrapper>
-        <div className="container has-text-centered">
+        <div className="container has-text-centered padded-content">
           <h1 className="title is-size-1">
-            <span aria-label="rollecoaster" role="img">🎢</span> Hand picked top projects for Lisk
+            <span aria-label="rollecoaster" role="img">🎢</span><br className="is-hidden-desktop"/> Hand picked top projects for Lisk
           </h1>
           <h2 className="subtitle">
             A directory of the best Lisk resources.
