@@ -16,7 +16,7 @@ class AppTile extends Component {
     return (
       <div key={app.app_id} className="column is-one-quarter has-text-centered">
         <div className="card">
-          <div className="card-image">
+          <div className="card-image pointer" onClick={goResource.bind(this, app.app_id)}>
             <figure className="image is-4by3">
               <img src={app.app_images[0]} alt="App preview" />
             </figure>
