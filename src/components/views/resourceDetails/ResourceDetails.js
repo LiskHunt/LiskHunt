@@ -8,7 +8,7 @@ import Remarkable from 'remarkable';
 import axios from 'axios';
 
 import AnimationsWrapper from '../../animations-wrapper/AnimationsWrapper';
-import { DiscussionEmbed } from '../../disqus/index';
+import { DiscussionEmbed } from '../../disqus/disqus';
 
 import HighlightDetails from './components/HighlightDetails';
 
@@ -32,9 +32,9 @@ class ResourceDetails extends Component {
   }
 
   componentDidMount() {
-    this.getResource();
     this.getVotes();
     this.getViews();
+    this.getResource();
   }
 
   componentWillUnmount() {
@@ -59,10 +59,12 @@ class ResourceDetails extends Component {
         console.error(error, 'error');
       });
 
-    this.setState({
-      votes: votes.data.votes || 0,
-      upVoted: votes.data.upVoted,
-    });
+    if(votes && votes.data && votes.data.votes){
+      this.setState({
+        votes: votes.data.votes || 0,
+        upVoted: votes.data.upVoted,
+      });
+    }
   };
 
   getViews = async () => {
@@ -74,7 +76,9 @@ class ResourceDetails extends Component {
         console.error(error, 'error');
       });
 
-    this.setState({ views: votes.data.views || 0 });
+    if(votes && votes.data && votes.data.views) {
+      this.setState({views: votes.data.views || 0});
+    }
   };
 
   renderDisqus = resource => {
@@ -87,7 +91,7 @@ class ResourceDetails extends Component {
         title: resource.app_name,
       };
       return (
-        <div className="container has-text-centered comments">
+        <div className="has-text-centered comments left20 right20">
           <DiscussionEmbed shortname={disqusShortname} config={disqusConfig}/>
         </div>
       )
@@ -125,20 +129,25 @@ class ResourceDetails extends Component {
           </Slider>
         </section>
 
-        <HighlightDetails
-          resource={resource}
-          views={this.state.views}
-          votes={this.state.votes}
-          upVoted={this.state.upVoted}
-          app_id={this.props.match.params.app_id}
-          getVotes={this.getVotes}
-        />
+        <section className="container hero carousel content bottom50">
 
-        <section className="section container hero top0 padded-content ">
-          <div dangerouslySetInnerHTML={{ __html: this.state.description }} />
+          <HighlightDetails
+            resource={resource}
+            views={this.state.views}
+            votes={this.state.votes}
+            upVoted={this.state.upVoted}
+            app_id={this.props.match.params.app_id}
+            getVotes={this.getVotes}
+          />
+
+          <section className="section top0 padded-content">
+            <div dangerouslySetInnerHTML={{ __html: this.state.description }} />
+          </section>
+
+          {this.renderDisqus(resource)}
+
         </section>
 
-        {this.renderDisqus(resource)}
       </AnimationsWrapper>
     );
   }
