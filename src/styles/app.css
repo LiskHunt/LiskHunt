@@ -47,3 +47,7 @@
     text-decoration: underline;
     font-weight: bold;
 }
+
+.pointer {
+    cursor: pointer;
+}
