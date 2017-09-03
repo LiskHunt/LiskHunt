@@ -68,8 +68,8 @@ class Recommended extends Component {
   render() {
     return (
       <AnimationsWrapper>
-        <section className="hero">
-          <div className="hero-body padded-content has-text-centered">
+        <section className="top15">
+          <div className="padded-content has-text-centered">
             <section className="container">
               <section className="columns">
                 <div className="container has-text-centered bottom30">
