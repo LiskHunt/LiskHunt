@@ -8,7 +8,8 @@ import Remarkable from 'remarkable';
 import axios from 'axios';
 
 import AnimationsWrapper from '../../animations-wrapper/AnimationsWrapper';
-import ReactDisqusComments from 'react-disqus-comments';
+import { DiscussionEmbed } from '../../disqus/index';
+
 import HighlightDetails from './components/HighlightDetails';
 
 import { resources } from '../../../lib/resources/resources';
@@ -77,19 +78,22 @@ class ResourceDetails extends Component {
   };
 
   renderDisqus = resource => {
+
     if (resource.app_name) {
+      const disqusShortname = 'liskhunt';
+      const disqusConfig = {
+        identifier: resource.app_id,
+        url: 'https://liskhunt.com/resource/' + resource.app_id,
+        title: resource.app_name,
+      };
       return (
-        <div className="container bottom30">
-          <ReactDisqusComments
-            shortname={resource.app_name}
-            identifier={resource.app_id}
-            title={resource.app_name}
-            url={'https://liskhunt.com/' + resource.app_id}
-            category_id="1"
-          />
+        <div className="container has-text-centered comments">
+          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig}/>
         </div>
-      );
+      )
+
     }
+
   };
 
   render() {
@@ -103,7 +107,7 @@ class ResourceDetails extends Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      arrows: resource.app_images && resource.app_images.length > 0,
+      arrows: (resource.app_images && !!resource.app_images[1]),
     };
 
     return (
