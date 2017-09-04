@@ -6,6 +6,7 @@ import {
   goResourcesList,
   goBuildSomething,
   goSubmitHunt,
+  goNewToLisk,
   isActive,
 } from '../router/router_helpers';
 import PropTypes from 'prop-types';
@@ -47,39 +48,51 @@ class Header extends Component {
         <div id="navMenubd-example" className="navbar-menu">
           <div className="navbar-end has-text-grey-dark">
             <a
-              className={'navbar-item ' + isActive.call(this, '/')}
+              className={'navbar-item has-text-grey-lighter ' + isActive.call(this, '/')}
               onClick={goHome.bind(this)}
             >
               Home
             </a>
-            <div
+            <a
               className={
-                isActive.call(this, '/recommended') +
-                ' navbar-item is-hidden-desktop'
+                'navbar-item has-text-grey-lighter is-white ' + isActive.call(this, '/recommended')
               }
               onClick={goResourcesList.bind(this)}
             >
-              Apps & Resources
-            </div>
+              Apps & resources
+            </a>
+            <a
+              className={
+                'navbar-item has-text-grey-lighter is-white ' + isActive.call(this, '/new-to-lisk')
+              }
+              onClick={goNewToLisk.bind(this)}
+            >
+              New to Lisk?
+            </a>
+
             <div
               className={
                 isActive.call(this, '/lets-build-something') +
-                ' navbar-item is-hidden-desktop'
+                ' navbar-item has-text-grey-lighter is-hidden-desktop'
               }
               onClick={goBuildSomething.bind(this)}
             >
               Build something
             </div>
+
             <a
-              className={'navbar-item is-white ' + isActive.call(this, '/cheers')}
+              className={
+                'navbar-item has-text-grey-lighter is-white ' + isActive.call(this, '/cheers')
+              }
               onClick={goCheers.bind(this)}
             >
               <span role="img" aria-label="cheers">
                 🍻
-              </span> Cheers
+              </span>{' '}
+              Cheers
             </a>
             <span
-              className={'navbar-item ' + isActive.call(this, '/submit-hunt')}
+              className={'navbar-item has-text-grey-lighter ' + isActive.call(this, '/submit-hunt')}
               onClick={goSubmitHunt.bind(this)}
             >
               <a className="navbar-item button is-info is-inverted">

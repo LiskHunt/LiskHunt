@@ -18,6 +18,10 @@ export const goSubmitHunt = function() {
   this.context.router.history.push('/submit-hunt');
 };
 
+export const goNewToLisk = function() {
+  this.context.router.history.push('/new-to-lisk');
+};
+
 export const goResource = function(resource_name) {
   console.log(resource_name);
   this.context.router.history.push('/resource/' + resource_name);

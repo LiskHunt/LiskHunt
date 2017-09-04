@@ -10,6 +10,7 @@ import BuildSomething from '../views/buildSomething/BuildSomething';
 import Cheers from '../views/cheers/Cheers';
 import NewHunt from '../views/newHunt/NewHunt';
 import ResourceDetails from '../views/resourceDetails/ResourceDetails';
+import NewToLisk from '../views/newToLisk/NewToLisk';
 
 
 const Navigation = ()=>{
@@ -23,6 +24,7 @@ const Navigation = ()=>{
         <Route path="/Cheers" name="about" component={Cheers}/>
         <Route path="/submit-hunt" name="about" component={NewHunt}/>
         <Route path="/resource/:app_id" name="about" component={ResourceDetails}/>
+        <Route path="/new-to-lisk" name="about" component={NewToLisk}/>
       </Switch>
       <Footer/>
     </div>
