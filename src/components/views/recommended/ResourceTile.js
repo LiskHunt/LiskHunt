@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { goResource } from '../../../router/router_helpers';
+import { goResource } from '../../router/router_helpers';
 
 class ResourceTile extends Component {
   constructor(props) {

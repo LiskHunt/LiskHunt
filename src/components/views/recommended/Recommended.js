@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FlipMove from 'react-flip-move';
 
-import AppTile from '../../apps/AppTile';
+import ResourceTile from './ResourceTile';
 import AnimationsWrapper from '../../animations-wrapper/AnimationsWrapper';
 
 import { resources, labels } from '../../../lib/resources/resources';
@@ -189,7 +189,7 @@ class Recommended extends Component {
                 className="columns is-multiline"
               >
                 {this.state.resources.map(app => {
-                  return <AppTile app={app} labels={labels} key={app.app_id} />;
+                  return <ResourceTile app={app} labels={labels} key={app.app_id} />;
                 })}
               </FlipMove>
             </section>
