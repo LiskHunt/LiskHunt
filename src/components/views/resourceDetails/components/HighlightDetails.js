@@ -3,8 +3,9 @@ import app_settings from '../../../../config';
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import HighlightDetails_mobile from './mobile/Highlight_mobile'
-import HighlightDetails_desktop from './desktop/Highlight_desktop'
+
+import HighlightDetails_Mobile from './mobile/Highlight_mobile'
+import HighlightDetails_Desktop from './desktop/Highlight_desktop'
 
 import { labels } from '../../../../lib/resources/resources';
 
@@ -43,7 +44,7 @@ class HighlightDetails extends Component {
       <div className="">
 
         <
-          HighlightDetails_desktop
+          HighlightDetails_Desktop
           resource={resource}
           addUpVote={this.addUpVote}
           labelClassName={this.labelClassName}
@@ -53,7 +54,7 @@ class HighlightDetails extends Component {
         />
 
         <
-          HighlightDetails_mobile
+          HighlightDetails_Mobile
           resource={resource}
           addUpVote={this.addUpVote}
           labelClassName={this.labelClassName}
@@ -61,6 +62,8 @@ class HighlightDetails extends Component {
           votes={this.props.votes}
           views={this.props.views}
         />
+
+
 
       </div>
     );

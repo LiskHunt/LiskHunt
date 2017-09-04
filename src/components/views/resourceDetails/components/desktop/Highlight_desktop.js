@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HighlightDetails_desktop = (props) => {
+const HighlightDetails_Desktop = (props) => {
   console.log(props);
 
   let resource = props.resource;
@@ -82,4 +82,4 @@ const HighlightDetails_desktop = (props) => {
   );
 };
 
-export default HighlightDetails_desktop;
+export default HighlightDetails_Desktop;

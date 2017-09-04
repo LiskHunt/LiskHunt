@@ -42,12 +42,13 @@ class NewHunt extends Component {
             <div className="top40 bottom40 columms">
               <div className="column is-half is-offset-one-quarter">
                 <a className="button is-success right30 top15">
-                  {' '}<i className="fa fa-github" /> Submit on Github
+                  {' '}<i className="fa fa-github right10" /> Submit on Github
                 </a>
                 <a
-                  className="button is-warning top15"
+                  className="button is-primary top15"
                   onClick={this.togleHideManualSubmit}
                 >
+                  <i className="fa fa-puzzle-piece right10" aria-hidden="true"></i>
                   Submit without Github
                 </a>
               </div>

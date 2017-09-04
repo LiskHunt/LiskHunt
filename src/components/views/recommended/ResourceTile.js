@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { goResource } from '../router/router_helpers';
+import { goResource } from '../../router/router_helpers';
 
-class AppTile extends Component {
+class ResourceTile extends Component {
   constructor(props) {
     super(props);
   }
@@ -63,8 +63,8 @@ class AppTile extends Component {
   }
 }
 
-AppTile.contextTypes = {
+ResourceTile.contextTypes = {
   router: PropTypes.object.isRequired,
 };
 
-export default AppTile;
+export default ResourceTile;
