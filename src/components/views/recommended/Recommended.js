@@ -149,30 +149,17 @@ class Recommended extends Component {
                             >
                               None
                             </a>
-                            <a
-                              onClick={() => this.changeFilterBy('App')}
-                              className="dropdown-item has-text-dark has-text-left"
-                            >
-                              App
-                            </a>
-                            <a
-                              onClick={() => this.changeFilterBy('Script')}
-                              className="dropdown-item has-text-dark has-text-left"
-                            >
-                              Script
-                            </a>
-                            <a
-                              onClick={() => this.changeFilterBy('Community')}
-                              className="dropdown-item has-text-dark has-text-left"
-                            >
-                              Community
-                            </a>
-                            <a
-                              onClick={() => this.changeFilterBy('Pool')}
-                              className="dropdown-item has-text-dark has-text-left"
-                            >
-                              Pool
-                            </a>
+                            {Object.keys(labels).map(key => {
+                              return (
+                                <a
+                                  key={key}
+                                  onClick={() => this.changeFilterBy(key)}
+                                  className="dropdown-item has-text-dark has-text-left"
+                                >
+                                  {key}
+                                </a>
+                              );
+                            })}
                           </div>
                         </div>
                       </div>
@@ -189,7 +176,9 @@ class Recommended extends Component {
                 className="columns is-multiline"
               >
                 {this.state.resources.map(app => {
-                  return <ResourceTile app={app} labels={labels} key={app.app_id} />;
+                  return (
+                    <ResourceTile app={app} labels={labels} key={app.app_id} />
+                  );
                 })}
               </FlipMove>
             </section>
