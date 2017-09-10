@@ -69,6 +69,6 @@ Of course your donation will be shown on the contributors list in the Delegate H
 _______
 Brought to you with love by carbonara
 
-![carbonara-sign](https://lisk.rocks/img/carbonara_sm.png)
+![carbonara_logo](https://lisk.rocks/img/carbonara_sm.png)
 
 
