@@ -60,3 +60,7 @@
     background-color: transparent!important;
     color: white!important;
 }
+
+.max-size-limited {
+    max-width: 950px;
+}

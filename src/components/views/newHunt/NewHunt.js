@@ -25,10 +25,11 @@ class NewHunt extends Component {
     return (
       <AnimationsWrapper>
         <div className="container hero-body padded-content bottom20">
-          <div className="container has-text-centered">
+          <div className="container has-text-centered max-size-limited">
             <h1 className="title is-size-1">Submit something new!</h1>
             <h2 className="subtitle top10">
               Did you hunt a new lisk resouce? Did you develop something cool?
+              Are you a delegate?
             </h2>
             <p className="">
               Basically everything that is a resource for the Lisk ecosystem can
@@ -39,6 +40,10 @@ class NewHunt extends Component {
               just need to add the app to <code>resource.json</code>, commit and
               submit the PR.
             </p>
+            <p className="top15">
+              If you want to hunt a <strong>new delegate</strong> or a <strong>good action</strong> that a
+              delegate did. You can still submit it through Github or by email/lisk.chat.
+            </p>
             <div className="top40 bottom40 columms">
               <div className="column is-half is-offset-one-quarter">
                 <a className="button is-success right30 top15">
@@ -48,7 +53,10 @@ class NewHunt extends Component {
                   className="button is-primary top15"
                   onClick={this.togleHideManualSubmit}
                 >
-                  <i className="fa fa-puzzle-piece right10" aria-hidden="true"></i>
+                  <i
+                    className="fa fa-puzzle-piece right10"
+                    aria-hidden="true"
+                  />
                   Submit without Github
                 </a>
               </div>
@@ -62,7 +70,7 @@ class NewHunt extends Component {
                   <ul className="has-text-dark">
                     <li>Resource Name</li>
                     <li>Short description, max 120 chars</li>
-                    <li>Long description</li>
+                    <li>Long description (In markdown please)</li>
                     <li>Category [Pool, App, Script, Community, Bot]</li>
                     <li>Author (if any)</li>
                     <li>Images (Recommended: 720x540px)</li>
@@ -71,6 +79,37 @@ class NewHunt extends Component {
                 </blockquote>
               </div>
             </div>
+            <h2 className="title is-size-3">
+              How does the Delegate Coolness Score works?
+            </h2>
+            <p className="content has-text-left">
+              The <strong>Coolness score</strong> is there to indicate how is the delegate contributing to Lisk.<br/>
+              The score takes in consideration about multiple factors, such as:<br/>
+              <ul>
+                <li>
+                  Resources developed
+                </li>
+                <li>
+                  Likes in the applications
+                </li>
+                <li>
+                  Donations ( To any cause related to Lisk )
+                </li>
+              </ul>
+              Which:<br/><br/>
+
+              Every application has a score of 10 points.<br/><br/>
+
+              Every like is 1 point.<br/><br/>
+
+              Donations are divided in 3 tiers, with different scoring.<br/>
+              Donations from 0 to 100 Lisk are scored as 1 point.<br/>
+              Donations from 100 to 500 Lisk are scored as 5 points.<br/>
+              Donations from 500+ Lisk are scored as 7 points.<br/><br/>
+
+              In the calculation of Score, we will include in the soon future: Ambassadors, Mods of the lisk chat and whatever cool idea will come from the community.
+
+            </p>
             <h2 className="title is-size-3">
               I have an idea and I want to contribute to LiskHunt.
             </h2>

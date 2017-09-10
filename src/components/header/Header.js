@@ -7,7 +7,8 @@ import {
   goBuildSomething,
   goSubmitHunt,
   goNewToLisk,
-  isActive,
+  goDelegatesList,
+  isActive
 } from '../router/router_helpers';
 import PropTypes from 'prop-types';
 
@@ -63,6 +64,14 @@ class Header extends Component {
             </a>
             <a
               className={
+                'navbar-item has-text-grey-lighter is-white ' + isActive.call(this, '/cool-delegates')
+              }
+              onClick={goDelegatesList.bind(this)}
+            >
+              DelegatesHunt
+            </a>
+            <a
+              className={
                 'navbar-item has-text-grey-lighter is-white ' + isActive.call(this, '/new-to-lisk')
               }
               onClick={goNewToLisk.bind(this)}
@@ -99,7 +108,7 @@ class Header extends Component {
                 <span className="icon">
                   <i className="fa fa-github" />
                 </span>
-                <span>Submit app</span>
+                <span>Submit hunt</span>
               </a>
             </span>
           </div>
