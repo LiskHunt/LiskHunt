@@ -17,7 +17,7 @@ Did you find a new Lisk resource? Did you develop something cool? Are you a dele
 Everything that is a resource for the Lisk ecosystem can be submitted. So let's say an (d)App, a pool, guide or community can be submitted to LiskHunt.
 
 In order to submit a new hunt, you can create a new Pull-Request to this repository on Github. 
-You'll just need to add the new resource to `src/lib/resources/resources.js`, commit and submit the PR.
+You'll just need to add the new resource to `src/lib/resources/resources.js`, add the description in `src/lib/resources/descriptions.js`, commit and submit the PR.
 
 
 If you want to submit a new delegate that is not on the list or a good action of a delegate (such as a donation). You can submit it by opening an issue on this repo.
