@@ -28,7 +28,7 @@ class NewHunt extends Component {
           <div className="container has-text-centered max-size-limited">
             <h1 className="title is-size-1">Submit something new!</h1>
             <h2 className="subtitle top10">
-              Did you hunt a new lisk resouce? Did you develop something cool?
+              Did you hunt a new lisk resource? Did you develop something cool?
               Are you a delegate?
             </h2>
             <p className="">
@@ -46,7 +46,10 @@ class NewHunt extends Component {
             </p>
             <div className="top40 bottom40 columms">
               <div className="column is-half is-offset-one-quarter">
-                <a className="button is-success right30 top15">
+                <a className="button is-success right30 top15" href="https://github.com/xunga/Lisk-hunt"
+                   rel="noopener noreferrer"
+                   target="_blank"
+                   >
                   {' '}<i className="fa fa-github right10" /> Submit on Github
                 </a>
                 <a
