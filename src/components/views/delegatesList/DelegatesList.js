@@ -7,6 +7,9 @@ import axios from 'axios';
 import app_settings from '../../../config';
 import './delegatesList.css';
 
+import { connect } from 'react-redux'
+import { openProfile } from '../../../actions'
+
 import { goSubmitHunt } from '../../router/router_helpers';
 import DelegateCard from './components/DelegateCard'
 
@@ -72,7 +75,14 @@ class DelegatesList extends Component {
   }
 }
 
-export default DelegatesList;
+const mapStateToProps = state => ({
+})
+
+export default connect(
+    mapStateToProps,
+    { openProfile }
+)(DelegatesList)
+
 
 DelegatesList.contextTypes = {
   router: PropTypes.object.isRequired,

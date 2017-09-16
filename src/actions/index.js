@@ -1,0 +1,1 @@
+export const openProfile = () => ({type : 'OPEN_PROFILE'})
