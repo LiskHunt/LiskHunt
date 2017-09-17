@@ -36,3 +36,5 @@ deploy\.sh
 build/
 
 liskhunt\.tar\.gz
+
+src/config\.js
