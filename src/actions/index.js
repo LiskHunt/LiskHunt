@@ -7,7 +7,6 @@ export const openProfile = () => ({type : 'OPEN_PROFILE'})
 export const fetchDelegates = async () => {
 
     try{
-        console.log('CHECKPOINT')
         const request = axios.get(`${app_settings.backend_url}/get_delegates_list`)
 
         return {
