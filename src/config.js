@@ -1,4 +1,3 @@
-
 /*if(process.env.NODE_ENV === 'production'){
     settings = {
         backend_url: 'https://backend.liskhunt.com'
