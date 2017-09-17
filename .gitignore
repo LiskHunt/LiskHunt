@@ -13,7 +13,7 @@ lib-cov
 
 # Coverage directory used by tools like istanbul
 coverage
-
+git
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
@@ -36,3 +36,6 @@ deploy\.sh
 build/
 
 liskhunt\.tar\.gz
+
+src/config.js
+package-lock.json
