@@ -8,14 +8,15 @@ import React from 'react';
 import {render} from 'react-dom';
 import {BrowserRouter as Router} from 'react-router-dom';
 
-import { createStore } from 'redux'
+import promiseMiddleware from 'redux-promise'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducers'
 
 import Navigation from './components/router/Navigation';
 
 const store = createStore(
-    reducer
+    reducer, applyMiddleware(promiseMiddleware)
 )
 
 render(

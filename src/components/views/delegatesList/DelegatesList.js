@@ -2,43 +2,37 @@ import AnimationsWrapper from '../../animations-wrapper/AnimationsWrapper';
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 
-import app_settings from '../../../config';
 import './delegatesList.css';
 
 import { connect } from 'react-redux'
-import { openProfile } from '../../../actions'
+import { fetchDelegates } from "../../../actions"
 
 import { goSubmitHunt } from '../../router/router_helpers';
 import DelegateCard from './components/DelegateCard'
 
 
 class DelegatesList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      delegatesList: []
-    };
-  }
 
-  componentDidMount() {
-    this.getDelegatesList()
-  }
-
-  getDelegatesList = async () => {
-    let delegates = await axios
-      .get(`${app_settings.backend_url}/get_delegates_list/`)
-      .catch(function(error) {
-        console.error(error, 'error');
-      });
-
-    if(delegates && delegates.data && delegates.data.list){
-      this.setState({
-        delegatesList: delegates.data.list
-      });
+    constructor(props) {
+        super(props);
     }
-  };
+
+    componentWillMount(){
+        this.props.fetchDelegates();
+    }
+
+    renderDelegateList () {
+
+      const { delegates } = this.props
+
+      if (delegates){
+          return this.props.delegates.map((delegate, index) => {
+              return (<DelegateCard key={delegate.delegate_name} delegate={delegate} index={index+1}/>);
+          })
+      }
+    }
+
 
   render() {
     return (
@@ -55,18 +49,7 @@ class DelegatesList extends Component {
 
             <h2 className="top15">If you want to join the list <a onClick={goSubmitHunt.bind(this)} className="underlined">click here</a></h2>
 
-
-            <div className="columns top50 is-multiline">
-
-              {
-                this.state.delegatesList.map((delegate, index) => {
-                  return (<DelegateCard key={delegate.delegate_name} delegate={delegate} index={index+1}/>);
-                })
-              }
-
-
-            </div>
-
+            <div className="columns top50 is-multiline"> { this.renderDelegateList() } </div>
 
           </div>
         </div>
@@ -76,12 +59,10 @@ class DelegatesList extends Component {
 }
 
 const mapStateToProps = state => ({
+    delegates : state.delegates.delegates
 })
 
-export default connect(
-    mapStateToProps,
-    { openProfile }
-)(DelegatesList)
+export default connect( mapStateToProps, { fetchDelegates } )(DelegatesList)
 
 
 DelegatesList.contextTypes = {

@@ -1,8 +1,8 @@
 
 import { combineReducers } from 'redux'
-import profile from './profile'
+import delegates from './delegates'
 
 
 export default combineReducers({
-    profile
+    delegates
 });
