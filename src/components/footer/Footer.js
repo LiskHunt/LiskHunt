@@ -15,10 +15,6 @@ import PropTypes from 'prop-types';
 
 class Footer extends Component {
 
-    isActive(routeName){
-        return this.props.location.pathname === routeName ? 'is-active' : '';
-    }
-
   render() {
     return (
       <div className="hero-foot">
@@ -26,25 +22,25 @@ class Footer extends Component {
           <div className="container">
             <ul>
               <li
-                className={this.isActive(goHome)}
+                className={isActive.call(this, goHome)}
                 onClick={() => this.props.goHome()}
               >
                 <a>Overview</a>
               </li>
               <li
-                className={this.isActive(goResourcesList)}
+                className={isActive.call(this, goResourcesList)}
                 onClick={() => this.props.goResourcesList()}
               >
                 <a>Apps & Resources</a>
               </li>
               <li
-                className={this.isActive(goBuildSomething)}
+                className={isActive.call(this, goBuildSomething)}
                 onClick={() => this.props.goBuildSomething()}
               >
                 <a>Build something</a>
               </li>
               <li
-                className={this.isActive(goSubmitHunt)}
+                className={isActive.call(this, goSubmitHunt)}
                 onClick={() => this.props.goSubmitHunt()}
               >
                 <a>Submit new hunt</a>
@@ -57,9 +53,7 @@ class Footer extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-    location : ''
-});
+const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => bindActionCreators({
     goSubmitHunt: () => push(goSubmitHunt),
