@@ -36,10 +36,6 @@ class Header extends Component {
     }
   }
 
-  isActive(routeName){
-    return this.context.router.route.location.pathname === routeName ? 'is-active' : '';
-  }
-
   render() {
     return (
       <nav className="navbar background-transparent">
@@ -58,14 +54,14 @@ class Header extends Component {
         <div id="navMenubd-example" className="navbar-menu">
           <div className="navbar-end has-text-grey-dark">
             <a
-              className={'navbar-item has-text-grey-lighter ' + this.isActive.call(this, goHome)}
+              className={'navbar-item has-text-grey-lighter ' + isActive.call(this, goHome)}
               onClick={() => this.props.goHome()}
             >
               Home
             </a>
             <a
               className={
-                'navbar-item has-text-grey-lighter is-white ' + this.isActive(goResourcesList)
+                'navbar-item has-text-grey-lighter is-white ' + isActive.call(this, goResourcesList)
               }
               onClick={() => this.props.goResourcesList()}
             >
@@ -73,7 +69,7 @@ class Header extends Component {
             </a>
             <a
               className={
-                'navbar-item has-text-grey-lighter is-white ' + this.isActive(goDelegatesList)
+                'navbar-item has-text-grey-lighter is-white ' + isActive.call(this, goDelegatesList)
               }
               onClick={() => this.props.goDelegatesList()}
             >
@@ -81,7 +77,7 @@ class Header extends Component {
             </a>
             <a
               className={
-                'navbar-item has-text-grey-lighter is-white ' + this.isActive(goNewToLisk)
+                'navbar-item has-text-grey-lighter is-white ' + isActive.call(this, goNewToLisk)
               }
               onClick={() => this.props.goNewToLisk()}
             >
@@ -90,7 +86,7 @@ class Header extends Component {
 
             <div
               className={
-                  this.isActive(goBuildSomething) +
+                  isActive.call(this, goBuildSomething) +
                 ' navbar-item has-text-grey-lighter is-hidden-desktop'
               }
               onClick={() => this.props.goBuildSomething()}
@@ -100,7 +96,7 @@ class Header extends Component {
 
             <a
               className={
-                'navbar-item has-text-grey-lighter is-white ' + this.isActive(goCheers)
+                'navbar-item has-text-grey-lighter is-white ' + isActive.call(this, goCheers)
               }
               onClick={() => this.props.goCheers()}
             >
@@ -110,7 +106,7 @@ class Header extends Component {
               Cheers
             </a>
             <span
-              className={'navbar-item has-text-grey-lighter ' + this.isActive(goSubmitHunt)}
+              className={'navbar-item has-text-grey-lighter ' + isActive.call(this, goSubmitHunt)}
               onClick={() => this.props.goSubmitHunt()}
             >
               <a className="navbar-item button is-info is-inverted">
@@ -127,9 +123,7 @@ class Header extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { location : ''}
-};
+const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => bindActionCreators({
     goSubmitHunt: () => push(goSubmitHunt),
