@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Tooltip } from 'react-lightweight-tooltip';
+import { goDelegateProfile } from "../../../router/routes";
+
+import { connect } from "react-redux";
+import { push } from 'react-router-redux'
+import { bindActionCreators } from 'redux'
 
 class DelegateCard extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     const tooltip = {
@@ -21,10 +23,11 @@ class DelegateCard extends Component {
     };
 
     return (
-      <div
+
+      <div key={this.props.delegate.delegate_name}
         className="column is-6 is-offset-3"
-        key={this.props.delegate.delegate_name}
       >
+        <a onClick={() => this.props.goDelegateProfile()}>
         <div className="box">
           <article className="media">
             <div className="media-left">
@@ -96,9 +99,17 @@ class DelegateCard extends Component {
             </div>
           </article>
         </div>
+                </a>
       </div>
+
     );
   }
 }
 
-export default DelegateCard;
+const mapStateToProps = state => ({});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    goDelegateProfile: () => push(goDelegateProfile)
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(DelegateCard);

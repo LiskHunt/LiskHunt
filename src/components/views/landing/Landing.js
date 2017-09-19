@@ -1,7 +1,11 @@
 import React,{Component} from 'react';
-import PropTypes from 'prop-types';
+
 import AnimationsWrapper from '../../animations-wrapper/AnimationsWrapper'
-import { goResourcesList, goBuildSomething, goNewToLisk } from '../../router/router_helpers';
+import { goResourcesList, goBuildSomething, goNewToLisk } from '../../router/routes';
+
+import { connect } from "react-redux";
+import { push } from 'react-router-redux'
+import { bindActionCreators } from 'redux'
 
 class Landing extends Component{
 
@@ -16,9 +20,9 @@ class Landing extends Component{
             A directory of the best Lisk resources.
           </h2>
           <div className="has-text-left inline-block">
-            <p><span role="img" aria-label="wave">👋🏻</span> New to Lisk? <a className="underlined" onClick={goNewToLisk.bind(this)}>Start here → </a></p>
-            <p><span role="img" aria-label="wave">🔎</span> Looking to browse resources? <a className="underlined" onClick={goResourcesList.bind(this)}>here →</a></p>
-            <p><span role="img" aria-label="wave">🤓</span> Are you a developer? <a className="underlined" onClick={goBuildSomething.bind(this)}>Let's create stuff → </a></p>
+            <p><span role="img" aria-label="wave">👋🏻</span> New to Lisk? <a className="underlined" onClick={() => this.props.goNewToLisk()}>Start here → </a></p>
+            <p><span role="img" aria-label="wave">🔎</span> Looking to browse resources? <a className="underlined" onClick={() => this.props.goResourcesList()}>here →</a></p>
+            <p><span role="img" aria-label="wave">🤓</span> Are you a developer? <a className="underlined" onClick={() => this.props.goBuildSomething()}>Let's create stuff → </a></p>
 
           </div>
         </div>
@@ -27,8 +31,12 @@ class Landing extends Component{
   }
 }
 
-Landing.contextTypes = {
-  router: PropTypes.object.isRequired,
-};
+const mapStateToProps = state => ({});
 
-export default Landing;
+const mapDispatchToProps = dispatch => bindActionCreators({
+    goNewToLisk: () => push(goNewToLisk),
+    goResourcesList: () => push(goResourcesList),
+    goBuildSomething: () => push(goBuildSomething)
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Landing);

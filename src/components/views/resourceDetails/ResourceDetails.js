@@ -2,7 +2,7 @@ import './resourceDetails.css';
 import app_settings from '../../../config';
 
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+
 import Slider from 'react-slick';
 import Remarkable from 'remarkable';
 import axios from 'axios';
@@ -152,9 +152,5 @@ class ResourceDetails extends Component {
     );
   }
 }
-
-ResourceDetails.contextTypes = {
-  router: PropTypes.object.isRequired,
-};
 
 export default ResourceDetails;
