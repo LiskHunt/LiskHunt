@@ -62,7 +62,7 @@ class DelegateCard extends Component {
                     >
                       Coolness score:
                     </strong>{' '}
-                    <small>{this.props.delegate.ranking}</small>
+                    <small>{this.props.delegate.coolness_score}</small>
                   </Tooltip>
                 </p>
               </div>
