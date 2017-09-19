@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import AnimationsWrapper from '../../animations-wrapper/AnimationsWrapper';
-import PropTypes from 'prop-types';
-import { goResourcesList } from '../../router/router_helpers';
+
+import { goResourcesList } from '../../router/routes';
+
+import { connect } from "react-redux";
+import { push } from 'react-router-redux'
+import { bindActionCreators } from 'redux'
 
 class BuildSomething extends Component {
   render() {
@@ -31,7 +35,7 @@ class BuildSomething extends Component {
                 LiskHunt has the aim to collect all the resources, categorize
                 and advertise.<br />
                 You can take inspiration on the{' '}
-                <a onClick={goResourcesList.bind(this)} className="underlined">
+                <a onClick={() => this.props.goResourcesList()} className="underlined">
                   resources page
                 </a>. Most of the projects are also open source, Lisk is open
                 source, we{' '}
@@ -59,8 +63,10 @@ class BuildSomething extends Component {
   }
 }
 
-export default BuildSomething;
+const mapStateToProps = state => ({});
 
-BuildSomething.contextTypes = {
-  router: PropTypes.object.isRequired,
-};
+const mapDispatchToProps = dispatch => bindActionCreators({
+    goResourcesList: () => push(goResourcesList)
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(BuildSomething);

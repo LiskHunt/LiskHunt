@@ -12,7 +12,7 @@ import NewHunt from "../views/newHunt/NewHunt";
 import ResourceDetails from "../views/resourceDetails/ResourceDetails";
 import NewToLisk from "../views/newToLisk/NewToLisk";
 import DelegatesList from "../views/delegatesList/DelegatesList";
-import DelegateProfile from "../views/delegateProfile/DelegateProfile";
+import DelegatesProfile from "../views/delegateProfile/DelegateProfile";
 
 const Navigation = () => {
   return (
@@ -35,11 +35,7 @@ const Navigation = () => {
         />
         <Route path="/new-to-lisk" name="about" component={NewToLisk} />
         <Route path="/cool-delegates" name="about" component={DelegatesList} />
-        <Route
-          path="/delegate-profile"
-          name="about"
-          component={DelegateProfile}
-        />
+        <Route path="/delegate-profile" name="profile" component={DelegatesProfile} />
       </Switch>
       <Footer />
     </div>

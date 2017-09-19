@@ -1,7 +1,11 @@
 import React, {Component}  from 'react';
 import AnimationsWrapper from '../../animations-wrapper/AnimationsWrapper';
-import PropTypes from 'prop-types';
-import { goResourcesList } from '../../router/router_helpers';
+
+import { goResourcesList } from '../../router/routes';
+
+import { connect } from "react-redux";
+import { push } from 'react-router-redux'
+import { bindActionCreators } from 'redux'
 
 class NewToLisk extends Component {
   render() {
@@ -133,7 +137,7 @@ class NewToLisk extends Component {
               <h2 className="title is-size-2 top30">
                 Now let's start to find some cool apps!{' '}
                 <a
-                  onClick={goResourcesList.bind(this)}
+                  onClick={() => this.props.goResourcesList()}
                   className="underlined has-text-success"
                 ><br className="is-hidden-desktop"/>
                   <i className="fa fa-share" aria-hidden="true"></i>
@@ -148,8 +152,10 @@ class NewToLisk extends Component {
   }
 };
 
-export default NewToLisk;
+const mapStateToProps = state => ({});
 
-NewToLisk.contextTypes = {
-  router: PropTypes.object.isRequired,
-};
+const mapDispatchToProps = dispatch => bindActionCreators({
+    goResourcesList: () => push(goResourcesList)
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewToLisk);

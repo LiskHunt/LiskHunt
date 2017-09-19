@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
-// import {Link} from 'react-router-dom';
+
 import {
   goHome,
   goResourcesList,
   goBuildSomething,
   goSubmitHunt,
   isActive,
-} from '../router/router_helpers';
+} from '../router/routes';
+
+import { connect } from "react-redux";
+import { push } from 'react-router-redux'
+import { bindActionCreators } from 'redux'
 import PropTypes from 'prop-types';
 
 class Footer extends Component {
+
+    isActive(routeName){
+        return this.props.location.pathname === routeName ? 'is-active' : '';
+    }
+
   render() {
     return (
       <div className="hero-foot">
@@ -17,26 +26,26 @@ class Footer extends Component {
           <div className="container">
             <ul>
               <li
-                className={isActive.call(this, '/')}
-                onClick={goHome.bind(this)}
+                className={this.isActive(goHome)}
+                onClick={() => this.props.goHome()}
               >
                 <a>Overview</a>
               </li>
               <li
-                className={isActive.call(this, '/recommended')}
-                onClick={goResourcesList.bind(this)}
+                className={this.isActive(goResourcesList)}
+                onClick={() => this.props.goResourcesList()}
               >
                 <a>Apps & Resources</a>
               </li>
               <li
-                className={isActive.call(this, '/lets-build-something')}
-                onClick={goBuildSomething.bind(this)}
+                className={this.isActive(goBuildSomething)}
+                onClick={() => this.props.goBuildSomething()}
               >
                 <a>Build something</a>
               </li>
               <li
-                className={isActive.call(this, '/submit-hunt')}
-                onClick={goSubmitHunt.bind(this)}
+                className={this.isActive(goSubmitHunt)}
+                onClick={() => this.props.goSubmitHunt()}
               >
                 <a>Submit new hunt</a>
               </li>
@@ -48,8 +57,20 @@ class Footer extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+    location : ''
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    goSubmitHunt: () => push(goSubmitHunt),
+    goHome: () => push(goHome),
+    goResourcesList: () => push(goResourcesList),
+    goBuildSomething: () => push(goBuildSomething)
+}, dispatch)
+
 Footer.contextTypes = {
-  router: PropTypes.object.isRequired,
+    router: PropTypes.object.isRequired,
 };
 
-export default Footer;
+export default connect(mapStateToProps, mapDispatchToProps)(Footer);
+

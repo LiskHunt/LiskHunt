@@ -1,20 +1,19 @@
 import AnimationsWrapper from "../../animations-wrapper/AnimationsWrapper";
 
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
 import "./delegatesList.css";
 
 import { connect } from "react-redux";
 import { fetchDelegates } from "../../../actions";
 
-import { goSubmitHunt } from "../../router/router_helpers";
+import { push } from 'react-router-redux'
+import { bindActionCreators } from 'redux'
+
 import DelegateCard from "./components/DelegateCard";
 
+
 class DelegatesList extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentWillMount() {
     this.props.fetchDelegates();
@@ -59,7 +58,7 @@ class DelegatesList extends Component {
 
             <h2 className="top15">
               If you want to join the list{" "}
-              <a onClick={goSubmitHunt.bind(this)} className="underlined">
+              <a onClick={() => this.props.goSubmitHunt()} className="underlined">
                 click here
               </a>
             </h2>
@@ -78,8 +77,10 @@ const mapStateToProps = state => ({
   delegates: state.delegates.delegates
 });
 
-export default connect(mapStateToProps, { fetchDelegates })(DelegatesList);
+const mapDispatchToProps = dispatch => bindActionCreators({
+    fetchDelegates,
+    goSubmitHunt: () => push('/submit-hunt')
+}, dispatch)
 
-DelegatesList.contextTypes = {
-  router: PropTypes.object.isRequired
-};
+export default connect(mapStateToProps, mapDispatchToProps)(DelegatesList);
+
