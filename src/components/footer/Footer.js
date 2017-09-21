@@ -22,25 +22,25 @@ class Footer extends Component {
           <div className="container">
             <ul>
               <li
-                className={isActive.call(this, goHome)}
+                className={isActive.call(this, '/')}
                 onClick={() => this.props.goHome()}
               >
                 <a>Overview</a>
               </li>
               <li
-                className={isActive.call(this, goResourcesList)}
+                className={isActive.call(this, '/recommended')}
                 onClick={() => this.props.goResourcesList()}
               >
                 <a>Apps & Resources</a>
               </li>
               <li
-                className={isActive.call(this, goBuildSomething)}
+                className={isActive.call(this, '/lets-build-something')}
                 onClick={() => this.props.goBuildSomething()}
               >
                 <a>Build something</a>
               </li>
               <li
-                className={isActive.call(this, goSubmitHunt)}
+                className={isActive.call(this, '/submit-hunt')}
                 onClick={() => this.props.goSubmitHunt()}
               >
                 <a>Submit new hunt</a>
