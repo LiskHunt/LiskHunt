@@ -70,7 +70,7 @@ class ResourceTile extends Component {
 const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    goResource: () => push(goResource)
+    goResource: (id) => push(goResource + id)
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(ResourceTile);
