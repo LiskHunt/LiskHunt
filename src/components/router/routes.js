@@ -7,7 +7,3 @@ export const goNewToLisk = '/new-to-lisk';
 export const goDelegatesList = '/cool-delegates';
 export const goDelegateProfile = '/delegate-profile';
 export const goResource = '/resource/';
-
-
-
-

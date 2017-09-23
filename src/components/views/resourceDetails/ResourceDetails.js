@@ -9,18 +9,17 @@ import { DiscussionEmbed } from '../../disqus/disqus';
 
 import HighlightDetails from './components/HighlightDetails';
 
-import { connect } from "react-redux";
-import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { goResourcesList } from '../../router/routes';
-import { setActivePage } from "../../../actions";
-import {getResource, getViews, getVotes} from "../../../actions/index";
+import { setActivePage } from '../../../actions';
+import { getResource, getViews, getVotes } from '../../../actions/index';
 
 class ResourceDetails extends Component {
   timeout = null;
 
-
-  componentWillMount(){
-    this.props.setActivePage(goResourcesList)
+  componentWillMount() {
+    this.props.setActivePage(goResourcesList);
   }
 
   componentDidMount() {
@@ -35,7 +34,6 @@ class ResourceDetails extends Component {
   }
 
   renderDisqus = resource => {
-
     if (resource.app_name) {
       const disqusShortname = 'liskhunt';
       const disqusConfig = {
@@ -45,12 +43,10 @@ class ResourceDetails extends Component {
       };
       return (
         <div className="has-text-centered comments left20 right20">
-          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig}/>
+          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
         </div>
-      )
-
+      );
     }
-
   };
 
   render() {
@@ -64,7 +60,7 @@ class ResourceDetails extends Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      arrows: (resource.app_images && !!resource.app_images[1]),
+      arrows: resource.app_images && !!resource.app_images[1],
     };
 
     return (
@@ -83,7 +79,6 @@ class ResourceDetails extends Component {
         </section>
 
         <section className="container hero carousel content bottom50">
-
           <HighlightDetails
             resource={resource}
             views={this.props.views}
@@ -98,28 +93,30 @@ class ResourceDetails extends Component {
           </section>
 
           {this.renderDisqus(resource)}
-
         </section>
-
       </AnimationsWrapper>
     );
   }
 }
 
 const mapStateToProps = state => ({
-    state : state,
-    resource: state.resource.resource,
-    description: state.resource.description,
-    votes: state.resource.votes,
-    views: state.resource.views,
-    upVoted: state.resource.upVoted,
+  state: state,
+  resource: state.resource.resource,
+  description: state.resource.description,
+  votes: state.resource.votes,
+  views: state.resource.views,
+  upVoted: state.resource.upVoted,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-    setActivePage: (page) => setActivePage(page),
-    getVotes: (id) => getVotes(id),
-    getViews: (id) => getViews(id),
-    getResource: (id) => getResource(id)
-}, dispatch)
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      setActivePage: page => setActivePage(page),
+      getVotes: id => getVotes(id),
+      getViews: id => getViews(id),
+      getResource: id => getResource(id),
+    },
+    dispatch,
+  );
 
 export default connect(mapStateToProps, mapDispatchToProps)(ResourceDetails);

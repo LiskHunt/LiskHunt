@@ -4,30 +4,34 @@ import FlipMove from 'react-flip-move';
 import ResourceTile from './ResourceTile';
 import AnimationsWrapper from '../../animations-wrapper/AnimationsWrapper';
 
-import { connect } from "react-redux";
-import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { goResourcesList } from '../../router/routes';
-import { setActivePage, sortResources, filterResources, setSortBy, setFilterBy } from "../../../actions";
-
+import {
+  setActivePage,
+  sortResources,
+  filterResources,
+  setSortBy,
+  setFilterBy,
+} from '../../../actions';
 
 class Recommended extends Component {
-
   componentWillMount() {
-      this.props.setActivePage(goResourcesList)
-      this.props.sortResources(this.props.resources, this.props.sortBy)
+    this.props.setActivePage(goResourcesList);
+    this.props.sortResources(this.props.resources, this.props.sortBy);
   }
 
   sortBy = sortBy => {
     if (this.props.sortBy === sortBy) {
       return;
     }
-    this.props.setSortBy(sortBy)
-    this.props.sortResources(this.props.resources, sortBy)
+    this.props.setSortBy(sortBy);
+    this.props.sortResources(this.props.resources, sortBy);
   };
 
   filterBy = filter => {
-    this.props.setFilterBy(filter)
-    this.props.filterResources(filter)
+    this.props.setFilterBy(filter);
+    this.props.filterResources(filter);
   };
 
   render() {
@@ -51,9 +55,7 @@ class Recommended extends Component {
                             aria-haspopup="true"
                             aria-controls="dropdown-menu4"
                           >
-                            <span>
-                              {this.props.sortBy}
-                            </span>
+                            <span>{this.props.sortBy}</span>
                             <span className="icon is-small">
                               <i
                                 className="fa fa-angle-down"
@@ -91,9 +93,7 @@ class Recommended extends Component {
                             aria-haspopup="true"
                             aria-controls="dropdown-menu4"
                           >
-                            <span>
-                              {this.props.filterBy}
-                            </span>
+                            <span>{this.props.filterBy}</span>
                             <span className="icon is-small">
                               <i
                                 className="fa fa-angle-down"
@@ -142,7 +142,11 @@ class Recommended extends Component {
               >
                 {this.props.resources.map(app => {
                   return (
-                    <ResourceTile app={app} labels={this.props.labels} key={app.app_id} />
+                    <ResourceTile
+                      app={app}
+                      labels={this.props.labels}
+                      key={app.app_id}
+                    />
                   );
                 })}
               </FlipMove>
@@ -155,18 +159,22 @@ class Recommended extends Component {
 }
 
 const mapStateToProps = state => ({
-    resources : state.resources.resources,
-    labels : state.resources.labels,
-    sortBy : state.resources.sortBy,
-    filterBy : state.resources.filterBy
+  resources: state.resources.resources,
+  labels: state.resources.labels,
+  sortBy: state.resources.sortBy,
+  filterBy: state.resources.filterBy,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-    setActivePage: (page) => setActivePage(page),
-    sortResources: (resources, type) => sortResources(resources, type),
-    filterResources: (filter) => filterResources(filter),
-    setSortBy: (sortBy) => setSortBy(sortBy),
-    setFilterBy: (filterBy) => setFilterBy(filterBy)
-}, dispatch)
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      setActivePage: page => setActivePage(page),
+      sortResources: (resources, type) => sortResources(resources, type),
+      filterResources: filter => filterResources(filter),
+      setSortBy: sortBy => setSortBy(sortBy),
+      setFilterBy: filterBy => setFilterBy(filterBy),
+    },
+    dispatch,
+  );
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recommended);
