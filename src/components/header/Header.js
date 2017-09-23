@@ -7,9 +7,9 @@ import {
   goBuildSomething,
   goSubmitHunt,
   goNewToLisk,
-  goDelegatesList,
-  isActive
+  goDelegatesList
 } from '../router/routes';
+
 import PropTypes from 'prop-types';
 
 import { connect } from "react-redux";
@@ -36,6 +36,10 @@ class Header extends Component {
     }
   }
 
+  isActivePage(page){
+    return this.props.active_page === page ? 'is-active' : '';
+  }
+
   render() {
     return (
       <nav className="navbar background-transparent">
@@ -54,14 +58,14 @@ class Header extends Component {
         <div id="navMenubd-example" className="navbar-menu">
           <div className="navbar-end has-text-grey-dark">
             <a
-              className={'navbar-item has-text-grey-lighter ' + isActive.call(this, goHome)}
+              className={'navbar-item has-text-grey-lighter ' + this.isActivePage(goHome)}
               onClick={() => this.props.goHome()}
             >
               Home
             </a>
             <a
               className={
-                'navbar-item has-text-grey-lighter is-white ' + isActive.call(this, goResourcesList)
+                'navbar-item has-text-grey-lighter is-white ' + this.isActivePage(goResourcesList)
               }
               onClick={() => this.props.goResourcesList()}
             >
@@ -69,7 +73,7 @@ class Header extends Component {
             </a>
             <a
               className={
-                'navbar-item has-text-grey-lighter is-white ' + isActive.call(this, goDelegatesList)
+                'navbar-item has-text-grey-lighter is-white ' + this.isActivePage(goDelegatesList)
               }
               onClick={() => this.props.goDelegatesList()}
             >
@@ -77,7 +81,7 @@ class Header extends Component {
             </a>
             <a
               className={
-                'navbar-item has-text-grey-lighter is-white ' + isActive.call(this, goNewToLisk)
+                'navbar-item has-text-grey-lighter is-white ' + this.isActivePage(goNewToLisk)
               }
               onClick={() => this.props.goNewToLisk()}
             >
@@ -86,7 +90,7 @@ class Header extends Component {
 
             <div
               className={
-                  isActive.call(this, goBuildSomething) +
+                  this.isActivePage(goBuildSomething) +
                 ' navbar-item has-text-grey-lighter is-hidden-desktop'
               }
               onClick={() => this.props.goBuildSomething()}
@@ -96,7 +100,7 @@ class Header extends Component {
 
             <a
               className={
-                'navbar-item has-text-grey-lighter is-white ' + isActive.call(this, goCheers)
+                'navbar-item has-text-grey-lighter is-white ' + this.isActivePage(goCheers)
               }
               onClick={() => this.props.goCheers()}
             >
@@ -106,7 +110,7 @@ class Header extends Component {
               Cheers
             </a>
             <span
-              className={'navbar-item has-text-grey-lighter ' + isActive.call(this, goSubmitHunt)}
+              className={'navbar-item has-text-grey-lighter ' + this.isActivePage(goSubmitHunt)}
               onClick={() => this.props.goSubmitHunt()}
             >
               <a className="navbar-item button is-info is-inverted">
@@ -123,7 +127,9 @@ class Header extends Component {
   }
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+    active_page : state.navigation.active_page
+});
 
 const mapDispatchToProps = dispatch => bindActionCreators({
     goSubmitHunt: () => push(goSubmitHunt),
@@ -133,7 +139,6 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     goCheers: () => push(goCheers),
     goNewToLisk: () => push(goNewToLisk),
     goDelegatesList: () => push(goDelegatesList),
-
 }, dispatch)
 
 Header.contextTypes = {

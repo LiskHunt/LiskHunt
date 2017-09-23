@@ -1,13 +1,19 @@
 import React,{Component} from 'react';
 
 import AnimationsWrapper from '../../animations-wrapper/AnimationsWrapper'
-import { goResourcesList, goBuildSomething, goNewToLisk } from '../../router/routes';
+import {goResourcesList, goBuildSomething, goNewToLisk, goHome} from '../../router/routes';
 
 import { connect } from "react-redux";
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 
+import { setActivePage } from "../../../actions"
+
 class Landing extends Component{
+
+    componentWillMount(){
+        this.props.setActivePage(goHome)
+    }
 
   render(){
     return(
@@ -36,7 +42,8 @@ const mapStateToProps = state => ({});
 const mapDispatchToProps = dispatch => bindActionCreators({
     goNewToLisk: () => push(goNewToLisk),
     goResourcesList: () => push(goResourcesList),
-    goBuildSomething: () => push(goBuildSomething)
+    goBuildSomething: () => push(goBuildSomething),
+    setActivePage : (page) => setActivePage(page)
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Landing);
