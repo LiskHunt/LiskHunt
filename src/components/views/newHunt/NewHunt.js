@@ -8,26 +8,21 @@ import './newHunt.css';
 import { connect } from "react-redux";
 import { bindActionCreators } from 'redux'
 import { goSubmitHunt } from '../../router/routes';
-import { setActivePage } from "../../../actions";
+import { setActivePage, setManuelSubmit } from "../../../actions";
 
 class NewHunt extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hideManualSubmit: true,
-    };
-  }
 
     componentWillMount(){
         this.props.setActivePage(goSubmitHunt)
     }
 
-  togleHideManualSubmit = () => {
-    return this.setState({ hideManualSubmit: !this.state.hideManualSubmit });
+  toggleHideManualSubmit = () => {
+      const manual = this.props.hideManualSubmit == true ? false : true;
+      this.props.setManuelSubmit(manual);
   };
 
   isManualSubmitHidden = () => {
-    return this.state.hideManualSubmit ? 'leave-transform' : 'enter-transform';
+    return this.props.hideManualSubmit ? 'leave-transform' : 'enter-transform';
   };
 
   render() {
@@ -63,7 +58,7 @@ class NewHunt extends Component {
                 </a>
                 <a
                   className="button is-primary top15"
-                  onClick={this.togleHideManualSubmit}
+                  onClick={() => this.toggleHideManualSubmit() }
                 >
                   <i
                     className="fa fa-puzzle-piece right10"
@@ -140,10 +135,13 @@ NewHunt.contextTypes = {
   router: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+    hideManualSubmit: state.navigation.hideManualSubmit
+});
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    setActivePage: (page) => setActivePage(page)
+    setActivePage: (page) => setActivePage(page),
+    setManuelSubmit: (type) => setManuelSubmit(type)
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewHunt);
