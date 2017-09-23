@@ -1,5 +1,6 @@
 import axios from "axios";
 import app_settings from "../config";
+import { resources } from '../lib/resources/resources';
 
 export const fetchDelegates = async () => {
   try {
@@ -124,7 +125,7 @@ export const setFilterBy = async (type) => {
     }
 };
 
-export const filterResources = async (resources, type) => {
+export const filterResources = async (type) => {
 
     try {
 

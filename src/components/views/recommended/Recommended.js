@@ -17,7 +17,7 @@ class Recommended extends Component {
       this.props.sortResources(this.props.resources, this.props.sortBy)
   }
 
-  changeSortBy = sortBy => {
+  sortBy = sortBy => {
     if (this.props.sortBy === sortBy) {
       return;
     }
@@ -25,9 +25,9 @@ class Recommended extends Component {
     this.props.sortResources(this.props.resources, sortBy)
   };
 
-  changeFilterBy = filterBy => {
-    this.props.setFilterBy(filterBy)
-    this.props.filterResources(this.props.resources, filterBy)
+  filterBy = filter => {
+    this.props.setFilterBy(filter)
+    this.props.filterResources(filter)
   };
 
   render() {
@@ -69,13 +69,13 @@ class Recommended extends Component {
                         >
                           <div className="dropdown-content">
                             <a
-                              onClick={() => this.changeSortBy('Magic')}
+                              onClick={() => this.sortBy('Magic')}
                               className="dropdown-item has-text-dark has-text-left"
                             >
                               Magic
                             </a>
                             <a
-                              onClick={() => this.changeSortBy('Newest')}
+                              onClick={() => this.sortBy('Newest')}
                               className="dropdown-item has-text-dark has-text-left"
                             >
                               Newest Hunt
@@ -109,7 +109,7 @@ class Recommended extends Component {
                         >
                           <div className="dropdown-content">
                             <a
-                              onClick={() => this.changeFilterBy('None')}
+                              onClick={() => this.filterBy('None')}
                               className="dropdown-item has-text-dark has-text-left"
                             >
                               None
@@ -118,7 +118,7 @@ class Recommended extends Component {
                               return (
                                 <a
                                   key={key}
-                                  onClick={() => this.changeFilterBy(key)}
+                                  onClick={() => this.filterBy(key)}
                                   className="dropdown-item has-text-dark has-text-left"
                                 >
                                   {key}
@@ -164,7 +164,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => bindActionCreators({
     setActivePage: (page) => setActivePage(page),
     sortResources: (resources, type) => sortResources(resources, type),
-    filterResources: (resources, filter) => filterResources(resources, filter),
+    filterResources: (filter) => filterResources(filter),
     setSortBy: (sortBy) => setSortBy(sortBy),
     setFilterBy: (filterBy) => setFilterBy(filterBy)
 }, dispatch)
