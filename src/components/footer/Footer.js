@@ -15,7 +15,7 @@ import PropTypes from 'prop-types';
 class Footer extends Component {
 
   isActivePage(page){
-    return this.props.active_page === page ? 'is-active' : '';
+      return this.props.active_page === page ? 'is-active' : '';
   }
 
   render() {
@@ -31,7 +31,7 @@ class Footer extends Component {
                 <a>Overview</a>
               </li>
               <li
-                className={this.isActivePage(goBuildSomething)}
+                className={this.isActivePage(goResourcesList)}
                 onClick={() => this.props.goResourcesList()}
               >
                 <a>Apps & Resources</a>
