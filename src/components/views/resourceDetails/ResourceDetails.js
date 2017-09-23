@@ -26,7 +26,7 @@ class ResourceDetails extends Component {
 
   constructor() {
     super();
-
+    console.log('herro')
     this.state = {
       resource: {},
       description: '',
@@ -34,6 +34,10 @@ class ResourceDetails extends Component {
       views: 0,
       upVoted: false,
     };
+
+  }
+
+  componentWillMount(){
     this.props.setActivePage(goResourcesList)
   }
 
