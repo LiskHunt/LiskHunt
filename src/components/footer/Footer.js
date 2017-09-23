@@ -4,8 +4,7 @@ import {
   goHome,
   goResourcesList,
   goBuildSomething,
-  goSubmitHunt,
-  isActive,
+  goSubmitHunt
 } from '../router/routes';
 
 import { connect } from "react-redux";
@@ -15,6 +14,10 @@ import PropTypes from 'prop-types';
 
 class Footer extends Component {
 
+  isActivePage(page){
+    return this.props.active_page === page ? 'is-active' : '';
+  }
+
   render() {
     return (
       <div className="hero-foot">
@@ -22,25 +25,25 @@ class Footer extends Component {
           <div className="container">
             <ul>
               <li
-                className={isActive.call(this, '/')}
+                className={ this.isActivePage(goHome)}
                 onClick={() => this.props.goHome()}
               >
                 <a>Overview</a>
               </li>
               <li
-                className={isActive.call(this, '/recommended')}
+                className={this.isActivePage(goBuildSomething)}
                 onClick={() => this.props.goResourcesList()}
               >
                 <a>Apps & Resources</a>
               </li>
               <li
-                className={isActive.call(this, '/lets-build-something')}
+                className={this.isActivePage(goBuildSomething)}
                 onClick={() => this.props.goBuildSomething()}
               >
                 <a>Build something</a>
               </li>
               <li
-                className={isActive.call(this, '/submit-hunt')}
+                className={this.isActivePage(goSubmitHunt)}
                 onClick={() => this.props.goSubmitHunt()}
               >
                 <a>Submit new hunt</a>
@@ -53,7 +56,9 @@ class Footer extends Component {
   }
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+    active_page : state.navigation.active_page
+});
 
 const mapDispatchToProps = dispatch => bindActionCreators({
     goSubmitHunt: () => push(goSubmitHunt),
