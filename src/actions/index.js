@@ -28,16 +28,118 @@ export const fetchProfile = async (id) => {
 
     });
 
-    console.log('CHECKPOINT')
     return {
       type: "FETCH_PROFILE_SUCCESS",
       payload: mock_request
     };
   } catch (error) {
     return {
-      type: "FETCH_PROFILE_ERROR",
+      type: "ERROR",
       payload: error.message
     };
   }
 
+};
+
+export const setActivePage = async (page) => {
+    try {
+
+        return {
+            type: "SET_ACTIVE_PAGE",
+            payload: page
+        };
+
+    } catch (error) {
+        return {
+            type: "ERROR",
+            payload: error.message
+        };
+    }
+};
+
+export const sortResources = async (resources, type) => {
+
+    try {
+
+        let new_resources = resources
+
+        switch(type){
+
+            case 'Newest' : {
+                new_resources = resources.slice(0).reverse()
+            }
+
+            case 'Magic' : {
+                new_resources = resources.sort(() => {
+                    return Math.random() - 0.1;
+                });
+            }
+
+        }
+
+        return {
+            type: "SET_RESOURCES",
+            payload: new_resources
+        };
+
+    } catch (error) {
+        return {
+            type: "ERROR",
+            payload: error.message
+        };
+    }
+};
+
+export const setSortBy = async (type) => {
+
+    try {
+
+        return {
+            type: "SET_SORT_BY",
+            payload: type
+        };
+
+    } catch (error) {
+        return {
+            type: "ERROR",
+            payload: error.message
+        };
+    }
+};
+
+export const setFilterBy = async (type) => {
+
+    try {
+
+        return {
+            type: "SET_FILTER_BY",
+            payload: type
+        };
+
+    } catch (error) {
+        return {
+            type: "ERROR",
+            payload: error.message
+        };
+    }
+};
+
+export const filterResources = async (resources, type) => {
+
+    try {
+
+        let resourcesFiltered = resources.filter(res => res.category === type);
+        if (type === 'None') resourcesFiltered = resources.slice(0);
+
+        return {
+            type: "SET_RESOURCES",
+            payload: resourcesFiltered
+        };
+
+    } catch (error) {
+        return {
+            type: "ERROR",
+            payload: error.message
+        };
+    }
 };
