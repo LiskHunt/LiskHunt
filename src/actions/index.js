@@ -1,6 +1,9 @@
 import axios from "axios";
 import app_settings from "../config";
 import { resources } from '../lib/resources/resources';
+import descriptions from '../lib/resources/descriptions';
+import Remarkable from 'remarkable';
+const md = new Remarkable();
 
 export const fetchDelegates = async () => {
   try {
@@ -144,3 +147,81 @@ export const filterResources = async (type) => {
         };
     }
 };
+
+export const getVotes = async (id) => {
+    try {
+
+        const votes = axios.get(`${app_settings.backend_url}/vote/${id}`)
+
+
+        return {
+            type: "FETCH_VOTES",
+            payload: votes
+        };
+    } catch (error) {
+        return {
+            type: "ERROR",
+            payload: error.message
+        };
+    }
+};
+
+export const getViews = async (id) => {
+    try {
+
+        const views = axios.get(`${app_settings.backend_url}/views/${id}`)
+
+        return {
+            type: "FETCH_VIEWS",
+            payload: views
+        };
+    } catch (error) {
+        return {
+            type: "ERROR",
+            payload: error.message
+        };
+    }
+};
+
+export const getResource = async (id) => {
+    try {
+
+        const resource = await resources.find(res => {
+            return res.app_id === id;
+        });
+
+        const description = md.render(descriptions[resource.app_id]);
+
+        return {
+            type: "FETCH_RESOURCE",
+            payload: {
+                resource,
+                description,
+            }
+        };
+    } catch (error) {
+        return {
+            type: "ERROR",
+            payload: error.message
+        };
+    }
+};
+
+
+export const setManuelSubmit = async (type) => {
+
+    try {
+
+        return {
+            type: "SET_MANUAL_SUBMIT",
+            payload: type
+        };
+
+    } catch (error) {
+        return {
+            type: "ERROR",
+            payload: error.message
+        };
+    }
+};
+
