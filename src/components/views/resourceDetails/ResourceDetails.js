@@ -15,6 +15,11 @@ import HighlightDetails from './components/HighlightDetails';
 import { resources } from '../../../lib/resources/resources';
 import descriptions from '../../../lib/resources/descriptions';
 
+import { connect } from "react-redux";
+import { bindActionCreators } from 'redux'
+import { goResourcesList } from '../../router/routes';
+import { setActivePage } from "../../../actions";
+
 class ResourceDetails extends Component {
   timeout = null;
   md = new Remarkable();
@@ -29,6 +34,7 @@ class ResourceDetails extends Component {
       views: 0,
       upVoted: false,
     };
+    this.props.setActivePage(goResourcesList)
   }
 
   componentDidMount() {
@@ -153,4 +159,10 @@ class ResourceDetails extends Component {
   }
 }
 
-export default ResourceDetails;
+const mapStateToProps = state => ({});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    setActivePage: (page) => setActivePage(page)
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(ResourceDetails);

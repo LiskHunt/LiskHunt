@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 
 import { connect } from "react-redux";
 import { fetchProfile } from "../../../actions";
+import {goDelegateProfile} from "../../router/routes";
+import { setActivePage } from "../../../actions";
+import { bindActionCreators } from 'redux'
 
 
 class DelegatesProfile extends Component {
@@ -13,6 +16,7 @@ class DelegatesProfile extends Component {
 
     componentWillMount() {
         this.props.fetchProfile(1);
+        this.props.setActivePage(goDelegateProfile)
     }
 
     renderProfile(delegate) {
@@ -46,6 +50,11 @@ const mapStateToProps = state => ({
   delegate: state.delegates.delegate
 });
 
-export default connect(mapStateToProps, { fetchProfile })(DelegatesProfile);
+const mapDispatchToProps = dispatch => bindActionCreators({
+    fetchProfile,
+    setActivePage: (page) => setActivePage(page)
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(DelegatesProfile);
 
 
