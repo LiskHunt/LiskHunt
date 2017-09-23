@@ -5,6 +5,11 @@ import PropTypes from 'prop-types';
 
 import './newHunt.css';
 
+import { connect } from "react-redux";
+import { bindActionCreators } from 'redux'
+import { goSubmitHunt } from '../../router/routes';
+import { setActivePage } from "../../../actions";
+
 class NewHunt extends Component {
   constructor(props) {
     super(props);
@@ -12,6 +17,10 @@ class NewHunt extends Component {
       hideManualSubmit: true,
     };
   }
+
+    componentWillMount(){
+        this.props.setActivePage(goSubmitHunt)
+    }
 
   togleHideManualSubmit = () => {
     return this.setState({ hideManualSubmit: !this.state.hideManualSubmit });
@@ -127,8 +136,14 @@ class NewHunt extends Component {
   }
 }
 
-export default NewHunt;
-
 NewHunt.contextTypes = {
   router: PropTypes.object.isRequired,
 };
+
+const mapStateToProps = state => ({});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    setActivePage: (page) => setActivePage(page)
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewHunt);

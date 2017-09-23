@@ -5,18 +5,21 @@ import React, { Component } from "react";
 import "./delegatesList.css";
 
 import { connect } from "react-redux";
-import { fetchDelegates } from "../../../actions";
+import { fetchDelegates, setActivePage } from "../../../actions";
 
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 
 import DelegateCard from "./components/DelegateCard";
 
+import {goDelegatesList} from '../../router/routes';
+
 
 class DelegatesList extends Component {
 
   componentWillMount() {
     this.props.fetchDelegates();
+    this.props.setActivePage(goDelegatesList)
   }
 
   renderDelegateList() {
@@ -79,7 +82,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
     fetchDelegates,
-    goSubmitHunt: () => push('/submit-hunt')
+    goSubmitHunt: () => push('/submit-hunt'),
+    setActivePage: (page) => setActivePage(page)
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(DelegatesList);
