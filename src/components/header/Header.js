@@ -7,15 +7,14 @@ import {
   goBuildSomething,
   goSubmitHunt,
   goNewToLisk,
-  goDelegatesList
+  goDelegatesList,
 } from '../router/routes';
 
 import PropTypes from 'prop-types';
 
-import { connect } from "react-redux";
-import { push } from 'react-router-redux'
-import { bindActionCreators } from 'redux'
-
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+import { bindActionCreators } from 'redux';
 
 class Header extends Component {
   componentDidMount() {
@@ -36,7 +35,7 @@ class Header extends Component {
     }
   }
 
-  isActivePage(page){
+  isActivePage(page) {
     return this.props.active_page === page ? 'is-active' : '';
   }
 
@@ -58,14 +57,17 @@ class Header extends Component {
         <div id="navMenubd-example" className="navbar-menu">
           <div className="navbar-end has-text-grey-dark">
             <a
-              className={'navbar-item has-text-grey-lighter ' + this.isActivePage(goHome)}
+              className={
+                'navbar-item has-text-grey-lighter ' + this.isActivePage(goHome)
+              }
               onClick={() => this.props.goHome()}
             >
               Home
             </a>
             <a
               className={
-                'navbar-item has-text-grey-lighter is-white ' + this.isActivePage(goResourcesList)
+                'navbar-item has-text-grey-lighter is-white ' +
+                this.isActivePage(goResourcesList)
               }
               onClick={() => this.props.goResourcesList()}
             >
@@ -73,7 +75,8 @@ class Header extends Component {
             </a>
             <a
               className={
-                'navbar-item has-text-grey-lighter is-white ' + this.isActivePage(goDelegatesList)
+                'navbar-item has-text-grey-lighter is-white ' +
+                this.isActivePage(goDelegatesList)
               }
               onClick={() => this.props.goDelegatesList()}
             >
@@ -81,7 +84,8 @@ class Header extends Component {
             </a>
             <a
               className={
-                'navbar-item has-text-grey-lighter is-white ' + this.isActivePage(goNewToLisk)
+                'navbar-item has-text-grey-lighter is-white ' +
+                this.isActivePage(goNewToLisk)
               }
               onClick={() => this.props.goNewToLisk()}
             >
@@ -90,7 +94,7 @@ class Header extends Component {
 
             <div
               className={
-                  this.isActivePage(goBuildSomething) +
+                this.isActivePage(goBuildSomething) +
                 ' navbar-item has-text-grey-lighter is-hidden-desktop'
               }
               onClick={() => this.props.goBuildSomething()}
@@ -100,7 +104,8 @@ class Header extends Component {
 
             <a
               className={
-                'navbar-item has-text-grey-lighter is-white ' + this.isActivePage(goCheers)
+                'navbar-item has-text-grey-lighter is-white ' +
+                this.isActivePage(goCheers)
               }
               onClick={() => this.props.goCheers()}
             >
@@ -110,7 +115,10 @@ class Header extends Component {
               Cheers
             </a>
             <span
-              className={'navbar-item has-text-grey-lighter ' + this.isActivePage(goSubmitHunt)}
+              className={
+                'navbar-item has-text-grey-lighter ' +
+                this.isActivePage(goSubmitHunt)
+              }
               onClick={() => this.props.goSubmitHunt()}
             >
               <a className="navbar-item button is-info is-inverted">
@@ -128,22 +136,25 @@ class Header extends Component {
 }
 
 const mapStateToProps = state => ({
-    active_page : state.navigation.active_page
+  active_page: state.navigation.active_page,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-    goSubmitHunt: () => push(goSubmitHunt),
-    goHome: () => push(goHome),
-    goResourcesList: () => push(goResourcesList),
-    goBuildSomething: () => push(goBuildSomething),
-    goCheers: () => push(goCheers),
-    goNewToLisk: () => push(goNewToLisk),
-    goDelegatesList: () => push(goDelegatesList),
-}, dispatch)
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      goSubmitHunt: () => push(goSubmitHunt),
+      goHome: () => push(goHome),
+      goResourcesList: () => push(goResourcesList),
+      goBuildSomething: () => push(goBuildSomething),
+      goCheers: () => push(goCheers),
+      goNewToLisk: () => push(goNewToLisk),
+      goDelegatesList: () => push(goDelegatesList),
+    },
+    dispatch,
+  );
 
 Header.contextTypes = {
-    router: PropTypes.object.isRequired,
+  router: PropTypes.object.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
-

@@ -3,16 +3,15 @@ import AnimationsWrapper from '../../animations-wrapper/AnimationsWrapper';
 
 import { goResourcesList, goBuildSomething } from '../../router/routes';
 
-import { connect } from "react-redux";
-import { push } from 'react-router-redux'
-import { bindActionCreators } from 'redux'
-import { setActivePage } from '../../../actions'
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+import { bindActionCreators } from 'redux';
+import { setActivePage } from '../../../actions';
 
 class BuildSomething extends Component {
-
-    componentWillMount() {
-        this.props.setActivePage(goBuildSomething)
-    }
+  componentWillMount() {
+    this.props.setActivePage(goBuildSomething);
+  }
 
   render() {
     return (
@@ -41,7 +40,10 @@ class BuildSomething extends Component {
                 LiskHunt has the aim to collect all the resources, categorize
                 and advertise.<br />
                 You can take inspiration on the{' '}
-                <a onClick={() => this.props.goResourcesList()} className="underlined">
+                <a
+                  onClick={() => this.props.goResourcesList()}
+                  className="underlined"
+                >
                   resources page
                 </a>. Most of the projects are also open source, Lisk is open
                 source, we{' '}
@@ -71,9 +73,13 @@ class BuildSomething extends Component {
 
 const mapStateToProps = state => ({});
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-    goResourcesList: () => push(goResourcesList),
-    setActivePage: (page) => setActivePage(page)
-}, dispatch)
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      goResourcesList: () => push(goResourcesList),
+      setActivePage: page => setActivePage(page),
+    },
+    dispatch,
+  );
 
 export default connect(mapStateToProps, mapDispatchToProps)(BuildSomething);

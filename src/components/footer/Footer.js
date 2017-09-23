@@ -4,18 +4,17 @@ import {
   goHome,
   goResourcesList,
   goBuildSomething,
-  goSubmitHunt
+  goSubmitHunt,
 } from '../router/routes';
 
-import { connect } from "react-redux";
-import { push } from 'react-router-redux'
-import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
 class Footer extends Component {
-
-  isActivePage(page){
-      return this.props.active_page === page ? 'is-active' : '';
+  isActivePage(page) {
+    return this.props.active_page === page ? 'is-active' : '';
   }
 
   render() {
@@ -25,7 +24,7 @@ class Footer extends Component {
           <div className="container">
             <ul>
               <li
-                className={ this.isActivePage(goHome)}
+                className={this.isActivePage(goHome)}
                 onClick={() => this.props.goHome()}
               >
                 <a>Overview</a>
@@ -57,19 +56,22 @@ class Footer extends Component {
 }
 
 const mapStateToProps = state => ({
-    active_page : state.navigation.active_page
+  active_page: state.navigation.active_page,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-    goSubmitHunt: () => push(goSubmitHunt),
-    goHome: () => push(goHome),
-    goResourcesList: () => push(goResourcesList),
-    goBuildSomething: () => push(goBuildSomething)
-}, dispatch)
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      goSubmitHunt: () => push(goSubmitHunt),
+      goHome: () => push(goHome),
+      goResourcesList: () => push(goResourcesList),
+      goBuildSomething: () => push(goBuildSomething),
+    },
+    dispatch,
+  );
 
 Footer.contextTypes = {
-    router: PropTypes.object.isRequired,
+  router: PropTypes.object.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Footer);
-
