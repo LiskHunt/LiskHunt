@@ -106,7 +106,7 @@ class NewToLisk extends Component {
               </div>
               <div className="has-text-right top30">
                 <h2 className="title is-size-3 top10">
-                  What's an active or standby delegate?
+                  What&apos;s an active or standby delegate?
                 </h2>
                 <p>
                   Every delegate is placed at a specific position on the

@@ -65,7 +65,7 @@ class Landing extends Component {
                 className="underlined"
                 onClick={() => this.props.goBuildSomething()}
               >
-                Let's create stuff →{' '}
+                Let&apos;s create stuff →{' '}
               </a>
             </p>
           </div>
