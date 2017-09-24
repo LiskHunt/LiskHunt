@@ -26,7 +26,7 @@ class DelegateCard extends Component {
         key={this.props.delegate.delegate_name}
         className="column is-6 is-offset-3"
       >
-        <a >
+        <a onClick={() => this.props.goDelegateProfile()}>
           <div className="box">
             <article className="media">
               <div className="media-left">
