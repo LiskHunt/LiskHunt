@@ -23,7 +23,7 @@ class BuildSomething extends Component {
                 <span aria-label="nerd" role="img">
                   🤓
                 </span>{' '}
-                Let's build something...
+                Let&apos;s build something...
               </h1>
               <h2 className="subtitle">
                 So you are a developer and you want to build something?
