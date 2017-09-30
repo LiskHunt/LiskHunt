@@ -147,7 +147,7 @@ class NewToLisk extends Component {
                 >
                   <br className="is-hidden-desktop" />
                   <i className="fa fa-share" aria-hidden="true" />
-                  let's go!
+                  let&apos;s go!
                 </a>
               </h2>
             </div>
