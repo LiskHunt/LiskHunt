@@ -140,7 +140,7 @@ class NewToLisk extends Component {
               </div>
 
               <h2 className="title is-size-2 top30">
-                Now let's start to find some cool apps!{' '}
+                Now let&apos;s start to find some cool apps!{' '}
                 <a
                   onClick={() => this.props.goResourcesList()}
                   className="underlined has-text-success"
