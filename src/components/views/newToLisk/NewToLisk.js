@@ -27,7 +27,7 @@ class NewToLisk extends Component {
                 It's developed in Javascript and enables developers to create
                 their own dApp (decentralized application) and run them on the
                 Lisk sidechains. Lisk uses a system known as Delegated Proof of
-                Stake as it’s consensus model.
+                Stake as it&apos;s consensus model.
                 <br />
                 <br />
               </p>
