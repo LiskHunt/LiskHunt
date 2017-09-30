@@ -29,7 +29,7 @@ class NewToLisk extends Component {
               <p>
                 Lisk is a blockchain platform that provides decentralized
                 blockchain apps. <br />
-                It's developed in Javascript and enables developers to create
+                It&apos;s developed in Javascript and enables developers to create
                 their own dApp (decentralized application) and run them on the
                 Lisk sidechains. Lisk uses a system known as Delegated Proof of
                 Stake as it&apos;s consensus model.
