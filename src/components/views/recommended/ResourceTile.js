@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { goResource } from '../../router/router_helpers';
+
+import { goResource } from '../../router/routes';
+
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+import { bindActionCreators } from 'redux';
 
 class ResourceTile extends Component {
   constructor(props) {
@@ -16,7 +20,10 @@ class ResourceTile extends Component {
     return (
       <div key={app.app_id} className="column is-one-quarter has-text-centered">
         <div className="card">
-          <div className="card-image pointer" onClick={goResource.bind(this, app.app_id)}>
+          <div
+            className="card-image pointer"
+            onClick={() => this.props.goResource(app.app_id)}
+          >
             <figure className="image is-4by3">
               <img src={app.app_images[0]} alt="App preview" />
             </figure>
@@ -27,7 +34,7 @@ class ResourceTile extends Component {
               <div className="media-content">
                 <a
                   className="title is-4 has-text-primary is-marginless"
-                  onClick={goResource.bind(this, app.app_id)}
+                  onClick={() => this.props.goResource(app.app_id)}
                 >
                   {app.app_name} <br />
                 </a>
@@ -47,13 +54,11 @@ class ResourceTile extends Component {
               </div>
             </div>
 
-            <div className="content">
-              {app.short_description}
-            </div>
+            <div className="content">{app.short_description}</div>
           </div>
           <footer
             className="card-footer"
-            onClick={goResource.bind(this, app.app_id)}
+            onClick={() => this.props.goResource(app.app_id)}
           >
             <a className="card-footer-item is-dark">More info</a>
           </footer>
@@ -63,8 +68,14 @@ class ResourceTile extends Component {
   }
 }
 
-ResourceTile.contextTypes = {
-  router: PropTypes.object.isRequired,
-};
+const mapStateToProps = state => ({});
 
-export default ResourceTile;
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      goResource: id => push(goResource + id),
+    },
+    dispatch,
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(ResourceTile);

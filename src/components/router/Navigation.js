@@ -1,18 +1,18 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
-import Header from "../header/Header";
-import Footer from "../footer/Footer";
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
 
-import Landing from "../views/landing/Landing";
-import Recommended from "../views/recommended/Recommended";
-import BuildSomething from "../views/buildSomething/BuildSomething";
-import Cheers from "../views/cheers/Cheers";
-import NewHunt from "../views/newHunt/NewHunt";
-import ResourceDetails from "../views/resourceDetails/ResourceDetails";
-import NewToLisk from "../views/newToLisk/NewToLisk";
-import DelegatesList from "../views/delegatesList/DelegatesList";
-import DelegateProfile from "../views/delegateProfile/DelegateProfile";
+import Landing from '../views/landing/Landing';
+import Recommended from '../views/recommended/Recommended';
+import BuildSomething from '../views/buildSomething/BuildSomething';
+import Cheers from '../views/cheers/Cheers';
+import NewHunt from '../views/newHunt/NewHunt';
+import ResourceDetails from '../views/resourceDetails/ResourceDetails';
+import NewToLisk from '../views/newToLisk/NewToLisk';
+import DelegatesList from '../views/delegatesList/DelegatesList';
+import DelegatesProfile from '../views/delegateProfile/DelegateProfile';
 
 const Navigation = () => {
   return (
@@ -37,8 +37,8 @@ const Navigation = () => {
         <Route path="/cool-delegates" name="about" component={DelegatesList} />
         <Route
           path="/delegate-profile"
-          name="about"
-          component={DelegateProfile}
+          name="profile"
+          component={DelegatesProfile}
         />
       </Switch>
       <Footer />

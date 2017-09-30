@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import AnimationsWrapper from '../../animations-wrapper/AnimationsWrapper';
-import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { goCheers } from '../../router/routes';
+import { setActivePage } from '../../../actions';
 
 class Cheers extends Component {
+  componentWillMount() {
+    this.props.setActivePage(goCheers);
+  }
+
   render() {
     return (
       <AnimationsWrapper>
@@ -11,8 +18,8 @@ class Cheers extends Component {
             <h1 className="title is-size-1">
               <span aria-label="nerd" role="img">
                 🎩
-              </span><br className="is-hidden-desktop"/>{' '}
-              Cheers Mate!
+              </span>
+              <br className="is-hidden-desktop" /> Cheers Mate!
             </h1>
           </div>
           <div className="has-text-centered top20 bottom20">
@@ -50,8 +57,14 @@ class Cheers extends Component {
   }
 }
 
-export default Cheers;
+const mapStateToProps = state => ({});
 
-Cheers.contextTypes = {
-  router: PropTypes.object.isRequired,
-};
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      setActivePage: page => setActivePage(page),
+    },
+    dispatch,
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cheers);

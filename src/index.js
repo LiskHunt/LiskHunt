@@ -5,27 +5,21 @@ import './styles/app.css';
 import registerServiceWorker from './lib/registerServiceWorker';
 
 import React from 'react';
-import {render} from 'react-dom';
-import {BrowserRouter as Router} from 'react-router-dom';
-
-import promiseMiddleware from 'redux-promise'
-import { createStore, applyMiddleware } from 'redux'
-import { Provider } from 'react-redux'
-import reducer from './reducers'
-
+import { render } from 'react-dom';
+import store, { history } from './store';
+import { ConnectedRouter } from 'react-router-redux';
+import { Provider } from 'react-redux';
 import Navigation from './components/router/Navigation';
 
-const store = createStore(
-    reducer, applyMiddleware(promiseMiddleware)
-)
+const target = document.querySelector('#root');
 
 render(
-    <Provider store={store}>
-      <Router>
-        <Navigation/>
-      </Router>
-    </Provider>,
-document.getElementById('root'));
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <Navigation />
+    </ConnectedRouter>
+  </Provider>,
+  target,
+);
 
 registerServiceWorker();
-

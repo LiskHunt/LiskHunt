@@ -1,5 +1,6 @@
 import React from 'react';
 import { insertScript, removeScript } from './utils';
+import PropTypes from 'prop-types';
 
 const DOC = window.document;
 
