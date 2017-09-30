@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import { goResource } from '../../router/routes';
 
-import { connect } from "react-redux";
-import { push } from 'react-router-redux'
-import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+import { bindActionCreators } from 'redux';
 
 class ResourceTile extends Component {
   constructor(props) {
@@ -20,7 +20,10 @@ class ResourceTile extends Component {
     return (
       <div key={app.app_id} className="column is-one-quarter has-text-centered">
         <div className="card">
-          <div className="card-image pointer" onClick={() => this.props.goResource(app.app_id)}>
+          <div
+            className="card-image pointer"
+            onClick={() => this.props.goResource(app.app_id)}
+          >
             <figure className="image is-4by3">
               <img src={app.app_images[0]} alt="App preview" />
             </figure>
@@ -51,9 +54,7 @@ class ResourceTile extends Component {
               </div>
             </div>
 
-            <div className="content">
-              {app.short_description}
-            </div>
+            <div className="content">{app.short_description}</div>
           </div>
           <footer
             className="card-footer"
@@ -69,9 +70,12 @@ class ResourceTile extends Component {
 
 const mapStateToProps = state => ({});
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-    goResource: () => push(goResource)
-}, dispatch)
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      goResource: id => push(goResource + id),
+    },
+    dispatch,
+  );
 
 export default connect(mapStateToProps, mapDispatchToProps)(ResourceTile);
-

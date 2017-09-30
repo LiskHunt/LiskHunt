@@ -4,65 +4,34 @@ import FlipMove from 'react-flip-move';
 import ResourceTile from './ResourceTile';
 import AnimationsWrapper from '../../animations-wrapper/AnimationsWrapper';
 
-import { resources, labels } from '../../../lib/resources/resources';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { goResourcesList } from '../../router/routes';
+import {
+  setActivePage,
+  sortResources,
+  filterResources,
+  setSortBy,
+  setFilterBy,
+} from '../../../actions';
 
 class Recommended extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      resources: [],
-      sortBy: 'Magic',
-      filterBy: 'None',
-    };
-  }
-
   componentWillMount() {
-    this.setState({
-      resources: this.shuffleArray(resources),
-    });
+    this.props.setActivePage(goResourcesList);
+    this.props.sortResources(this.props.resources, this.props.sortBy);
   }
 
-  shuffleArray = arrayToShuffle => {
-    let arrayCopy = arrayToShuffle.slice(0);
-    return arrayCopy.sort(() => {
-      return Math.random() - 0.1;
-    });
-  };
-
-  changeSortBy = sortBy => {
-    if (this.state.sortBy === sortBy) {
+  sortBy = sortBy => {
+    if (this.props.sortBy === sortBy) {
       return;
     }
-
-    switch (sortBy) {
-      case 'Magic': {
-        return this.setState({
-          resources: this.shuffleArray(this.state.resources),
-          sortBy,
-        });
-      }
-      case 'Newest': {
-        return this.setState({
-          resources: this.state.resources.slice(0).reverse(),
-          sortBy,
-        });
-      }
-      default: {
-        return;
-      }
-    }
+    this.props.setSortBy(sortBy);
+    this.props.sortResources(this.props.resources, sortBy);
   };
 
-  changeFilterBy = filterBy => {
-    let resourcesFiltered = resources.filter(res => res.category === filterBy);
-
-    if (filterBy === 'None') resourcesFiltered = resources.slice(0);
-
-    this.setState({
-      resources: resourcesFiltered,
-      filterBy,
-    });
+  filterBy = filter => {
+    this.props.setFilterBy(filter);
+    this.props.filterResources(filter);
   };
 
   render() {
@@ -86,9 +55,7 @@ class Recommended extends Component {
                             aria-haspopup="true"
                             aria-controls="dropdown-menu4"
                           >
-                            <span>
-                              {this.state.sortBy}
-                            </span>
+                            <span>{this.props.sortBy}</span>
                             <span className="icon is-small">
                               <i
                                 className="fa fa-angle-down"
@@ -104,13 +71,13 @@ class Recommended extends Component {
                         >
                           <div className="dropdown-content">
                             <a
-                              onClick={() => this.changeSortBy('Magic')}
+                              onClick={() => this.sortBy('Magic')}
                               className="dropdown-item has-text-dark has-text-left"
                             >
                               Magic
                             </a>
                             <a
-                              onClick={() => this.changeSortBy('Newest')}
+                              onClick={() => this.sortBy('Newest')}
                               className="dropdown-item has-text-dark has-text-left"
                             >
                               Newest Hunt
@@ -126,9 +93,7 @@ class Recommended extends Component {
                             aria-haspopup="true"
                             aria-controls="dropdown-menu4"
                           >
-                            <span>
-                              {this.state.filterBy}
-                            </span>
+                            <span>{this.props.filterBy}</span>
                             <span className="icon is-small">
                               <i
                                 className="fa fa-angle-down"
@@ -144,16 +109,16 @@ class Recommended extends Component {
                         >
                           <div className="dropdown-content">
                             <a
-                              onClick={() => this.changeFilterBy('None')}
+                              onClick={() => this.filterBy('None')}
                               className="dropdown-item has-text-dark has-text-left"
                             >
                               None
                             </a>
-                            {Object.keys(labels).map(key => {
+                            {Object.keys(this.props.labels).map(key => {
                               return (
                                 <a
                                   key={key}
-                                  onClick={() => this.changeFilterBy(key)}
+                                  onClick={() => this.filterBy(key)}
                                   className="dropdown-item has-text-dark has-text-left"
                                 >
                                   {key}
@@ -175,9 +140,13 @@ class Recommended extends Component {
                 leaveAnimation="fade"
                 className="columns is-multiline"
               >
-                {this.state.resources.map(app => {
+                {this.props.resources.map(app => {
                   return (
-                    <ResourceTile app={app} labels={labels} key={app.app_id} />
+                    <ResourceTile
+                      app={app}
+                      labels={this.props.labels}
+                      key={app.app_id}
+                    />
                   );
                 })}
               </FlipMove>
@@ -189,4 +158,23 @@ class Recommended extends Component {
   }
 }
 
-export default Recommended;
+const mapStateToProps = state => ({
+  resources: state.resources.resources,
+  labels: state.resources.labels,
+  sortBy: state.resources.sortBy,
+  filterBy: state.resources.filterBy,
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      setActivePage: page => setActivePage(page),
+      sortResources: (resources, type) => sortResources(resources, type),
+      filterResources: filter => filterResources(filter),
+      setSortBy: sortBy => setSortBy(sortBy),
+      setFilterBy: filterBy => setFilterBy(filterBy),
+    },
+    dispatch,
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(Recommended);
