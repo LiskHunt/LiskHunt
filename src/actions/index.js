@@ -28,10 +28,10 @@ export const fetchProfile = async id => {
     const mock_request = new Promise((resolve, reject) => {
       return resolve({
         _id: '59b4377b1af86bd25f7c1865',
-        delegate_name: 'vekexasia',
-        delegate_contact: 'vekexasia',
-        delegate_github: 'https://api.github.com/users/vekexasia',
-        delegate_img_url: 'https://avatars2.githubusercontent.com/u/200523?v=4',
+        name: 'vekexasia',
+        contact: 'vekexasia',
+        github: 'https://api.github.com/users/vekexasia',
+        img_url: 'https://avatars2.githubusercontent.com/u/200523?v=4',
         applications_count: 2,
         likes: 3,
         app_count: 2,

@@ -16,7 +16,7 @@ class NewHunt extends Component {
   }
 
   toggleHideManualSubmit = () => {
-    const manual = this.props.hideManualSubmit == true ? false : true;
+    const manual = !this.props.hideManualSubmit;
     this.props.setManuelSubmit(manual);
   };
 
