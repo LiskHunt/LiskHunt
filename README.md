@@ -1,5 +1,7 @@
 # LiskHunt
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cee1b3ed705f4676b4cd84921b2a9b61)](https://www.codacy.com/app/alessioscarapazzi/Lisk-hunt?utm_source=github.com&utm_medium=referral&utm_content=xunga/Lisk-hunt&utm_campaign=badger)
+
 ![Liskhunt_logo](https://liskhunt.com/img/meta_liskHunt.png)
 
 ### Hand picked top projects for Lisk
