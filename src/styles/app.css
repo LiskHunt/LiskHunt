@@ -64,3 +64,8 @@
 .max-size-limited {
     max-width: 950px;
 }
+
+.delegate-content{
+    background-color: #eee;
+    color: #000;
+}

@@ -1,0 +1,74 @@
+.main-tile{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-size: 0.9em;
+    padding: 0;
+    font-family: "Roboto";
+}
+
+
+
+.main-tile--banner-wrap{
+
+    height:             200px;
+    position:           relative;
+
+
+
+}
+
+.banner{
+
+    background-color:   #353535;
+    height:             100px;
+    width: 100%;
+    position: absolute;
+
+}
+
+.image-wrap{
+    position: absolute;
+    height:             150px;
+    width :             150px;
+    padding:            5px;
+    border:             1px solid #eee;
+    background-color:   #fff;
+    margin-top:         25px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+
+
+
+}
+
+img{
+
+    height:             100%;
+    width :             100%;
+
+}
+
+.picture-wrap{
+
+}
+
+.main-tile--key-information{
+    text-align: center;
+}
+
+.main-tile--key-information h1{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.main-tile--key-information h2{
+    color: #999999;
+    font-size: 0.85em;
+}
+
+.main-tile-label{
+    color: #999999;
+    font-size: 0.85em;
+
+}
