@@ -1,19 +1,26 @@
 .main-tile{
     background-color: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid #eee;
     font-size: 0.9em;
     padding: 0;
     font-family: "Roboto";
 }
 
+.taskbar{
+
+    background-color: #fff;
+    border: 1px solid #eee;
+    font-size: 0.9em;
+    align-self: flex-start;
+    margin-left: 25px;
+
+}
 
 
 .main-tile--banner-wrap{
 
     height:             200px;
     position:           relative;
-
-
 
 }
 

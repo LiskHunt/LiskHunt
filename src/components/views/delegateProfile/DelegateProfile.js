@@ -6,11 +6,10 @@ import { goDelegateProfile } from '../../router/routes';
 import { setActivePage } from '../../../actions';
 import { bindActionCreators } from 'redux';
 
-
-
 import "./delegate-profile.css"
 
 import MainTile from "./MainTile";
+import Taskbar from "./Taskbar";
 
 class DelegatesProfile extends Component {
 
@@ -28,8 +27,9 @@ class DelegatesProfile extends Component {
       return (
         <div className="hero padded-content is-fullheight delegate-content">
             <div className="container">
-                <div className=" columns">
-                    <MainTile  pictureUrl={delegate.delegate_img_url} name={delegate.delegate_name}/>
+                <div className="columns">
+                    <MainTile pictureUrl={delegate.delegate_img_url} name={delegate.delegate_name}/>
+                    <Taskbar />
                 </div>
             </div>
         </div>
