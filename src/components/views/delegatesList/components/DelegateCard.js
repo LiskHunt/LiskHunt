@@ -7,6 +7,8 @@ import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 
 class DelegateCard extends Component {
+
+
   render() {
     const tooltip = {
       content: {
@@ -26,7 +28,7 @@ class DelegateCard extends Component {
         key={this.props.delegate.delegate_name}
         className="column is-6 is-offset-3"
       >
-        <a onClick={() => this.props.goDelegateProfile()}>
+        <a onClick={() => this.props.goDelegateProfile(this.props.delegate.delegate_name)}>
           <div className="box">
             <article className="media">
               <div className="media-left">
@@ -107,7 +109,7 @@ const mapStateToProps = state => ({});
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      goDelegateProfile: () => push(goDelegateProfile),
+      goDelegateProfile: (name) => push(goDelegateProfile + name),
     },
     dispatch,
   );

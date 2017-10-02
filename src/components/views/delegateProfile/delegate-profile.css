@@ -55,6 +55,7 @@ img{
 
 .main-tile--key-information{
     text-align: center;
+    margin-bottom: 25px;
 }
 
 .main-tile--key-information h1{
@@ -69,6 +70,12 @@ img{
 
 .main-tile-label{
     color: #999999;
-    font-size: 0.85em;
+    font-size: 0.9em;
+    text-align: left;
+}
 
+.main-tile-text{
+    color: #000;
+    font-size: 0.9em;
+    text-align: right;
 }

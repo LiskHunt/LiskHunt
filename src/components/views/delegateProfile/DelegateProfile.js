@@ -12,8 +12,14 @@ import "./delegate-profile.css"
 
 class DelegatesProfile extends Component {
 
+    constructor(props){
+        super(props);
+        const { name }  = this.props.match.params
+        this.props.fetchProfile(name);
+
+    }
+
   componentWillMount() {
-    this.props.fetchProfile(1);
     this.props.setActivePage(goDelegateProfile);
   }
 
@@ -33,14 +39,17 @@ class DelegatesProfile extends Component {
                   </section>
 
                   <section className="column padded-content">
-                      <div className="main-tile-text-wrap">
-                          <div>MAIN WALLET</div>
+                      <div className="main-tile-text-wrap columns">
+                          <div className="column main-tile-label">MAIN WALLET</div>
+                          <div className="column main-tile-text">MAIN WALLET</div>
                       </div>
-                      <div className="main-tile-text-wrap">
-                          <div>VOTING WALLET</div>
+                      <div className="main-tile-text-wrap columns">
+                          <div className="column main-tile-label">VOTING WALLET</div>
+                          <div className="column main-tile-text">MAIN WALLET</div>
                       </div>
-                      <div className="main-tile-text-wrap">
-                          <div>SHARING REWARDS</div>
+                      <div className="main-tile-text-wrap columns">
+                          <div className="column main-tile-label">SHARING REWARDS</div>
+                          <div className="column main-tile-text">MAIN WALLET</div>
                       </div>
 
                   </section>
@@ -70,7 +79,7 @@ class DelegatesProfile extends Component {
 }
 
 const mapStateToProps = state => ({
-  delegate: state.delegates.delegate,
+  delegate: state.delegates.delegate
 });
 
 const mapDispatchToProps = dispatch =>

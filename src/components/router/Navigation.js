@@ -18,7 +18,7 @@ const Navigation = () => {
   return (
     <div className="hero is-info is-large is-fullheight bg-gradient">
       <Header />
-      <Switch>
+      <Switch >
         <Route exact path="/" name="app" component={Landing} />
         <Route path="/recommended" name="recommended" component={Recommended} />
         <Route
@@ -34,9 +34,9 @@ const Navigation = () => {
           component={ResourceDetails}
         />
         <Route path="/new-to-lisk" name="about" component={NewToLisk} />
-        <Route path="/cool-delegates" name="about" component={DelegatesList} />
+        <Route path="/delegates" name="about" component={DelegatesList} />
         <Route
-          path="/delegate-profile"
+          path="/delegate/:name"
           name="profile"
           component={DelegatesProfile}
         />
