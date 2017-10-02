@@ -7,6 +7,8 @@ import { setActivePage } from '../../../actions';
 import { bindActionCreators } from 'redux';
 import ProfilePicture from "./ProfilePicture"
 import Banner from "./Banner"
+import TextWrap from "./TextWrap"
+import Column from "./Column"
 
 import "./delegate-profile.css"
 
@@ -23,8 +25,26 @@ class DelegatesProfile extends Component {
     this.props.setActivePage(goDelegateProfile);
   }
 
+  renderColumns(){
+      const section1  = [{ label : "MAIN WALLET", text : "10,123 LSK"}, { label : "VOTING WALLET", text : "20,045 LSK"},
+          { label : "SHARING REWARDS", text : "20%"}]
+      const section2  = [{ label : "AFFILIATION", text : "--"}]
+      const section3  = [{ label : "FORGING", text : "--"}, { label : "TOTAL FORGED", text : "--"}]
+      const section4  = [{ label : "COMMITS TO LISKHQ", text : "--"}, { label : "MARKETING EVENTS", text : "--"},
+          { label : "PUBLIC NODE", text : "--"}, { label : "SNAPSHOT SERVER", text : "--"}]
+
+      return (
+          <div>
+              <Column fields={section1} />
+              <Column fields={section2} />
+              <Column fields={section3} />
+              <Column fields={section4} />
+          </div>
+      );
+  }
+
   renderProfile(delegate) {
-    return (
+      return (
         <div className="hero padded-content is-fullheight delegate-content">
             <div  className="container">
           <div className=" columns">
@@ -33,71 +53,14 @@ class DelegatesProfile extends Component {
                       <Banner />
                       <ProfilePicture picture={delegate.delegate_img_url} />
                   </section>
+
                   <section className="main-tile--key-information">
                       <h1>{delegate.delegate_name}</h1>
                       <h2>delegate #23</h2>
                   </section>
 
-                  <section className="column padded-content ">
-                      <div className="columns">
-                          <div className="column main-tile-label">MAIN WALLET</div>
-                          <div className="column main-tile-text">10,123 LSK</div>
-                      </div>
-                      <div className="columns">
-                          <div className="column main-tile-label">VOTING WALLET</div>
-                          <div className="column main-tile-text">20,045 LSK</div>
-                      </div>
-                      <div className="columns">
-                          <div className="column main-tile-label">SHARING REWARDS</div>
-                          <div className="column main-tile-text">20%</div>
-                      </div>
-                  </section>
-                  <section className="column padded-content">
-                      <div className="columns">
-                          <div className="column main-tile-label">AFFILIATION</div>
-                          <div className="column main-tile-text">--</div>
-                      </div>
-                  </section>
-                  <section className="column padded-content">
-                      <div className="columns">
-                          <div className="column main-tile-label">FORGING</div>
-                          <div className="column main-tile-text">--</div>
-                      </div>
-                      <div className="columns">
-                          <div className="column main-tile-label">TOTAL FORGED</div>
-                          <div className="column main-tile-text">20%</div>
-                      </div>
-                  </section>
-                  <section className="column padded-content">
-                      <div className="columns">
-                          <div className="column main-tile-label">COMMITS TO LISKHQ</div>
-                          <div className="column main-tile-text">-</div>
-                      </div>
-                      <div className="columns">
-                          <div className="column main-tile-label">MARKETING EVENTS</div>
-                          <div className="column main-tile-text">-</div>
-                      </div>
-                      <div className="columns">
-                          <div className="column main-tile-label">PUBLIC NODE</div>
-                          <div className="column main-tile-text">-</div>
-                      </div>
-                      <div className="columns">
-                          <div className="column main-tile-label">SNAPSHOT SERVER</div>
-                          <div className="column main-tile-text">-</div>
-                      </div>
-                  </section>
+                  {this.renderColumns()}
 
-
-
-              </div>
-              <div className="column">
-                  {/*<div>Likes: {delegate.likes}</div>
-                  <div>Application count: {delegate.app_count}</div>
-                  <div>Donation 1: {delegate.donations_1}</div>
-                  <div>Donation 2: {delegate.donations_2}</div>
-                  <div>Donation 3: {delegate.donations_3}</div>
-                  <div>Total donations: {delegate.total_donations}</div>
-                  <div>Rank: {delegate.ranking}</div>*/}
               </div>
           </div>
             </div>
