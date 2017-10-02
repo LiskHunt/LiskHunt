@@ -38,20 +38,53 @@ class DelegatesProfile extends Component {
                       <h2>delegate #23</h2>
                   </section>
 
-                  <section className="column padded-content">
-                      <div className="main-tile-text-wrap columns">
+                  <section className="column padded-content ">
+                      <div className="columns">
                           <div className="column main-tile-label">MAIN WALLET</div>
-                          <div className="column main-tile-text">MAIN WALLET</div>
+                          <div className="column main-tile-text">10,123 LSK</div>
                       </div>
-                      <div className="main-tile-text-wrap columns">
+                      <div className="columns">
                           <div className="column main-tile-label">VOTING WALLET</div>
-                          <div className="column main-tile-text">MAIN WALLET</div>
+                          <div className="column main-tile-text">20,045 LSK</div>
                       </div>
-                      <div className="main-tile-text-wrap columns">
+                      <div className="columns">
                           <div className="column main-tile-label">SHARING REWARDS</div>
-                          <div className="column main-tile-text">MAIN WALLET</div>
+                          <div className="column main-tile-text">20%</div>
                       </div>
-
+                  </section>
+                  <section className="column padded-content">
+                      <div className="columns">
+                          <div className="column main-tile-label">AFFILIATION</div>
+                          <div className="column main-tile-text">--</div>
+                      </div>
+                  </section>
+                  <section className="column padded-content">
+                      <div className="columns">
+                          <div className="column main-tile-label">FORGING</div>
+                          <div className="column main-tile-text">--</div>
+                      </div>
+                      <div className="columns">
+                          <div className="column main-tile-label">TOTAL FORGED</div>
+                          <div className="column main-tile-text">20%</div>
+                      </div>
+                  </section>
+                  <section className="column padded-content">
+                      <div className="columns">
+                          <div className="column main-tile-label">COMMITS TO LISKHQ</div>
+                          <div className="column main-tile-text">-</div>
+                      </div>
+                      <div className="columns">
+                          <div className="column main-tile-label">MARKETING EVENTS</div>
+                          <div className="column main-tile-text">-</div>
+                      </div>
+                      <div className="columns">
+                          <div className="column main-tile-label">PUBLIC NODE</div>
+                          <div className="column main-tile-text">-</div>
+                      </div>
+                      <div className="columns">
+                          <div className="column main-tile-label">SNAPSHOT SERVER</div>
+                          <div className="column main-tile-text">-</div>
+                      </div>
                   </section>
 
 
