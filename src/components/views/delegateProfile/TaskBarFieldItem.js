@@ -2,10 +2,10 @@ import React from 'react';
 
 const TaskBarFieldItem = ({ label, text }) => {
     return (
-        <div class="level-item has-text-centered">
+        <div className="level-item">
             <div>
-                <p class="heading">{text}</p>
-                <p class="title">{label}</p>
+                <p className="taskbar-text">{text}</p>
+                <p className="taskbar-label">{label}</p>
             </div>
         </div>
     );

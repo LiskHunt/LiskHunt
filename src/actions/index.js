@@ -22,6 +22,7 @@ export const fetchDelegates = async () => {
 };
 
 export const fetchProfile = async id => {
+
   try {
 
     const request = axios.get(`${app_settings.backend_url}/delegate/${id}`);

@@ -16,6 +16,18 @@
 
 }
 
+.level-item .taskbar-label{
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #999;
+}
+
+.level-item .taskbar-text{
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #000;
+}
+
 
 .main-tile--banner-wrap{
 

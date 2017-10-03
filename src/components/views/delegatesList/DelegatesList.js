@@ -27,7 +27,7 @@ class DelegatesList extends Component {
       return this.props.delegates.map((delegate, index) => {
         return (
           <DelegateCard
-            key={delegate.delegate_name}
+            key={delegate.name}
             delegate={delegate}
             index={index + 1}
           />

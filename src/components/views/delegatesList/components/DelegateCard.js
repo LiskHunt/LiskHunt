@@ -25,7 +25,7 @@ class DelegateCard extends Component {
 
     return (
       <div
-        key={this.props.delegate.delegate_name}
+        key={this.props.delegate.name}
         className="column is-6 is-offset-3"
       >
         <a onClick={() => this.props.goDelegateProfile(this.props.delegate.delegate_name)}>
@@ -33,13 +33,13 @@ class DelegateCard extends Component {
             <article className="media">
               <div className="media-left">
                 <figure className="image is-64x64">
-                  <img src={this.props.delegate.delegate_img_url} alt="Image" />
+                  <img src={this.props.delegate.img_url} alt="Image" />
                 </figure>
               </div>
               <div className="media-content">
                 <div className="content">
                   <p>
-                    <strong>{this.props.delegate.delegate_name}</strong> <br />
+                    <strong>{this.props.delegate.name}</strong> <br />
                     <Tooltip
                       content={[
                         ' The coolness score is calculated by the amount of Apps the delegate developed,',
@@ -60,10 +60,11 @@ class DelegateCard extends Component {
                         data-for="score-explain"
                         className="tooltip"
                         data-tooltip="Tooltip Text"
+                        key={'tooltip' + this.props.delegate.name}
                       >
                         Coolness score:
                       </strong>{' '}
-                      <small>{this.props.delegate.ranking}</small>
+                      <small>{this.props.delegate.coolness_score}</small>
                     </Tooltip>
                   </p>
                 </div>
@@ -73,7 +74,7 @@ class DelegateCard extends Component {
                       className="level-item"
                       href={
                         'https://lisk.chat/direct/' +
-                        this.props.delegate.delegate_contact
+                        this.props.delegate.contact
                       }
                       rel="noopener noreferrer"
                       target="_blank"
@@ -84,7 +85,7 @@ class DelegateCard extends Component {
                     </a>
                     <a
                       className="level-item"
-                      href={this.props.delegate.delegate_github}
+                      href={this.props.delegate.github}
                       rel="noopener noreferrer"
                       target="_blank"
                     >
