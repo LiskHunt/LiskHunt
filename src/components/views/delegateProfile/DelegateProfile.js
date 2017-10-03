@@ -19,10 +19,10 @@ class DelegatesProfile extends Component {
   renderProfile(delegate) {
     return (
       <div>
-        <div>Name: {delegate.delegate_name}</div>
-        <div>Contact: {delegate.delegate_contact}</div>
-        <div>Github url: {delegate.delegate_github}</div>
-        <div>IMG url: {delegate.delegate_img_url}</div>
+        <div>Name: {delegate.name}</div>
+        <div>Contact: {delegate.contact}</div>
+        <div>Github url: {delegate.github}</div>
+        <div>IMG url: {delegate.img_url}</div>
 
         <div>Likes: {delegate.likes}</div>
         <div>Application count: {delegate.app_count}</div>
