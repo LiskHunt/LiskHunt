@@ -1,4 +1,4 @@
-.main-tile{
+.sidebar{
     background-color: #fff;
     border: 1px solid #eee;
     font-size: 0.9em;
@@ -6,7 +6,7 @@
     font-family: "Roboto";
 }
 
-.taskbar{
+.topbar{
 
     background-color: #fff;
     border: 1px solid #eee;
@@ -26,11 +26,11 @@
     width: 80%;
 }
 
-.level-item .taskbar-label{
+.level-item .topbar-label{
     color: #aaa;
 }
 
-.level-item .taskbar-text{
+.level-item .topbar-text{
     font-weight: 700;
     font-size: 1.1em;
     color: #000;
@@ -72,14 +72,14 @@
 
 }
 
-.taskbar-button-label{
+.topbar-button-label{
     color: #fff;
     font-weight: bold;
     text-align: center;
     flex-basis: 100%;
 }
 
-.taskbar-button-text{
+.topbar-button-text{
     color: #dddddd;
     text-align: right;
     flex-basis: 70%;
@@ -87,7 +87,7 @@
 
 
 
-.main-tile--banner-wrap{
+.sidebar--banner-wrap{
 
     height:             200px;
     position:           relative;
@@ -127,28 +127,28 @@ img{
 
 }
 
-.main-tile--key-information{
+.sidebar--key-information{
     text-align: center;
     margin-bottom: 25px;
 }
 
-.main-tile--key-information h1{
+.sidebar--key-information h1{
     font-weight: bold;
     font-size: 1.5em;
 }
 
-.main-tile--key-information h2{
+.sidebar--key-information h2{
     color: #999999 ;
     font-size: 0.85em;
 }
 
-.main-tile-label{
+.sidebar-label{
     color: #999999 ;
     font-size: 0.9em;
     text-align: left;
 }
 
-.main-tile-text{
+.sidebar-text{
     color: #000;
     font-size: 0.9em;
     text-align: right;

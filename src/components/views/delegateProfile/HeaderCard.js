@@ -1,12 +1,12 @@
 import React from 'react';
 
-const KeyInformation = ({ name }) => {
+const HeaderCard = ({ name }) => {
     return (
-        <section className="main-tile--key-information">
+        <section className="sidebar--key-information">
             <h1>{name}</h1>
             <h2>delegate #23</h2>
         </section>
     );
 };
 
-export default KeyInformation;
+export default HeaderCard;

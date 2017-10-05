@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class TaskBarButtonItem extends Component {
+class TopBarButton extends Component {
 
     handleUpvoteClick(){
 
@@ -14,8 +14,8 @@ class TaskBarButtonItem extends Component {
                     <div className="button-arrow-wrap">
                         <div className="arrow-up"></div>
                     </div>
-                    <div className="taskbar-button-label">{label}</div>
-                    <div className="taskbar-button-text">{text}</div>
+                    <div className="topbar-button-label">{label}</div>
+                    <div className="topbar-button-text">{text}</div>
                 </a>
             </div>
         );
@@ -23,4 +23,4 @@ class TaskBarButtonItem extends Component {
 
 };
 
-export default TaskBarButtonItem;
+export default TopBarButton;

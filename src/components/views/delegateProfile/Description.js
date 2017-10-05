@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import Column from "./Column"
 
-class MainInformation extends Component {
+class Description extends Component {
 
 
     renderColumns(){
@@ -33,5 +33,5 @@ class MainInformation extends Component {
     }
 }
 
-export default MainInformation;
+export default Description;
 

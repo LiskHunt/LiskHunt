@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-import "./delegate-profile.css"
+import "./profile.css"
 
 class Banner extends Component {
 

@@ -5,7 +5,7 @@ import Banner from "./Banner"
 
 const BannerWrap = ({ pictureUrl }) => {
     return (
-        <section className="main-tile--banner-wrap">
+        <section className="sidebar--banner-wrap">
             <Banner />
             <ProfilePicture picture={pictureUrl} />
         </section>
