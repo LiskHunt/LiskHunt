@@ -1,19 +1,16 @@
 import React from 'react';
 import TaskBarFieldItem from "./TaskBarFieldItem";
+import TaskBarButtonItem from "./TaskBarButtonItem";
 
 
-const Taskbar = ({ pictureUrl, name }) => {
+const Taskbar = ({ coolnessScore , appCount, ranking }) => {
     return (
         <div className="column taskbar">
             <div className="level">
-                <TaskBarFieldItem label="COOLNESS SCORE" text="3,456" />
-                <TaskBarFieldItem label="APPLICATIONS" text="123" />
-                <TaskBarFieldItem label="RANKING" text="456K" />
-                <div className="level-item has-text-centered">
-                    <div>
-                        <button>sdfadfasd</button>
-                    </div>
-                </div>
+                <TaskBarFieldItem label="COOLNESS SCORE" text={coolnessScore} />
+                <TaskBarFieldItem label="APPLICATIONS" text={appCount} />
+                <TaskBarFieldItem label="RANKING" text={ranking} />
+                <TaskBarButtonItem label="UPVOTE" text={1500} />
             </div>
         </div>
     );

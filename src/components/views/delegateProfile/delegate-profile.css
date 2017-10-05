@@ -16,17 +16,75 @@
 
 }
 
+.level-item {
+    padding: 0;
+}
+
+.level-item div {
+    margin: 5px;
+    padding: 0;
+    width: 80%;
+}
+
 .level-item .taskbar-label{
-    font-weight: bold;
-    font-size: 1.2em;
-    color: #999;
+    color: #aaa;
 }
 
 .level-item .taskbar-text{
-    font-weight: bold;
-    font-size: 1.3em;
+    font-weight: 700;
+    font-size: 1.1em;
     color: #000;
 }
+
+.level-item a{
+    background-color: #d64100;
+    width: 160px;
+    margin-right: 10px;
+    margin-left: auto;
+    font-size: 0.9em;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.level-item a:hover{
+    background-color: #ff5700;
+}
+
+.level-item a div{
+    margin: 0;
+    padding: 0;
+}
+
+.button-arrow-wrap{
+    flex-basis: 0px;
+    flex-basis: 7%;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid #fff;
+
+
+}
+
+.taskbar-button-label{
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    flex-basis: 100%;
+}
+
+.taskbar-button-text{
+    color: #dddddd;
+    text-align: right;
+    flex-basis: 70%;
+}
+
 
 
 .main-tile--banner-wrap{
@@ -38,7 +96,7 @@
 
 .banner{
 
-    background-color:   #353535;
+    background-color:   #353535 ;
     height:             100px;
     width: 100%;
     position: absolute;
@@ -55,9 +113,6 @@
     margin-top:         25px;
     left: 50%;
     transform: translate(-50%, 0);
-
-
-
 
 }
 
@@ -83,12 +138,12 @@ img{
 }
 
 .main-tile--key-information h2{
-    color: #999999;
+    color: #999999 ;
     font-size: 0.85em;
 }
 
 .main-tile-label{
-    color: #999999;
+    color: #999999 ;
     font-size: 0.9em;
     text-align: left;
 }
@@ -98,3 +153,4 @@ img{
     font-size: 0.9em;
     text-align: right;
 }
+
