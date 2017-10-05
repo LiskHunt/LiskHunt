@@ -7,9 +7,6 @@ import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 
 class ResourceTile extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   labelClassName = category => {
     return `tag ${this.props.labels[category]}`;
