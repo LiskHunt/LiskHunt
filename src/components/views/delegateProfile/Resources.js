@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ContentLabel from "./ContentLabel";
+import Resource from "./Resource";
 
 class Resources extends Component {
 
@@ -8,9 +9,7 @@ class Resources extends Component {
         if (resources){
             return resources.map(e => {
                 return (
-                    <div className="resource-wrap">
-
-                    </div>
+                    <Resource key={e.resource_id} resource={e} />
                 )
             });
         }else{
@@ -28,7 +27,7 @@ class Resources extends Component {
 
     render(){
         return (
-            <div className="column is-two-thirds resources is-paddingless">
+            <div className="column is-9 resources is-paddingless">
                 <ContentLabel name={this.renderContentLabel()} />
                 {this.renderResources()}
             </div>

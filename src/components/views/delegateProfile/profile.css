@@ -1,9 +1,13 @@
+.delegate-content{
+    font-family: "Roboto";
+}
+
 .sidebar{
     background-color: #fff;
     border: 1px solid #eee;
     font-size: 0.9em;
     padding: 0;
-    font-family: "Roboto";
+
 }
 
 .right-section-wrap{
@@ -214,6 +218,7 @@ img{
 .resources{
     border: 1px solid #eee;
     font-size: 0.9em;
+
 }
 
 .resource-wrap{
@@ -221,4 +226,71 @@ img{
     border: 1px solid #eee;
     padding: 25px;
     margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+    margin-right: 50px;
+}
+
+.resource-wrap:hover{
+    border: 1px solid #d64100;
+}
+
+.resource-left-section{
+    align-self: flex-start;
+}
+
+.resource-right-section-wrap{
+    margin-left: 25px;
+    width: 100%;
+}
+
+.resource-section-wrap{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.resource-image{
+    width: 75px;
+}
+
+.resource-name{
+    font-weight: bold;
+}
+
+.resource-category{
+    padding: 2px 7px;
+    background-color: #bbbbbb;
+    color: #fff;
+    border-radius: 5px;
+    text-transform: uppercase;
+    margin-left: auto;
+    font-size: 0.9em;
+}
+
+.resource-description{
+    color: #444;
+    font-size: 0.9em;
+    line-height: 1.4em;
+    max-height: 4.2em;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.resource-right-section-details {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: #0043ff;
+}
+
+.resource-right-section-details a {
+
+    font-weight: 500;
+    margin-left: auto;
+}
+
+.resource-right-section-details a:hover{
+    text-decoration: underline;
 }
