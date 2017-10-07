@@ -31,7 +31,7 @@ class DelegateCard extends Component {
             <article className="media">
               <div className="media-left">
                 <figure className="image is-64x64">
-                  <img src={this.props.delegate.img_url} alt="Image" />
+                  <img src={this.props.delegate.img_url} alt="resource_image" />
                 </figure>
               </div>
               <div className="media-content">
