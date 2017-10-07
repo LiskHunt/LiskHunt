@@ -27,6 +27,20 @@ class DelegatesProfile extends Component {
 
     renderProfile(delegate) {
         const {applications_count, coolness_score, ranking, img_url, delegate_name, resources } = delegate
+
+        const donations = {
+            "total_donations": 11.8,
+            "donations": [
+                {
+                    "txid": "8571524797751631045",
+                    "from": "13724180208900114961L",
+                    "to": "13779833213219955222L",
+                    "timestamp": 189175895000,
+                    "import": "11.80"
+                }
+            ]
+        }
+
         const social = { github : delegate.github, twitter : delegate.twitter_url, reddit: delegate.reddit_url }
         return (
             <div className="hero padded-content is-fullheight delegate-content">
@@ -35,7 +49,7 @@ class DelegatesProfile extends Component {
                         <Sidebar pictureUrl={img_url} name={delegate_name}/>
                         <div className="column right-section-wrap">
                             <TopBar appCount={applications_count} coolnessScore={coolness_score} ranking={ranking} />
-                            <Content resources={resources} social={social} />
+                            <Content resources={resources} social={social} donations={donations} />
                         </div>
                     </div>
                 </div>

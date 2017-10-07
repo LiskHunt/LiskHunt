@@ -294,3 +294,45 @@ img{
 .resource-right-section-details a:hover{
     text-decoration: underline;
 }
+
+.donations-labels{
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.donations-labels div{
+    flex: 1
+}
+
+.donations-labels div:last-child{
+    margin-left: auto;
+    text-align: right;
+}
+
+.donations-donation{
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+    margin-bottom: 10px;
+}
+
+.donations-donation div{
+    flex: 1
+}
+
+.donations-donation #address{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: #0043ff;
+    font-weight: bold;
+    flex:1;
+}
+
+.donations-donation div:last-child{
+    margin-left: auto;
+    text-align: right;
+}
