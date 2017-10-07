@@ -10,6 +10,7 @@ import "./profile.css"
 
 import Sidebar from "./Sidebar";
 import TopBar from "./TopBar";
+import Content from "./Content";
 
 
 class DelegatesProfile extends Component {
@@ -25,15 +26,16 @@ class DelegatesProfile extends Component {
     }
 
     renderProfile(delegate) {
-        const {applications_count, coolness_score, ranking, delegate_img_url, delegate_name } = delegate
+        const {applications_count, coolness_score, ranking, delegate_img_url, delegate_name, resources } = delegate
         return (
             <div className="hero padded-content is-fullheight delegate-content">
                 <div className="container">
                     <div className="columns">
                         <Sidebar pictureUrl={delegate_img_url} name={delegate_name}/>
-                        <TopBar appCount={applications_count} coolnessScore={coolness_score} ranking={ranking} />
-
-
+                        <div className="column right-section-wrap">
+                            <TopBar appCount={applications_count} coolnessScore={coolness_score} ranking={ranking} />
+                            <Content resources={resources} />
+                        </div>
                     </div>
                 </div>
             </div>
