@@ -26,8 +26,8 @@ class DelegatesProfile extends Component {
     }
 
     renderProfile(delegate) {
-        const {applications_count, coolness_score, ranking, img_url, delegate_name, resources } = delegate
-
+        const {applications_count, coolness_score, ranking, img_url, delegate_img_url, delegate_name, resources } = delegate
+        let image_url = img_url ? img_url : delegate_img_url ? delegate_img_url : ""
         const donations = {
             "total_donations": 11.8,
             "donations": [
@@ -46,7 +46,7 @@ class DelegatesProfile extends Component {
             <div className="hero padded-content is-fullheight delegate-content">
                 <div className="container">
                     <div className="columns">
-                        <Sidebar pictureUrl={img_url} name={delegate_name}/>
+                        <Sidebar pictureUrl={image_url} name={delegate_name}/>
                         <div className="column right-section-wrap">
                             <TopBar appCount={applications_count} coolnessScore={coolness_score} ranking={ranking} />
                             <Content resources={resources} social={social} donations={donations} />

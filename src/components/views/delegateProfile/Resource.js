@@ -23,7 +23,7 @@ class Resource extends Component {
                         <div className="resource-category">{category}</div>
                     </div>
                     <div className="resource-description">{description}</div>
-                    <div className="resource-right-section-details" ><a onClick={() => this.props.goResource(resource_id)}>Go to details</a></div>
+                    <div className="resource-right-section-details" ><div onClick={() => this.props.goResource(resource_id)}>Go to details</div></div>
                 </div>
             </a>
         );

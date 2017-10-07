@@ -285,13 +285,13 @@ img{
     color: #0043ff;
 }
 
-.resource-right-section-details a {
+.resource-right-section-details div {
 
     font-weight: 500;
     margin-left: auto;
 }
 
-.resource-right-section-details a:hover{
+.resource-right-section-details div:hover{
     text-decoration: underline;
 }
 

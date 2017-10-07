@@ -34,7 +34,7 @@ class DonationBar extends Component {
     renderDonations(donations) {
         return donations.map(e => {
             return (
-                <div className="donations-donation">
+                <div key={e.to + e.import} className="donations-donation">
                     <a href={"https://explorer.lisk.io/address/" + e.to} target="_blank" id="address">address</a>
                     <div>{e.import}</div>
                 </div>

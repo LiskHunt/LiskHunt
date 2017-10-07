@@ -7,7 +7,8 @@ class Column extends Component {
 
     renderColumn(fields){
         return fields.map(obj =>{
-            return <TextWrap label={obj.label} text={obj.text} />
+
+            return <TextWrap key={obj.label} label={obj.label} text={obj.text} />
         });
     }
 

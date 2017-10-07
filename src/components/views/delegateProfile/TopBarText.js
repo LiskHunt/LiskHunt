@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TopBarText = ({ label, text }) => {
+const TopBarText = ({ label ="", text = 0 }) => {
     return (
         <div className="level-item">
             <div>
