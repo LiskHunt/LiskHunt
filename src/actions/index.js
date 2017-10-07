@@ -76,12 +76,18 @@ export const sortResources = async (resources, type) => {
     switch (type) {
       case 'Newest': {
         new_resources = resources.slice(0).reverse();
+        break;
       }
 
       case 'Magic': {
         new_resources = resources.sort(() => {
           return Math.random() - 0.1;
         });
+        break;
+      }
+
+      default: {
+        new_resources = resources
       }
     }
 

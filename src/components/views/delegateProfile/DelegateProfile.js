@@ -10,7 +10,7 @@ class DelegatesProfile extends Component {
   constructor(props) {
     super(props);
   }
-
+  
   componentWillMount() {
     this.props.fetchProfile(1);
     this.props.setActivePage(goDelegateProfile);

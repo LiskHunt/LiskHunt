@@ -1,5 +1,7 @@
 import React from 'react';
 import { insertScript, removeScript, debounce } from './utils';
+import PropTypes from 'prop-types';
+
 
 const queueResetCount = debounce(() => {
     if (window.DISQUSWIDGETS)
@@ -61,10 +63,10 @@ export class CommentCount extends React.Component {
 }
 
 CommentCount.propTypes = {
-    shortname: React.PropTypes.string.isRequired,
-    config: React.PropTypes.shape({
-        identifier: React.PropTypes.string,
-        url: React.PropTypes.string,
+    shortname: PropTypes.string.isRequired,
+    config: PropTypes.shape({
+        identifier: PropTypes.string,
+        url: PropTypes.string,
     }).isRequired,
-    children: React.PropTypes.node,
+    children: PropTypes.node,
 };
