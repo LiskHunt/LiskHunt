@@ -31,7 +31,6 @@ class Resources extends Component {
             <div className="column is-two-thirds resources is-paddingless">
                 <ContentLabel name={this.renderContentLabel()} />
                 {this.renderResources()}
-
             </div>
 
 

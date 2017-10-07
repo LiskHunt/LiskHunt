@@ -1,10 +1,12 @@
 import React from 'react';
-import ContentLabel from "./ContentLabel";
+import SocialBar from "./SocialBar";
+import DonationBar from "./DonationBar";
 
-const RightBar = () => {
+const RightBar = ({ social }) => {
     return (
-        <div className="rightbar column">
-            <ContentLabel name="SOCIAL" />
+        <div className="right-bar column">
+            <SocialBar social={social}/>
+            <DonationBar />
         </div>
     );
 };

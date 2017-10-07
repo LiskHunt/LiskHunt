@@ -26,15 +26,16 @@ class DelegatesProfile extends Component {
     }
 
     renderProfile(delegate) {
-        const {applications_count, coolness_score, ranking, delegate_img_url, delegate_name, resources } = delegate
+        const {applications_count, coolness_score, ranking, img_url, delegate_name, resources } = delegate
+        const social = { github : delegate.github, twitter : delegate.twitter_url, reddit: delegate.reddit_url }
         return (
             <div className="hero padded-content is-fullheight delegate-content">
                 <div className="container">
                     <div className="columns">
-                        <Sidebar pictureUrl={delegate_img_url} name={delegate_name}/>
+                        <Sidebar pictureUrl={img_url} name={delegate_name}/>
                         <div className="column right-section-wrap">
                             <TopBar appCount={applications_count} coolnessScore={coolness_score} ranking={ranking} />
-                            <Content resources={resources} />
+                            <Content resources={resources} social={social} />
                         </div>
                     </div>
                 </div>

@@ -5,12 +5,12 @@ import RightBar from "./RightBar";
 class Content extends Component {
 
     render(){
-        const { resources } = this.props;
+        const { resources, social } = this.props;
         return (
 
             <div className="content-wrap columns">
                 <Resources resources={resources} />
-                <RightBar />
+                <RightBar social={social} />
             </div>
         );
     }

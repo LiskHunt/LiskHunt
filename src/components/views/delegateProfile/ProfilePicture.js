@@ -6,7 +6,7 @@ class ProfilePicture extends Component {
     render() {
         return (
             <div className="image-wrap">
-                <img alt="profilepicture" src={this.props.picture}/>
+                <img alt="profile-picture" src={this.props.picture}/>
            </div>
         )
     }
