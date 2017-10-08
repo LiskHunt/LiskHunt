@@ -102,7 +102,7 @@ This is awesome, feel free to propose your changes about LiskHunt on Github. We 
 ### Contacts
 You can get in touch with carbonara on the lisk.chat or by email `carbonara [at] lisk.rocks`.
 
-### Donations:
+# Donations ❤️:
 
 If you want to support the development of this and many more resources for the Lisk ecosystem, please consider a donation to: 
 
