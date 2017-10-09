@@ -92,7 +92,7 @@ class NewHunt extends Component {
             <h2 className="title is-size-3">
               How does the Delegate Coolness Score works?
             </h2>
-            <p className="content has-text-left">
+            <div className="content has-text-left">
               The <strong>Coolness score</strong> is there to indicate how is
               the delegate contributing to Lisk.<br />
               The score takes in consideration about multiple factors, such as:<br
@@ -116,7 +116,7 @@ class NewHunt extends Component {
               In the calculation of Score, we will include in the soon future:
               Ambassadors, Mods of the lisk chat and whatever cool idea will
               come from the community.
-            </p>
+            </div>
             <h2 className="title is-size-3">
               I have an idea and I want to contribute to LiskHunt.
             </h2>

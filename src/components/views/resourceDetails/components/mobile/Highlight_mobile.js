@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HighlightDetails_Mobile = (props) => {
+const HighlightDetailsMobile = (props) => {
   console.log(props);
 
   let resource = props.resource;
@@ -76,4 +76,4 @@ const HighlightDetails_Mobile = (props) => {
   );
 };
 
-export default HighlightDetails_Mobile;
+export default HighlightDetailsMobile;

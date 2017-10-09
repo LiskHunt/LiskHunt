@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 
 const RADIX_BASE = 36;
 
@@ -21,21 +23,22 @@ export class CommentEmbed extends React.Component {
                 scrolling="no"
                 frameBorder="0"
                 allowTransparency="true"
+                title="Disqus"
             />
         );
     }
 }
 
 CommentEmbed.propTypes = {
-    commentId: React.PropTypes.oneOfType([
-        React.PropTypes.number,
-        React.PropTypes.string,
+    commentId: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
     ]).isRequired,
 
-    showMedia: React.PropTypes.bool,
-    showParentComment: React.PropTypes.bool,
-    width: React.PropTypes.number,
-    height: React.PropTypes.number,
+    showMedia: PropTypes.bool,
+    showParentComment: PropTypes.bool,
+    width: PropTypes.number,
+    height: PropTypes.number,
 };
 
 CommentEmbed.defaultProps = {

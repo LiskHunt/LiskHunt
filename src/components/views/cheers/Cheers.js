@@ -28,7 +28,7 @@ class Cheers extends Component {
               We are very excited to run LiskHunt a directory of Lisk related
               resources, apps, dapps & tools.
             </p>
-            <p>
+            <div>
               If you are enjoying this tool, we would be very glad if you would
               like to donate to our App Development fund:
               <br />
@@ -37,7 +37,7 @@ class Cheers extends Component {
                 Carbonara is also looking for votes, if you would like to keep
                 the mood of carbonara high, feel free to vote him :)
               </p>
-            </p>
+            </div>
 
             <p className="top20">
               Created by{' '}

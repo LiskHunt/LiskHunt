@@ -33,12 +33,12 @@ class DelegateCard extends Component {
             <article className="media">
               <div className="media-left">
                 <figure className="image is-64x64">
-                  <img src={this.props.delegate.img_url} alt="Image" />
+                  <img src={this.props.delegate.img_url} alt="resource_image" />
                 </figure>
               </div>
               <div className="media-content">
                 <div className="content">
-                  <p>
+                  <div>
                     <strong>{this.props.delegate.name}</strong> <br />
                     <Tooltip
                       content={[
@@ -54,6 +54,7 @@ class DelegateCard extends Component {
                         <br />,
                       ]}
                       styles={tooltip}
+                      key={this.props.delegate.name}
                     >
                       <strong
                         data-tip
@@ -66,7 +67,7 @@ class DelegateCard extends Component {
                       </strong>{' '}
                       <small>{this.props.delegate.coolness_score}</small>
                     </Tooltip>
-                  </p>
+                  </div>
                 </div>
                 <nav className="level is-mobile">
                   <div className="level-left">

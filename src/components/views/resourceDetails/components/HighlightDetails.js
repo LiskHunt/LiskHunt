@@ -4,8 +4,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 
-import HighlightDetails_Mobile from './mobile/Highlight_mobile'
-import HighlightDetails_Desktop from './desktop/Highlight_desktop'
+import HighlightDetailsMobile from './mobile/Highlight_mobile'
+import HighlightDetailsDesktop from './desktop/Highlight_desktop'
 
 import { labels } from '../../../../lib/resources/resources';
 
@@ -44,7 +44,7 @@ class HighlightDetails extends Component {
       <div className="">
 
         <
-          HighlightDetails_Desktop
+          HighlightDetailsDesktop
           resource={resource}
           addUpVote={this.addUpVote}
           labelClassName={this.labelClassName}
@@ -54,7 +54,7 @@ class HighlightDetails extends Component {
         />
 
         <
-          HighlightDetails_Mobile
+          HighlightDetailsMobile
           resource={resource}
           addUpVote={this.addUpVote}
           labelClassName={this.labelClassName}
