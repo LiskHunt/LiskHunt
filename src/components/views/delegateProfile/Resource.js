@@ -15,7 +15,7 @@ class Resource extends Component {
         return (
             <a onClick={() => this.props.goResource(resource_id)} className="resource-wrap">
                 <div className="resource-left-section">
-                    <img src={image} className="image resource-image"/>
+                    <img src={image} alt="logo of the resource" className="image resource-image"/>
                 </div>
                 <div className="resource-right-section-wrap">
                     <div className="resource-section-wrap">

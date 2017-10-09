@@ -20,9 +20,9 @@ class SocialBar extends Component {
             <div className="social-bar">
                 <ContentLabel name="SOCIAL" />
                 <div className="social-links-wrap columns is-marginless">
-                    <SocialBarIcon url={social.twitter} logo_available={twitter_available} logo_unavailable={twitter_unavailable} />
-                    <SocialBarIcon url={social.reddit} logo_available={reddit_available} logo_unavailable={reddit_unavailable} />
-                    <SocialBarIcon url={social.github} logo_available={github_available} logo_unavailable={github_unavailable} />
+                    <SocialBarIcon url={social.twitter} label="twitter" logo_available={twitter_available} logo_unavailable={twitter_unavailable} />
+                    <SocialBarIcon url={social.reddit} label="reddit" logo_available={reddit_available} logo_unavailable={reddit_unavailable} />
+                    <SocialBarIcon url={social.github} label="github" logo_available={github_available} logo_unavailable={github_unavailable} />
                     <SocialBarIcon />
                 </div>
             </div>

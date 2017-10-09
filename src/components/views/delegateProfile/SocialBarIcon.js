@@ -3,18 +3,18 @@ import React, {Component} from 'react';
 class SocialBarIcon extends Component {
 
     renderIcon(){
-        const { url, logo_available, logo_unavailable } = this.props;
+        const { url, logo_available, logo_unavailable, label } = this.props;
         if (url){
             return (
                 <a href={url} target="_blank" className="">
-                    <img src={logo_available} className="image"></img>
+                    <img src={logo_available} alt={label} className="image"></img>
                 </a>
 
             )
         }else{
             return (
                 <a className="">
-                        <img src={logo_unavailable} className="image"></img>
+                        <img src={logo_unavailable} alt={label} className="image"></img>
                 </a>
             )
         }

@@ -43,9 +43,9 @@ class DelegatesProfile extends Component {
 
         const social = { github : delegate.github, twitter : delegate.twitter_url, reddit: delegate.reddit_url }
         return (
-            <div className="hero padded-content is-fullheight delegate-content">
-                <div className="container">
-                    <div className="columns">
+            <div className="hero-body padded-content delegate-content">
+
+                    <div className="columns is-fullheight ">
                         <Sidebar pictureUrl={image_url} name={delegate_name}/>
                         <div className="column right-section-wrap">
                             <TopBar appCount={applications_count} coolnessScore={coolness_score} ranking={ranking} />
@@ -53,7 +53,7 @@ class DelegatesProfile extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
+
         );
     }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const HighlightDetails_Desktop = (props) => {
-  console.log(props);
+
 
   let resource = props.resource;
   return(

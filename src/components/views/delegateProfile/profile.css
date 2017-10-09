@@ -1,6 +1,11 @@
 .delegate-content{
     font-family: "Roboto";
+    min-height: 100%;
+    color: #000;
+    padding: 50px;
 }
+
+
 
 .sidebar{
     background-color: #fff;
@@ -28,7 +33,7 @@
 
 
 .right-bar{
-    border: 1px solid #eee;
+
     font-size: 0.9em;
     padding-top: 0px;
 }
@@ -216,7 +221,6 @@ img{
 }
 
 .resources{
-    border: 1px solid #eee;
     font-size: 0.9em;
 
 }
