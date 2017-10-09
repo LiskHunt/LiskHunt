@@ -16,7 +16,7 @@ import DelegatesProfile from '../views/delegateProfile/DelegateProfile';
 
 const Navigation = () => {
   return (
-    <div className="hero is-info is-large is-fullheight bg-gradient">
+    <div className="hero is-info is-large is-fullheight ">
       <Header />
       <Switch >
         <Route exact path="/" name="app" component={Landing} />

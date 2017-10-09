@@ -43,11 +43,11 @@ class DelegatesProfile extends Component {
 
         const social = { github : delegate.github, twitter : delegate.twitter_url, reddit: delegate.reddit_url }
         return (
-            <div className="hero-body padded-content delegate-content">
+            <div id="delegate-content" className="hero-body ">
 
-                    <div className="columns is-fullheight ">
+                    <div className="columns ">
                         <Sidebar pictureUrl={image_url} name={delegate_name}/>
-                        <div className="column right-section-wrap">
+                        <div className=" right-section-wrap">
                             <TopBar appCount={applications_count} coolnessScore={coolness_score} ranking={ranking} />
                             <Content resources={resources} social={social} donations={donations} />
                         </div>

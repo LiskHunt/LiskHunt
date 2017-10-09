@@ -6,14 +6,14 @@ class SocialBarIcon extends Component {
         const { url, logo_available, logo_unavailable, label } = this.props;
         if (url){
             return (
-                <a href={url} target="_blank" className="">
+                <a href={url} target="_blank" className="column">
                     <img src={logo_available} alt={label} className="image"></img>
                 </a>
 
             )
         }else{
             return (
-                <a className="">
+                <a className="column">
                         <img src={logo_unavailable} alt={label} className="image"></img>
                 </a>
             )

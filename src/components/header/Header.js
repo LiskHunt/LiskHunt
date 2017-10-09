@@ -41,7 +41,8 @@ class Header extends Component {
 
   render() {
     return (
-      <nav className="navbar background-transparent">
+        <div className="hero-head">
+      <nav className="navbar  background-transparent">
         <div className="navbar-brand">
           <a className="nav-item " onClick={() => this.props.goHome()}>
             <img src={logo} alt="LiskHunt" />
@@ -131,6 +132,7 @@ class Header extends Component {
           </div>
         </div>
       </nav>
+        </div>
     );
   }
 }

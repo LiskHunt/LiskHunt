@@ -1,17 +1,9 @@
-body, h1{
-    color: #fff;
-}
-
 .inline-block {
     display:inline-block;
 }
 
 .underlined {
     text-decoration: underline;
-}
-
-.bg-gradient {
-
 }
 
 .padded-content {
@@ -67,8 +59,4 @@ body, h1{
 
 .max-size-limited {
     max-width: 950px;
-}
-
-.delegate-content{
-    background-color: #eee;
 }

@@ -19,7 +19,7 @@ class SocialBar extends Component {
         return (
             <div className="social-bar">
                 <ContentLabel name="SOCIAL" />
-                <div className="social-links-wrap columns is-marginless">
+                <div className="social-links-wrap columns is-marginless is-mobile">
                     <SocialBarIcon url={social.twitter} label="twitter" logo_available={twitter_available} logo_unavailable={twitter_unavailable} />
                     <SocialBarIcon url={social.reddit} label="reddit" logo_available={reddit_available} logo_unavailable={reddit_unavailable} />
                     <SocialBarIcon url={social.github} label="github" logo_available={github_available} logo_unavailable={github_unavailable} />
@@ -28,7 +28,6 @@ class SocialBar extends Component {
             </div>
         );
     }
-
 };
 
 export default SocialBar;
