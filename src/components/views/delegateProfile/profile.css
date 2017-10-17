@@ -23,9 +23,6 @@
     margin: 0 0 0 25px;
 }
 
-
-
-
 .topbar{
     background-color: #fff;
     border: 1px solid #eee;
@@ -45,8 +42,7 @@
 
 .social-bar{
     margin: 0;
-    padding: 0;
-    padding-bottom: 10px;
+    padding: 0 0 10px;
 }
 
 .social-links-wrap{
@@ -64,6 +60,7 @@
 .social-links-wrap .column img{
     width: 22px;
     height: auto;
+    margin: auto;
 }
 
 .social-icon{
@@ -421,12 +418,9 @@
         margin-right: 5px;
     }
 
-    .delegate-tab:hover{
-        background-color: #aaa;
-    }
 
     .active-tab{
-        border-bottom : 1px solid #3273DC;
+        border-bottom : 1px solid #0D47A1;
     }
 
     .right-section-wrap{
@@ -448,5 +442,36 @@
         margin: auto;
 
     }
+
+    .description{
+        margin-top: 50px;
+    }
+
+    .social-bar .content-label-wrap{
+        display: none;
+    }
+
+    .social-bar{
+        width: 50%;
+        margin: auto;
+        padding-bottom: 0px;
+
+    }
+
+    .social-links-wrap{
+        border-bottom-width: 0px;
+        padding-bottom: 0px;
+    }
+
+    .resources{
+        width: 90%;
+        margin: 25px auto auto;
+    }
+
+    .donations-bar{
+        width: 90%;
+        margin: 25px auto auto;
+    }
+
 
 }

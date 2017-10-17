@@ -22,12 +22,12 @@ class SocialBar extends Component {
         const { twitter, reddit, github } = this.props;
         return (
             <div className="social-bar">
-                <ContentLabel name="SOCIAL" />
+                <ContentLabel name="CONTACT" />
                 <div className="social-links-wrap columns is-marginless is-mobile">
                     <SocialBarIcon url={twitter} label="twitter" logo_available={twitter_available} logo_unavailable={twitter_unavailable} />
                     <SocialBarIcon url={reddit} label="reddit" logo_available={reddit_available} logo_unavailable={reddit_unavailable} />
                     <SocialBarIcon url={github} label="github" logo_available={github_available} logo_unavailable={github_unavailable} />
-                    <SocialBarIcon />
+
                 </div>
             </div>
         );

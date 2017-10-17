@@ -20,7 +20,7 @@ class Description extends Component {
             { label : "PUBLIC ADDRESS", text : block_explorer_url}, { label : "SNAPSHOT SERVER", text : snapshot_server_url}]
 
         return (
-            <div>
+            <div className="description">
                 <Column fields={section1} />
                 <Column fields={section2} />
                 <Column fields={section3} />
