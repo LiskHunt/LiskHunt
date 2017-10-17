@@ -8,9 +8,9 @@ import { bindActionCreators } from 'redux';
 
 import "./profile.css"
 
-import Sidebar from "./Sidebar";
-import TopBar from "./TopBar";
-import Content from "./Content";
+import MediaQuery from "react-responsive";
+import MobileContent from "./MobileContent";
+import DesktopContent from "./DesktopContent";
 
 
 class DelegatesProfile extends Component {
@@ -26,35 +26,20 @@ class DelegatesProfile extends Component {
     }
 
     renderProfile(delegate) {
-        const {applications_count, coolness_score, ranking, img_url, delegate_img_url, delegate_name, resources } = delegate
-        let image_url = img_url ? img_url : delegate_img_url ? delegate_img_url : ""
-        const donations = {
-            "total_donations": 11.8,
-            "donations": [
-                {
-                    "txid": "8571524797751631045",
-                    "from": "13724180208900114961L",
-                    "to": "13779833213219955222L",
-                    "timestamp": 189175895000,
-                    "import": "11.80"
-                }
-            ]
-        }
 
-        const social = { github : delegate.github, twitter : delegate.twitter_url, reddit: delegate.reddit_url }
-        return (
-            <div id="delegate-content" className="hero-body ">
-
-                    <div className="columns ">
-                        <Sidebar pictureUrl={image_url} name={delegate_name}/>
-                        <div className=" right-section-wrap">
-                            <TopBar appCount={applications_count} coolnessScore={coolness_score} ranking={ranking} />
-                            <Content resources={resources} social={social} donations={donations} />
-                        </div>
-                    </div>
+        if (delegate) {
+            return (
+                <div>
+                    <MediaQuery maxDeviceWidth={1024}>
+                        <MobileContent/>
+                    </MediaQuery>
+                    <MediaQuery minDeviceWidth={1025}>
+                        <DesktopContent />
+                    </MediaQuery>
                 </div>
 
-        );
+            );
+        }
     }
 
     render() {

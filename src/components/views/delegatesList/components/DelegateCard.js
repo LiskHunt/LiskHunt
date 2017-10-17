@@ -22,7 +22,7 @@ class DelegateCard extends Component {
         background: '#303030',
       },
     };
-    const { delegate } = this.props;
+    const { delegate, img_url } = this.props;
 
     let image_url = delegate.img_url ? delegate.img_url : delegate.delegate_img_url ? delegate.delegate_img_url : ""
     return (
@@ -30,7 +30,7 @@ class DelegateCard extends Component {
         key={this.props.delegate.name}
         className="column is-6 is-offset-3"
       >
-        <a onClick={() => this.props.goDelegateProfile(this.props.delegate.delegate_name)}>
+        <a onClick={() => this.props.goDelegateProfile(this.props.delegate.name)}>
           <div className="box">
             <article className="media">
               <div className="media-left">
@@ -41,7 +41,7 @@ class DelegateCard extends Component {
               <div className="media-content">
                 <div className="content">
                   <div>
-                    <strong>{this.props.delegate.delegate_name}</strong> <br />
+                    <strong>{this.props.delegate.name}</strong> <br />
                     <Tooltip
                       content={[
                         ' The coolness score is calculated by the amount of Apps the delegate developed,',

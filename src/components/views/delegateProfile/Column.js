@@ -1,14 +1,17 @@
 import React, {Component} from 'react';
 
 import TextWrap from "./TextWrap"
+import CheckWrap from "./CheckWrap";
 
 class Column extends Component {
 
 
     renderColumn(fields){
         return fields.map(obj =>{
-
-            return <TextWrap key={obj.label} label={obj.label} text={obj.text} />
+            if (typeof obj.text === "boolean")
+                return <CheckWrap key={obj.label} label={obj.label} text={obj.text} />
+            else
+                return <TextWrap key={obj.label} label={obj.label} text={obj.text} />
         });
     }
 

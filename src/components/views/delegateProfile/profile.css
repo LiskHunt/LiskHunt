@@ -1,17 +1,16 @@
-#delegate-content{
+.delegate-content{
     font-family: "Roboto";
     color: #000;
-    display: flex;
-    flex-direction: column;
-    padding-top: 4rem;
-    background-color: #eee;
+    padding-top: 1rem;
+    margin: 0;
+    background-color: #EEEEEE;
 }
 
+.hero.is-large .hero-body{
+    padding-top: 5rem;
+}
 
-
-
-
-.sidebar{
+#sidebar{
     background-color: #fff;
     border: 1px solid #eee;
     font-size: 0.9em;
@@ -226,6 +225,28 @@
     text-align: right;
 }
 
+.column-check{
+    padding-top: 5px;
+
+}
+
+.sidebar-check{
+    margin-left: auto;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.active-check{
+    background-color: #0f0;
+}
+
+.deactive-check{
+    background-color: #ccc;
+}
+
+
 .resources{
     font-size: 0.9em;
 
@@ -347,10 +368,65 @@
     text-align: right;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1024px) {
 
-    .sidebar{
-        margin-bottom: 25px;
+    .delegate-content{
+        margin: 0;
+        background-color: #fff;
+        padding:0;
+        min-height: 1000px;
+    }
+
+    .mobile-wrap{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-wrap{
+        display: inline-block;
+    }
+
+    #sidebar{
+        padding: 0;
+        margin: 0 0 25px;
+        width: 100%;
+        position: relative;
+        width: 100%;
+    }
+
+    .image-wrap{
+
+    }
+
+    .delegate-tabs{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        padding : 0;
+        margin: 25px auto auto;
+
+    }
+
+    .delegate-tab{
+        padding-top: 12px;
+        padding-bottom: 12px;
+        width : 50%;
+        text-align: center;
+        cursor: pointer;
+        text-decoration : none;
+        color : black;
+        border-bottom : 1px solid #ccc;
+        margin-right: 5px;
+    }
+
+    .delegate-tab:hover{
+        background-color: #aaa;
+    }
+
+    .active-tab{
+        border-bottom : 1px solid #3273DC;
     }
 
     .right-section-wrap{

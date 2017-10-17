@@ -4,11 +4,11 @@ import Description from "./Description";
 import BannerWrap from "./BannerWrap";
 import HeaderCard from "./HeaderCard";
 
-const Sidebar = ({ pictureUrl, name }) => {
+const Sidebar = ({ }) => {
     return (
-        <div className="column is-one-quarter sidebar">
-            <BannerWrap pictureUrl={pictureUrl}/>
-            <HeaderCard name={name}/>
+        <div id="sidebar" className="column is-one-quarter">
+            <BannerWrap />
+            <HeaderCard />
             <Description/>
         </div>
     );

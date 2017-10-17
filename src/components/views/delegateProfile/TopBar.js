@@ -1,19 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 import TopBarText from "./TopBarText";
 import TopBarButton from "./TopBarButton";
 
+class TopBar extends Component {
 
-const TopBar = ({ coolnessScore , appCount, ranking }) => {
-    return (
-        <div className="column topbar">
-            <div className="level">
-                <TopBarText label="COOLNESS SCORE" text={coolnessScore} />
-                <TopBarText label="APPLICATIONS" text={appCount} />
-                <TopBarText label="RANKING" text={ranking} />
-                <TopBarButton label="UPVOTE" text={1500} />
+
+    render() {
+        const {coolness_score, app_count, likes} = this.props;
+        return (
+            <div className="column topbar">
+                <div className="level">
+                    <TopBarText label="COOLNESS SCORE" text={coolness_score} />
+                    <TopBarText label="APPLICATIONS" text={app_count} />
+                    <TopBarText label="RANKING" text={likes} />
+                    <TopBarButton label="UPVOTE" text={likes} />
+                </div>
             </div>
-        </div>
-    );
-};
+        )
+    }
+}
 
-export default TopBar;
+
+const mapStateToProps = state => ({
+    coolness_score : state.delegates.delegate.coolness_score,
+    app_count : state.delegates.delegate.app_count,
+    likes : state.delegates.delegate.likes
+});
+
+const mapDispatchToProps = dispatch =>
+    bindActionCreators({}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(TopBar);

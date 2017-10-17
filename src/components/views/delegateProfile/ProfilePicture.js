@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 class ProfilePicture extends Component {
 
@@ -12,4 +14,12 @@ class ProfilePicture extends Component {
     }
 }
 
-export default ProfilePicture;
+
+const mapStateToProps = state => ({
+    picture : state.delegates.delegate.img_url
+});
+
+const mapDispatchToProps = dispatch =>
+    bindActionCreators({}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfilePicture);

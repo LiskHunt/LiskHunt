@@ -12,17 +12,21 @@ import github_unavailable from './img/github-unavailable.png';
 
 import SocialBarIcon from "./SocialBarIcon";
 
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+import { bindActionCreators } from 'redux';
+
 class SocialBar extends Component {
 
     render(){
-        const { social } = this.props;
+        const { twitter, reddit, github } = this.props;
         return (
             <div className="social-bar">
                 <ContentLabel name="SOCIAL" />
                 <div className="social-links-wrap columns is-marginless is-mobile">
-                    <SocialBarIcon url={social.twitter} label="twitter" logo_available={twitter_available} logo_unavailable={twitter_unavailable} />
-                    <SocialBarIcon url={social.reddit} label="reddit" logo_available={reddit_available} logo_unavailable={reddit_unavailable} />
-                    <SocialBarIcon url={social.github} label="github" logo_available={github_available} logo_unavailable={github_unavailable} />
+                    <SocialBarIcon url={twitter} label="twitter" logo_available={twitter_available} logo_unavailable={twitter_unavailable} />
+                    <SocialBarIcon url={reddit} label="reddit" logo_available={reddit_available} logo_unavailable={reddit_unavailable} />
+                    <SocialBarIcon url={github} label="github" logo_available={github_available} logo_unavailable={github_unavailable} />
                     <SocialBarIcon />
                 </div>
             </div>
@@ -30,4 +34,13 @@ class SocialBar extends Component {
     }
 };
 
-export default SocialBar;
+
+const mapStateToProps = state => ({
+    twitter: state.delegates.delegate.twitter,
+    reddit : state.delegates.delegate.reddit,
+    github: state.delegates.delegate.github
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(SocialBar);

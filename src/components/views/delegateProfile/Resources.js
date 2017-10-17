@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import ContentLabel from "./ContentLabel";
 import Resource from "./Resource";
 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 class Resources extends Component {
 
     renderResources(){
@@ -38,4 +41,11 @@ class Resources extends Component {
 
 };
 
-export default Resources;
+const mapStateToProps = state => ({
+    resources : state.delegates.delegate.resources
+});
+
+const mapDispatchToProps = dispatch =>
+    bindActionCreators({}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Resources);
