@@ -18,27 +18,21 @@ class MobileContent extends Component {
     }
 
     handleClick(id){
-        if(id == 1){
+        if(id === 1){
             if (this.state.information === false){
-                this.state.resources = false;
-                this.state.donations = false;
-                this.state.information = true;
+                this.setState({ "resources" :  false, "donations": false, "information": true });
             }
 
         }
-        if(id == 2){
+        if(id === 2){
             if (this.state.resources === false){
-                this.state.resources = true;
-                this.state.donations = false;
-                this.state.information = false;
+                this.setState({ "resources" :  true, "donations": false, "information": false });
             }
 
         }
-        if(id == 3){
+        if(id === 3){
             if (this.state.donations === false){
-                this.state.resources = false;
-                this.state.donations = true;
-                this.state.information = false;
+                this.setState({ "resources" :  false, "donations": true, "information": false });
             }
 
         }
