@@ -13,7 +13,6 @@ import github_unavailable from './img/github-unavailable.png';
 import SocialBarIcon from "./SocialBarIcon";
 
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 
 class SocialBar extends Component {

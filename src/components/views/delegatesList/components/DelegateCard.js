@@ -22,7 +22,7 @@ class DelegateCard extends Component {
         background: '#303030',
       },
     };
-    const { delegate, img_url } = this.props;
+    const { delegate } = this.props;
 
     let image_url = delegate.img_url ? delegate.img_url : delegate.delegate_img_url ? delegate.delegate_img_url : ""
     return (
