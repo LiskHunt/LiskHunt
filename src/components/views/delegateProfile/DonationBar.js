@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 import ContentLabel from "./ContentLabel";
+import Pagination from "react-js-pagination";
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 
 class DonationBar extends Component {
+
+    constructor(props){
+        super(props);
+        this.state =  {
+            page : 0,
+            size : 5
+        }
+    }
 
     renderContentLabel(){
         if (this.props.donations){
@@ -15,16 +24,31 @@ class DonationBar extends Component {
         }
     }
 
+    handlePageChange(pageNumber) {
+        this.setState({page: pageNumber});
+    }
+
     renderDonations(donations) {
-        if (donations){
-            return donations.map(e => {
-                return (
-                    <div key={e.to + e.import} className="donations-donation">
-                        <a href={"https://explorer.lisk.io/address/" + e.to} target="_blank" id="address">address</a>
-                        <div>{e.import}</div>
+        if (donations && donations.length > 0){
+            const { page, size } = this.state;
+            const range_min = donations.length > size ? size * page: 0
+            const range_max = donations.length > size ? size * (page + 1) : 5
+            return (
+                <div >
+                    <div className="donation-wrap">
+                    {donations.slice(range_min, range_max).map(e => {
+                        return (
+                            <div key={e.to + e.import} className="donations-donation">
+                                <a href={"https://explorer.lisk.io/address/" + e.to} target="_blank" id="address">address</a>
+                                <div>{e.import}</div>
+                            </div>
+                        )})}
                     </div>
-                )
-            })
+                    <Pagination activePage={this.state.page} itemsCountPerPage={this.state.size}
+                    totalItemsCount={(donations.length - 5)}  pageRangeDisplayed={5}
+                    onChange={(page) => this.handlePageChange(page)} />
+                </div>
+            )
         }else{
             return (
                 <div></div>
