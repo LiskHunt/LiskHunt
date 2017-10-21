@@ -44,16 +44,14 @@ class DelegateCard extends Component {
                     <strong>{this.props.delegate.name}</strong> <br />
                     <Tooltip
                       content={[
-                        ' The coolness score is calculated by the amount of Apps the delegate developed,',
-                        <br />,
-                        'the ammount of received likes and the amount of donations made. In this case:',
-                        <br />,
-                        <br />,
+                        ' The coolness score is calculated by the amount of Apps the delegate developed,\n',
+                        'the ammount of received likes and the amount of donations made. In this case:\n',
+
                         `Apps: ${this.props.delegate.app_count} || Likes: ${this
                           .props.delegate.likes}`,
-                        <br />,
-                        `Donations: ${this.props.delegate.total_donations}`,
-                        <br />,
+
+                        `\nDonations: ${this.props.delegate.total_donations}`,
+
                       ]}
                       styles={tooltip}
                       key={this.props.delegate.name}
@@ -71,33 +69,6 @@ class DelegateCard extends Component {
                     </Tooltip>
                   </div>
                 </div>
-                <nav className="level is-mobile">
-                  <div className="level-left">
-                    <a
-                      className="level-item"
-                      href={
-                        'https://lisk.chat/direct/' +
-                        this.props.delegate.contact
-                      }
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      <span className="icon is-small">
-                        <i className="fa  fa-commenting-o" />
-                      </span>
-                    </a>
-                    <a
-                      className="level-item"
-                      href={this.props.delegate.github}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      <span className="icon is-small">
-                        <i className="fa fa-github" />
-                      </span>
-                    </a>
-                  </div>
-                </nav>
               </div>
               <div className="media-right">{this.props.index}.</div>
             </article>
