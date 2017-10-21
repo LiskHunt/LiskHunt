@@ -10,7 +10,6 @@ class Column extends Component {
 
         return fields.map(obj =>{
             if (typeof obj.text === "boolean"){
-                console.log(obj.text)
                 return <CheckWrap key={obj.label} label={obj.label} check={obj.text} />
             }else{
                 return <TextWrap key={obj.label} label={obj.label} text={obj.text} />
