@@ -24,6 +24,17 @@ class DonationBar extends Component {
     }
   }
 
+  renderTabelHeaders(){
+    if (this.props.donations){
+      if (this.props.donations.length !== 0){
+        return (<div className="donations-labels">
+                  <div>to</div>
+                  <div>amount</div>
+                </div>)
+      }
+    }
+  }
+
   handlePageChange(pageNumber) {
     this.setState({ page: pageNumber });
   }
@@ -69,10 +80,7 @@ class DonationBar extends Component {
     return (
       <div className="donations-bar">
         <ContentLabel name={this.renderContentLabel()} />
-        <div className="donations-labels">
-          <div>to</div>
-          <div>amount</div>
-        </div>
+          {this.renderTabelHeaders()}
         {this.renderDonations(this.props.donations)}
       </div>
     );
