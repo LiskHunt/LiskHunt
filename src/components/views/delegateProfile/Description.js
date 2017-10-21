@@ -22,7 +22,7 @@ class Description extends Component {
     const section1 = [
       { label: 'MAIN WALLET', text: main_wallet },
       { label: 'VOTING WALLET', text: voting_wallet },
-      { label: 'SHARING REWARDS', text: share_rewards + '%' },
+      { label: 'SHARING REWARDS', text: share_rewards, extra_text : '%' },
     ];
     const section2 = [{ label: 'AFFILIATION', text: affiliate }];
     const section3 = [
