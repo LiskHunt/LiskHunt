@@ -32,7 +32,7 @@ class ResourceTile extends Component {
                   className="title is-4 has-text-primary is-marginless"
                   onClick={() => this.props.goResource(app.resource_id)}
                 >
-                  {app.app_name} <br />
+                  {app.name} <br />
                 </a>
                 <a
                   href={app.author_link}
