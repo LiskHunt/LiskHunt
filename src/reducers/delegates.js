@@ -9,20 +9,19 @@ export default (state = INITIAL_STATE, action) => {
     }
 
     case 'FETCH_PROFILE_SUCCESS': {
-
       return { ...state, delegate: payload.data.delegate };
     }
 
-      case 'UP_VOTE': {
-
-          const upvotes = state.delegate.upvotes + 1
-          return { ...state,
-              delegate: {
-                ...state.delegate,
-                  upvotes : upvotes
-              }
-          };
-      }
+    case 'UP_VOTE': {
+      const upvotes = state.delegate.upvotes + 1;
+      return {
+        ...state,
+        delegate: {
+          ...state.delegate,
+          upvotes: upvotes,
+        },
+      };
+    }
 
     default: {
       return state;

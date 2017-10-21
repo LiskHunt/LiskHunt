@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 
-
-import "./profile.css"
+import './profile.css';
 
 class Banner extends Component {
-
-
-    render() {
-        return (
-            <div className="banner"></div>
-        )
-    }
+  render() {
+    return <div className="banner" />;
+  }
 }
 
 export default Banner;

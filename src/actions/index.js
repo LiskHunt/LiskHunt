@@ -22,9 +22,7 @@ export const fetchDelegates = async () => {
 };
 
 export const fetchProfile = async id => {
-
   try {
-
     const request = axios.get(`${app_settings.backend_url}/delegate/${id}`);
 
     return {
@@ -71,7 +69,7 @@ export const sortResources = async (resources, type) => {
       }
 
       default: {
-        new_resources = resources
+        new_resources = resources;
       }
     }
 
@@ -149,18 +147,20 @@ export const getVotes = async id => {
 };
 
 export const upVote = async name => {
-    try {
-        const request = axios.get(`${app_settings.backend_url}/upvote/delegate/${name}`);
-        return {
-            type: 'UP_VOTE',
-            payload: request,
-        };
-    } catch (error) {
-        return {
-            type: 'ERROR',
-            payload: error.message,
-        };
-    }
+  try {
+    const request = axios.get(
+      `${app_settings.backend_url}/upvote/delegate/${name}`,
+    );
+    return {
+      type: 'UP_VOTE',
+      payload: request,
+    };
+  } catch (error) {
+    return {
+      type: 'ERROR',
+      payload: error.message,
+    };
+  }
 };
 
 export const getViews = async id => {
