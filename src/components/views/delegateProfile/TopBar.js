@@ -16,7 +16,7 @@ class TopBar extends Component {
                     <TopBarText label="COOLNESS SCORE" text={coolness_score} />
                     <TopBarText label="APPLICATIONS" text={app_count} />
                     <TopBarText label="RANKING" text={likes} />
-                    <TopBarButton label="UPVOTE" text={likes} />
+                    <TopBarButton label="UPVOTE" />
                 </div>
             </div>
         )

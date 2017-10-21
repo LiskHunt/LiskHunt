@@ -148,6 +148,21 @@ export const getVotes = async id => {
   }
 };
 
+export const upVote = async name => {
+    try {
+        const request = axios.get(`${app_settings.backend_url}/upvote/delegate/${name}`);
+        return {
+            type: 'UP_VOTE',
+            payload: request,
+        };
+    } catch (error) {
+        return {
+            type: 'ERROR',
+            payload: error.message,
+        };
+    }
+};
+
 export const getViews = async id => {
   try {
     const views = axios.get(`${app_settings.backend_url}/views/${id}`);

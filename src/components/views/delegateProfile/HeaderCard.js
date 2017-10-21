@@ -7,7 +7,7 @@ const HeaderCard = ({ name }) => {
     return (
         <section className="sidebar--key-information">
             <h1>{name}</h1>
-            <h2>delegate #23</h2>
+            <h2>delegate</h2>
         </section>
     );
 };
