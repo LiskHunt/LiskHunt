@@ -11,6 +11,7 @@ import './profile.css';
 import MediaQuery from 'react-responsive';
 import MobileContent from './MobileContent';
 import DesktopContent from './DesktopContent';
+import AnimationsWrapper from "../../animations-wrapper/AnimationsWrapper";
 
 class DelegatesProfile extends Component {
   constructor(props) {
@@ -40,7 +41,9 @@ class DelegatesProfile extends Component {
 
   render() {
     const { delegate } = this.props;
-    return <div>{this.renderProfile(delegate)}</div>;
+      return (<AnimationsWrapper>
+          <div>{this.renderProfile(delegate)}</div>
+      </AnimationsWrapper>) ;
   }
 }
 
