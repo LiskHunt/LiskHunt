@@ -4,6 +4,7 @@
     padding-top: 1rem;
     margin: 0;
     background-color: #EEEEEE;
+
 }
 
 .hero.is-large .hero-body{
@@ -21,6 +22,11 @@
     align-self: flex-start;
     padding: 0;
     margin: 0 0 0 25px;
+    flex-basis: 100%;
+}
+
+.main{
+    flex-basis: 100%;
 }
 
 .topbar{
@@ -35,7 +41,6 @@
 
 
 .right-bar{
-
     font-size: 0.9em;
     padding-top: 0px;
 }
@@ -88,7 +93,7 @@
     color: #000;
 }
 
-.level-item a{
+.topbar-button a{
     background-color: #d64100;
     width: 160px;
     margin-right: 10px;
@@ -100,11 +105,11 @@
     padding: 10px 15px;
 }
 
-.level-item a:hover{
+.ltopbar-button a:hover{
     background-color: #ff5700;
 }
 
-.level-item a div{
+.topbar-button a div{
     margin: 0;
     padding: 0;
 }
@@ -246,7 +251,7 @@
 
 .resources{
     font-size: 0.9em;
-
+    width: 100%;
 }
 
 .resource-wrap{
@@ -371,14 +376,17 @@
 
 @media only screen and (max-width: 1024px) {
 
+    .hero-body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
     .delegate-content{
         margin: 0;
         background-color: #fff;
         padding:0;
         min-height: 1000px;
-        width: 100%;
-        padding: 0;
-        margin: 0;
     }
 
     .mobile-wrap{
@@ -434,6 +442,8 @@
         align-self: flex-start;
         padding: 0;
         margin: 0;
+        width: 100%;
+
     }
 
     .resource-wrap{

@@ -9,9 +9,9 @@ class DesktopContent extends Component {
     render(){
         return (
             <div className="delegate-content hero-body">
-                <div className="columns">
+                <div className="columns is-desktop main">
                     <Sidebar />
-                    <div className=" right-section-wrap">
+                    <div className="right-section-wrap">
                         <TopBar />
                         <Content />
                     </div>

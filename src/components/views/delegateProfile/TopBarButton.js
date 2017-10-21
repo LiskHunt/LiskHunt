@@ -9,7 +9,7 @@ class TopBarButton extends Component {
     render(){
         const { label, text } = this.props;
         return (
-            <div className="level-item">
+            <div className="level-item topbar-button">
                 <a onClick={() => this.handleUpvoteClick()}>
                     <div className="button-arrow-wrap">
                         <div className="arrow-up"></div>
