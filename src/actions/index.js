@@ -132,15 +132,12 @@ export const setFilterBy = async type => {
 export const filterResources = async type => {
   try {
 
-    const request = await axios.get(`${app_settings.backend_url}/resources`);
-    const resources = request.data.resources;
-
-    let resourcesFiltered = resources.filter(res => res.category === type);
-    if (type === 'None') resourcesFiltered = resources.slice(0);
+    const filter = type !== "None" ? `?filter=${type}` : "";
+    const request = axios.get(`${app_settings.backend_url}/resources${filter}`);
 
     return {
-      type: 'SET_RESOURCES',
-      payload: resourcesFiltered,
+      type: 'FETCH_RESOURCES_SUCCESS',
+      payload: request,
     };
   } catch (error) {
     return {
