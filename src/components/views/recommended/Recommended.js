@@ -19,13 +19,18 @@ import {
 class Recommended extends Component {
   constructor(props) {
     super(props);
-    props.getResources();
   }
 
   componentWillMount() {
     this.props.setActivePage(goResourcesList);
-    this.props.sortResources(this.props.resources, this.props.sortBy);
+      this.props.getResources();
   }
+
+    componentDidUpdate() {
+        if (this.props.resources.length > 0){
+            this.sortBy('Magic')
+        }
+    }
 
   sortBy = sortBy => {
     if (this.props.sortBy === sortBy) {

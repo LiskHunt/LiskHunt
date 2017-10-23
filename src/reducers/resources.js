@@ -3,7 +3,7 @@ import { labels } from '../lib/resources/labels';
 const INITIAL_STATE = {
   resources: [],
   labels: labels,
-  sortBy: 'Magic',
+  sortBy: 'Default',
   filterBy: 'None',
 };
 
