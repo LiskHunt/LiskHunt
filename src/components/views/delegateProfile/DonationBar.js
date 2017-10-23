@@ -55,7 +55,7 @@ class DonationBar extends Component {
                     target="_blank"
                     id="address"
                   >
-                    address
+                    {e.receipientName || e.to}
                   </a>
                   <div>{e.import}</div>
                 </div>
