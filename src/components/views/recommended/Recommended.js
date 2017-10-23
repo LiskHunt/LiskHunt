@@ -19,7 +19,7 @@ import {
 class Recommended extends Component {
   constructor(props){
     super(props);
-    this.props.getResources();
+    props.getResources();
   }
 
   componentWillMount() {
@@ -177,7 +177,7 @@ const mapDispatchToProps = dispatch =>
       setActivePage: page => setActivePage(page),
       sortResources: (resources, type) => sortResources(resources, type),
       filterResources: filter => filterResources(filter),
-        getResources: () => getResources(),
+      getResources: () => getResources(),
       setSortBy: sortBy => setSortBy(sortBy),
       setFilterBy: filterBy => setFilterBy(filterBy),
     },
