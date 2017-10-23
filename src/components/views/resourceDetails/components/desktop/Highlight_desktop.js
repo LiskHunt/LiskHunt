@@ -33,7 +33,7 @@ const HighlightDetailsDesktop = props => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {resource.app_name} <br className="" />
+                {resource.name} <br className="" />
               </a>
               <a
                 href={resource.app_link}
