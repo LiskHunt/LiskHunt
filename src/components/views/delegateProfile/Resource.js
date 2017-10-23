@@ -11,7 +11,7 @@ class Resource extends Component {
     const {
       name,
       category,
-      description,
+      short_description,
       app_images,
       resource_id,
     } = this.props.resource;
@@ -36,7 +36,7 @@ class Resource extends Component {
             <div className="resource-name">{name}</div>
             <div className="resource-category">{category}</div>
           </div>
-          <div className="resource-description">{description}</div>
+          <div className="resource-description">{short_description}</div>
           <div className="resource-right-section-details">
             <div onClick={() => this.props.goResource(resource_id)}>
               Go to details
