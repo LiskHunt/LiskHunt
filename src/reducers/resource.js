@@ -16,9 +16,9 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, votes: votes, upVoted: upVoted };
     }
 
-      case 'ADD_VOTE_SUCCESS': {
-          return { ...state, votes: payload.data };
-      }
+    case 'ADD_VOTE_SUCCESS': {
+      return { ...state, votes: payload.data };
+    }
 
     case 'FETCH_RESOURCE': {
       return { ...state, resource: payload.data.resource };

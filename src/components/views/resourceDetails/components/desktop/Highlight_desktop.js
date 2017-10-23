@@ -1,18 +1,15 @@
 import React from 'react';
 
-const HighlightDetailsDesktop = (props) => {
-
+const HighlightDetailsDesktop = props => {
   let resource = props.resource;
-  return(
+  return (
     <div>
       <div className="container has-text-centered is-hidden-touch">
         <nav className="level">
           <div className="level-item has-text-centered">
             <div>
               <p className="heading">Views</p>
-              <p className="title">
-                {props.views}
-              </p>
+              <p className="title">{props.views}</p>
             </div>
           </div>
           <div className="level-item has-text-centered">
@@ -23,10 +20,8 @@ const HighlightDetailsDesktop = (props) => {
                   'category-label ' + props.labelClassName(resource.category)
                 }
               >
-                  <p className="">
-                    #{resource.category}
-                  </p>
-                </span>
+                <p className="">#{resource.category}</p>
+              </span>
             </div>
           </div>
           <div className="level-item has-text-centered title-item">

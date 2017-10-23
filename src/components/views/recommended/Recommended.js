@@ -13,11 +13,11 @@ import {
   filterResources,
   setSortBy,
   setFilterBy,
-  getResources
+  getResources,
 } from '../../../actions';
 
 class Recommended extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     props.getResources();
   }
