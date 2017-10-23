@@ -19,7 +19,7 @@ class ResourceTile extends Component {
         <div className="card">
           <div
             className="card-image pointer"
-            onClick={() => this.props.goResource(app.app_id)}
+            onClick={() => this.props.goResource(app.resource_id)}
           >
             <figure className="image is-4by3">
               <img src={app.app_images[0]} alt="App preview" />
@@ -31,7 +31,7 @@ class ResourceTile extends Component {
               <div className="media-content">
                 <a
                   className="title is-4 has-text-primary is-marginless"
-                  onClick={() => this.props.goResource(app.app_id)}
+                  onClick={() => this.props.goResource(app.resource_id)}
                 >
                   {app.app_name} <br />
                 </a>
@@ -55,7 +55,7 @@ class ResourceTile extends Component {
           </div>
           <footer
             className="card-footer"
-            onClick={() => this.props.goResource(app.app_id)}
+            onClick={() => this.props.goResource(app.resource_id)}
           >
             <a className="card-footer-item is-dark">More info</a>
           </footer>

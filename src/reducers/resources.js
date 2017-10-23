@@ -1,7 +1,7 @@
-import { resources, labels } from '../lib/resources/resources';
+import { labels } from '../lib/resources/labels';
 
 const INITIAL_STATE = {
-  resources: resources,
+  resources: [],
   labels: labels,
   sortBy: 'Magic',
   filterBy: 'None',
@@ -13,6 +13,10 @@ export default (state = INITIAL_STATE, action) => {
   switch (type) {
     case 'SET_RESOURCES': {
       return { ...state, resources: action.payload };
+    }
+
+    case 'FETCH_RESOURCES_SUCCESS': {
+      return { ...state, resources: action.payload.data.resources };
     }
 
     case 'SET_SORT_BY': {

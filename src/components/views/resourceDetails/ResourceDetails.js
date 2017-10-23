@@ -13,20 +13,27 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { goResourcesList } from '../../router/routes';
 import { setActivePage } from '../../../actions';
-import { getResource, getViews, getVotes } from '../../../actions/index';
+import {
+  getResource,
+  getViews,
+  getVotes,
+  addVote,
+} from '../../../actions/index';
+import Remarkable from 'remarkable';
+const md = new Remarkable();
 
 class ResourceDetails extends Component {
   timeout = null;
+  constructor(props) {
+    super(props);
+    const app_id = this.props.match.params.app_id;
+    this.props.getResource(app_id);
+    this.props.getVotes(app_id);
+    this.props.getViews(app_id);
+  }
 
   componentWillMount() {
     this.props.setActivePage(goResourcesList);
-  }
-
-  componentDidMount() {
-    const app_id = this.props.match.params.app_id;
-    this.props.getVotes(app_id);
-    this.props.getViews(app_id);
-    this.props.getResource(app_id);
   }
 
   componentWillUnmount() {
@@ -34,12 +41,12 @@ class ResourceDetails extends Component {
   }
 
   renderDisqus = resource => {
-    if (resource.app_name) {
+    if (resource.name) {
       const disqusShortname = 'liskhunt';
       const disqusConfig = {
-        identifier: resource.app_id,
-        url: 'https://liskhunt.com/resource/' + resource.app_id,
-        title: resource.app_name,
+        identifier: resource.resource_id,
+        url: 'https://liskhunt.com/resource/' + resource.resource_id,
+        title: resource.name,
       };
       return (
         <div className="has-text-centered comments left20 right20">
@@ -89,7 +96,11 @@ class ResourceDetails extends Component {
           />
 
           <section className="section top0 padded-content">
-            <div dangerouslySetInnerHTML={{ __html: this.props.description }} />
+            <div
+              dangerouslySetInnerHTML={{
+                __html: md.render(this.props.resource.description),
+              }}
+            />
           </section>
 
           {this.renderDisqus(resource)}
@@ -100,9 +111,7 @@ class ResourceDetails extends Component {
 }
 
 const mapStateToProps = state => ({
-  state: state,
   resource: state.resource.resource,
-  description: state.resource.description,
   votes: state.resource.votes,
   views: state.resource.views,
   upVoted: state.resource.upVoted,
@@ -115,6 +124,7 @@ const mapDispatchToProps = dispatch =>
       getVotes: id => getVotes(id),
       getViews: id => getViews(id),
       getResource: id => getResource(id),
+      addVote: id => addVote(id),
     },
     dispatch,
   );

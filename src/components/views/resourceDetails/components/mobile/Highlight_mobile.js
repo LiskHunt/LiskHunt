@@ -1,7 +1,6 @@
 import React from 'react';
 
 const HighlightDetailsMobile = (props) => {
-  console.log(props);
 
   let resource = props.resource;
   return(
