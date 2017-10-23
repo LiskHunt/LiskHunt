@@ -17,6 +17,7 @@ class Description extends Component {
       ambassador,
       moderator,
       block_explorer_url,
+      github_commits
     } = this.props;
 
     const section1 = [
@@ -29,12 +30,16 @@ class Description extends Component {
       { label: 'FORGING', text: forging },
       { label: 'AMBASSADOR', text: ambassador },
     ];
-    const section4 = [
+    let section4 = [
       { label: 'MODERATOR', text: moderator },
       { label: 'MARKETING EVENTS', text: marketing_events },
-      { label: 'PUBLIC ADDRESS', text: block_explorer_url },
-      { label: 'SNAPSHOT SERVER', text: snapshot_server_url },
     ];
+    const section5 = [
+      { label: 'COMMITS TO LiskHQ', text: github_commits || 0 },
+    ];
+
+    if(block_explorer_url) section4.push({ label: 'PUBLIC ADDRESS', text: block_explorer_url });
+    if(snapshot_server_url) section4.push({ label: 'SNAPSHOT SERVER', text: snapshot_server_url });
 
     return (
       <div className="description">
@@ -42,6 +47,7 @@ class Description extends Component {
         <Column fields={section2} />
         <Column fields={section3} />
         <Column fields={section4} />
+        <Column fields={section5} />
       </div>
     );
   }
@@ -62,6 +68,7 @@ const mapStateToProps = state => ({
   ambassador: state.delegates.delegate.ambassador,
   moderator: state.delegates.delegate.moderator,
   block_explorer_url: state.delegates.delegate.block_explorer_url,
+  github_commits: state.delegates.delegate.github_commits,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
