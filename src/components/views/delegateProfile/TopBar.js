@@ -7,13 +7,13 @@ import TopBarButton from './TopBarButton';
 
 class TopBar extends Component {
   render() {
-    const { coolness_score, app_count, likes } = this.props;
+    const { coolness_score, app_count, ranking } = this.props;
     return (
       <div className="column topbar">
         <div className="level">
           <TopBarText label="COOLNESS SCORE" text={coolness_score} />
           <TopBarText label="APPLICATIONS" text={app_count} />
-          <TopBarText label="RANKING" text={likes} />
+          <TopBarText label="RANKING" text={ranking} />
           <TopBarButton label="UPVOTE" />
         </div>
       </div>
@@ -24,7 +24,7 @@ class TopBar extends Component {
 const mapStateToProps = state => ({
   coolness_score: state.delegates.delegate.coolness_score,
   app_count: state.delegates.delegate.app_count,
-  likes: state.delegates.delegate.likes,
+  ranking: state.delegates.delegate.ranking,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
