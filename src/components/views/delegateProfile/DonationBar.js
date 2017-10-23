@@ -77,9 +77,10 @@ class DonationBar extends Component {
   }
 
   render() {
+    const rounded_total_donations = this.props.total_donations ? this.props.total_donations.toFixed(2) + " LSK" : ""
     return (
       <div className="donations-bar">
-        <ContentLabel name={this.renderContentLabel()} />
+        <ContentLabel name={this.renderContentLabel()} extra={rounded_total_donations} />
           {this.renderTabelHeaders()}
         {this.renderDonations(this.props.donations)}
       </div>

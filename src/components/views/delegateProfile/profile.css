@@ -6,11 +6,11 @@
 
 }
 
-.hero.is-large .hero-body {
-  min-height: 88vh;
-  padding-top: 0rem;
-  padding-bottom: 0rem;
-
+@media screen and (min-width: 769px) {
+  .hero.is-large .hero-body {
+    padding-top: 4rem;
+    padding-bottom: 10rem;
+  }
 }
 
 #sidebar {
@@ -124,7 +124,13 @@
   color: #888888;
   font-weight: bold;
   height: 25px;
-  width: 100%;
+  width: 50%;
+}
+
+.content-extra-inf{
+  width: 50%;
+  text-align: right;
+  font-weight: bold;
 }
 
 .button-arrow-wrap {
