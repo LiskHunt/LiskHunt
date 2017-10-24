@@ -10,6 +10,7 @@
   .hero.is-large .hero-body {
     padding-top: 4rem;
     padding-bottom: 10rem;
+    min-height: 90vh;
   }
 }
 
