@@ -5,6 +5,7 @@ import { goResource } from '../../router/routes';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
+import './resourceTile.css'
 
 class ResourceTile extends Component {
   labelClassName = category => {
@@ -21,7 +22,7 @@ class ResourceTile extends Component {
             onClick={() => this.props.goResource(app.resource_id)}
           >
             <figure className="image is-4by3">
-              <img src={app.app_images[0]} alt="App preview" />
+              <img src={app.app_images[0]} alt="App preview" className="image-preview" />
             </figure>
           </div>
           <div className="card-content">
