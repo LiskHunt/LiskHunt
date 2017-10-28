@@ -13,13 +13,24 @@ import {
   filterResources,
   setSortBy,
   setFilterBy,
+  getResources,
 } from '../../../actions';
 
 class Recommended extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   componentWillMount() {
     this.props.setActivePage(goResourcesList);
-    this.props.sortResources(this.props.resources, this.props.sortBy);
+      this.props.getResources();
   }
+
+    componentDidUpdate() {
+        if (this.props.resources.length > 0){
+            this.sortBy('Magic')
+        }
+    }
 
   sortBy = sortBy => {
     if (this.props.sortBy === sortBy) {
@@ -145,7 +156,7 @@ class Recommended extends Component {
                     <ResourceTile
                       app={app}
                       labels={this.props.labels}
-                      key={app.app_id}
+                      key={app.resource_id}
                     />
                   );
                 })}
@@ -171,6 +182,7 @@ const mapDispatchToProps = dispatch =>
       setActivePage: page => setActivePage(page),
       sortResources: (resources, type) => sortResources(resources, type),
       filterResources: filter => filterResources(filter),
+      getResources: () => getResources(),
       setSortBy: sortBy => setSortBy(sortBy),
       setFilterBy: filterBy => setFilterBy(filterBy),
     },

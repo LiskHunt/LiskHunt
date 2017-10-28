@@ -1,9 +1,5 @@
 import axios from 'axios';
 import app_settings from '../config';
-import { resources } from '../lib/resources/resources';
-import descriptions from '../lib/resources/descriptions';
-import Remarkable from 'remarkable';
-const md = new Remarkable();
 
 export const fetchDelegates = async () => {
   try {
@@ -52,7 +48,9 @@ export const setActivePage = async page => {
 };
 
 export const sortResources = async (resources, type) => {
+
   try {
+
     let new_resources = resources;
 
     switch (type) {
@@ -115,12 +113,13 @@ export const setFilterBy = async type => {
 
 export const filterResources = async type => {
   try {
-    let resourcesFiltered = resources.filter(res => res.category === type);
-    if (type === 'None') resourcesFiltered = resources.slice(0);
+
+    const filter = type !== "None" ? `?filter=${type}` : "";
+    const request = axios.get(`${app_settings.backend_url}/resources${filter}`);
 
     return {
-      type: 'SET_RESOURCES',
-      payload: resourcesFiltered,
+      type: 'FETCH_RESOURCES_SUCCESS',
+      payload: request,
     };
   } catch (error) {
     return {
@@ -146,21 +145,20 @@ export const getVotes = async id => {
   }
 };
 
-export const upVote = async name => {
-  try {
-    const request = axios.get(
-      `${app_settings.backend_url}/upvote/delegate/${name}`,
-    );
-    return {
-      type: 'UP_VOTE',
-      payload: request,
-    };
-  } catch (error) {
-    return {
-      type: 'ERROR',
-      payload: error.message,
-    };
-  }
+export const addVote = async id => {
+    try {
+        const votes = axios.get(`${app_settings.backend_url}/add_vote/${id}`);
+
+        return {
+            type: 'ADD_VOTE',
+            payload: votes,
+        };
+    } catch (error) {
+        return {
+            type: 'ERROR',
+            payload: error.message,
+        };
+    }
 };
 
 export const getViews = async id => {
@@ -179,27 +177,36 @@ export const getViews = async id => {
   }
 };
 
+export const getResources = async () => {
+    try {
+        const request = axios.get(`${app_settings.backend_url}/resources`);
+
+        return {
+            type: 'FETCH_RESOURCES_SUCCESS',
+            payload: request,
+        };
+    } catch (error) {
+        return {
+            type: 'FETCH_RESOURCES_ERROR',
+            payload: error.message,
+        };
+    }
+};
+
 export const getResource = async id => {
-  try {
-    const resource = await resources.find(res => {
-      return res.app_id === id;
-    });
+    try {
+        const request = axios.get(`${app_settings.backend_url}/resource/${id}`);
 
-    const description = md.render(descriptions[resource.app_id]);
-
-    return {
-      type: 'FETCH_RESOURCE',
-      payload: {
-        resource,
-        description,
-      },
-    };
-  } catch (error) {
-    return {
-      type: 'ERROR',
-      payload: error.message,
-    };
-  }
+        return {
+            type: 'FETCH_RESOURCE',
+            payload: request
+        };
+    } catch (error) {
+        return {
+            type: 'ERROR',
+            payload: error.message,
+        };
+    }
 };
 
 export const setManuelSubmit = async type => {
