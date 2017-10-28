@@ -24,10 +24,20 @@ class List extends Component {
         }
     }
 
+    renderContentLabel(){
+        if (this.props.delegates) {
+            return this.props.delegates.length === 1
+                ? '1 DELEGATE'
+                : `${this.props.delegates.length} DELEGATES`;
+        } else {
+            return 'DELEGATES';
+        }
+    }
+
     render(){
         return (
             <div className="delegates-list--content">
-                <ContentLabel name="DELEGATES"/>
+                <div className="list-label"><ContentLabel name={this.renderContentLabel()}/></div>
                 <div className="columns list--wrap">
                     {this.renderDelegateList()}
                 </div>

@@ -9,7 +9,7 @@ class Description extends Component {
     render(){
         return (
             <div className="column">
-                <h1>Welcome to the delegates hunt</h1>
+                <h1>Delegates-hunt</h1>
                 <div className="delegate-hunt--description">
                     The delegates bringing Lisk to the next level, sorted by coolness
                     score. A super-duper index to show how the delegate is contributing to

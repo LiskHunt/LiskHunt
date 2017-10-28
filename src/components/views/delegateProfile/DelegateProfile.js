@@ -7,9 +7,6 @@ import { setActivePage } from '../../../actions';
 import { bindActionCreators } from 'redux';
 
 class DelegatesProfile extends Component {
-  constructor(props) {
-    super(props);
-  }
   
   componentWillMount() {
     this.props.fetchProfile(1);
