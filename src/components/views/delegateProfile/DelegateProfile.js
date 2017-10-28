@@ -6,7 +6,7 @@ import { goDelegateProfile } from '../../router/routes';
 import { setActivePage } from '../../../actions';
 import { bindActionCreators } from 'redux';
 
-import './profile.css';
+import './css/profile.css';
 
 import MediaQuery from 'react-responsive';
 import MobileContent from './MobileContent';

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { upVote } from '../../../actions';
+import { upVote } from '../../../../actions/index';
 
 class TopBarButton extends Component {
   handleUpvoteClick() {

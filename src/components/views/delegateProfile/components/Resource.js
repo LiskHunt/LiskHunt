@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { goResource } from '../../router/routes';
+import { goResource } from '../../../router/routes';
 
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';

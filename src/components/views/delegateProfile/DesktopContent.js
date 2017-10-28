@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import Sidebar from './Sidebar';
-import TopBar from './TopBar';
-import Content from './Content';
+import Sidebar from './components/Sidebar';
+import TopBar from './components/TopBar';
+import Content from './components/Content';
 
 class DesktopContent extends Component {
   render() {

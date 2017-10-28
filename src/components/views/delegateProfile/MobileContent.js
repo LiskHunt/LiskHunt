@@ -1,11 +1,11 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import React, { Component } from 'react';
-import Resources from './Resources';
-import DonationBar from './DonationBar';
-import BannerWrap from './BannerWrap';
-import HeaderCard from './HeaderCard';
-import Description from './Description';
-import SocialBar from './SocialBar';
+import Resources from './components/Resources';
+import DonationBar from './components/DonationBar';
+import BannerWrap from './components/BannerWrap';
+import HeaderCard from './components/HeaderCard';
+import Description from './components/Description';
+import SocialBar from './components/SocialBar';
 
 class MobileContent extends Component {
   constructor(props) {
