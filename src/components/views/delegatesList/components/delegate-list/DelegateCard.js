@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { goDelegateProfile } from '../../../router/routes';
+import { goDelegateProfile } from '../../../../router/routes';
 
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
@@ -25,7 +25,7 @@ class DelegateCard extends Component {
                     <div className="media-content">
                         <Information delegate={delegate} />
                     </div>
-                    <div className="media-right">{this.props.ranking}</div>
+                    <div className="media-right">{this.props.index}</div>
                   </article>
               </a>
             </div>

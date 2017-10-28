@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import DelegateCard from './DelegateCard';
-import ContentLabel from "../../../common/ContentLabel";
+import ContentLabel from "../../../../common/ContentLabel";
 
 class List extends Component {
 

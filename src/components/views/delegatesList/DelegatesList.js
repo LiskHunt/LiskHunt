@@ -10,8 +10,8 @@ import { fetchDelegates, setActivePage } from '../../../actions';
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 
-import Banner from './components/Banner';
-import List from "./components/List";
+import Banner from './components/introduction/Introduction';
+import List from "./components/delegate-list/List";
 
 import { goDelegatesList } from '../../router/routes';
 
