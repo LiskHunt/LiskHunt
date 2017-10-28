@@ -17,6 +17,7 @@
         box-shadow: 0 0 100px 0px #da5703;
     }
 }
+
 @keyframes shadow-drop-2-center {
     0% {
         -webkit-transform: translateZ(0);

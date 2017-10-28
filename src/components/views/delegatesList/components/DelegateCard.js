@@ -20,18 +20,21 @@ class DelegateCard extends Component {
         background: '#303030',
       },
     };
+    const { delegate } = this.props;
 
+    let image_url = delegate.img_url
+      ? delegate.img_url
+      : delegate.delegate_img_url ? delegate.delegate_img_url : '';
     return (
-      <div
-        key={this.props.delegate.name}
-        className="column is-6 is-offset-3"
-      >
-        <div onClick={() => this.props.goDelegateProfile()}>
+      <div key={this.props.delegate.name} className="column is-6 is-offset-3">
+        <a
+          onClick={() => this.props.goDelegateProfile(this.props.delegate.name)}
+        >
           <div className="box">
             <article className="media">
               <div className="media-left">
                 <figure className="image is-64x64">
-                  <img src={this.props.delegate.img_url} alt="resource_image" />
+                  <img src={image_url} alt="resource_image" />
                 </figure>
               </div>
               <div className="media-content">
@@ -40,16 +43,13 @@ class DelegateCard extends Component {
                     <strong>{this.props.delegate.name}</strong> <br />
                     <Tooltip
                       content={[
-                        ' The coolness score is calculated by the amount of Apps the delegate developed,',
-                        <br />,
-                        'the ammount of received likes and the amount of donations made. In this case:',
-                        <br />,
-                        <br />,
+                        ' The coolness score is calculated by the amount of Apps the delegate developed,\n',
+                        'the ammount of received likes and the amount of donations made. In this case:\n',
+
                         `Apps: ${this.props.delegate.app_count} || Likes: ${this
                           .props.delegate.likes}`,
-                        <br />,
-                        `Donations: ${this.props.delegate.total_donations}`,
-                        <br />,
+
+                        `\nDonations: ${this.props.delegate.total_donations}`,
                       ]}
                       styles={tooltip}
                       key={this.props.delegate.name}
@@ -67,38 +67,11 @@ class DelegateCard extends Component {
                     </Tooltip>
                   </div>
                 </div>
-                <nav className="level is-mobile">
-                  <div className="level-left">
-                    <a
-                      className="level-item"
-                      href={
-                        'https://lisk.chat/direct/' +
-                        this.props.delegate.contact
-                      }
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      <span className="icon is-small">
-                        <i className="fa  fa-commenting-o" />
-                      </span>
-                    </a>
-                    <a
-                      className="level-item"
-                      href={this.props.delegate.github}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      <span className="icon is-small">
-                        <i className="fa fa-github" />
-                      </span>
-                    </a>
-                  </div>
-                </nav>
               </div>
               <div className="media-right">{this.props.index}.</div>
             </article>
           </div>
-        </div>
+        </a>
       </div>
     );
   }
@@ -109,7 +82,7 @@ const mapStateToProps = state => ({});
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      goDelegateProfile: () => push(goDelegateProfile),
+      goDelegateProfile: name => push(goDelegateProfile + name),
     },
     dispatch,
   );

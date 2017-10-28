@@ -6,38 +6,44 @@ import { goDelegateProfile } from '../../router/routes';
 import { setActivePage } from '../../../actions';
 import { bindActionCreators } from 'redux';
 
+import './css/profile.css';
+
+import MediaQuery from 'react-responsive';
+import MobileContent from './MobileContent';
+import DesktopContent from './DesktopContent';
+import AnimationsWrapper from "../../animations-wrapper/AnimationsWrapper";
+
 class DelegatesProfile extends Component {
   constructor(props) {
     super(props);
+    const { name } = this.props.match.params;
+    this.props.fetchProfile(name);
   }
-  
+
   componentWillMount() {
-    this.props.fetchProfile(1);
     this.props.setActivePage(goDelegateProfile);
   }
 
   renderProfile(delegate) {
-    return (
-      <div>
-        <div>Name: {delegate.name}</div>
-        <div>Contact: {delegate.contact}</div>
-        <div>Github url: {delegate.github}</div>
-        <div>IMG url: {delegate.img_url}</div>
-
-        <div>Likes: {delegate.likes}</div>
-        <div>Application count: {delegate.app_count}</div>
-        <div>Donation 1: {delegate.donations_1}</div>
-        <div>Donation 2: {delegate.donations_2}</div>
-        <div>Donation 3: {delegate.donations_3}</div>
-        <div>Total donations: {delegate.total_donations}</div>
-        <div>Rank: {delegate.ranking}</div>
-      </div>
-    );
+    if (delegate) {
+      return (
+        <div>
+          <MediaQuery maxDeviceWidth={1024}>
+            <MobileContent />
+          </MediaQuery>
+          <MediaQuery minDeviceWidth={1025}>
+            <DesktopContent />
+          </MediaQuery>
+        </div>
+      );
+    }
   }
 
   render() {
     const { delegate } = this.props;
-    return <div>{this.renderProfile(delegate)}</div>;
+      return (<AnimationsWrapper>
+          <div>{this.renderProfile(delegate)}</div>
+      </AnimationsWrapper>) ;
   }
 }
 
