@@ -1,0 +1,105 @@
+@media screen and (min-width: 769px) {
+    .hero.is-large .hero-body {
+        padding-top: 0rem;
+        padding-bottom: 10rem;
+        min-height: 90vh;
+    }
+}
+
+.__react_component_tooltip {
+    max-width: 20%;
+    text-align: left;
+}
+
+.delegates-list{
+    font-family: 'Roboto';
+    color: #000;
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+    align-items: center;
+    flex-direction: column;
+}
+
+.delegatelist--banner-wrap{
+    background-color: #fff;
+    width: 100%;
+    margin: 0;
+}
+
+.delegatelist--banner {
+    width: 85%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 1em;
+    margin: auto;
+}
+
+.delegatelist--banner h1{
+    color: #000;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.delegatelist--banner h2{
+    color: #777;
+    line-height: 1.8em;
+    font-size: 0.8em;
+}
+
+.columns:last-child {
+    margin-bottom: 0rem;
+}
+
+.delegates-list--content{
+    width: 85%;
+    margin: auto;
+}
+
+.list--wrap{
+    padding: 0;
+    flex-wrap: wrap;
+    margin: 5px 0 0;
+}
+
+.content-label-wrap {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.content-label {
+    color: #888888;
+    font-weight: bold;
+    height: 25px;
+    width: 50%;
+}
+
+.tester{
+    background-color: #fff;
+}
+
+.delegate-card{
+    background-color: #fff;
+    font-size: 0.95em;
+    padding: 20px;
+    display: inline-block;
+    width: 100%;
+    height: 90px;
+    border: 1px solid #fff;
+}
+
+.delegate-card:hover{
+    border: 1px solid #d64100;
+}
+
+.delegate-name{
+    width: 100%;
+    font-weight: 700;
+}
+
+.image{
+    width: 50px;
+    height: 50px;
+}
