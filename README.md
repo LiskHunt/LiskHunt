@@ -58,7 +58,9 @@ Which is a sum of:
  
 #### Todo:
 Add in the score:
+
 [ ] Share rewards
+
 [ ] Long time investors and big wallets.
  
 # API
