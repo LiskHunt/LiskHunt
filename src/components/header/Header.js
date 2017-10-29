@@ -41,96 +41,102 @@ class Header extends Component {
 
   render() {
     return (
-      <nav className="navbar background-transparent">
-        <div className="navbar-brand">
-          <a className="nav-item " onClick={() => this.props.goHome()}>
-            <img src={logo} alt="LiskHunt" />
-          </a>
-
-          <div className="navbar-burger burger" data-target="navMenubd-example">
-            <span />
-            <span />
-            <span />
-          </div>
-        </div>
-
-        <div id="navMenubd-example" className="navbar-menu">
-          <div className="navbar-end has-text-grey-dark">
-            <a
-              className={
-                'navbar-item has-text-grey-lighter ' + this.isActivePage(goHome)
-              }
-              onClick={() => this.props.goHome()}
-            >
-              Home
-            </a>
-            <a
-              className={
-                'navbar-item has-text-grey-lighter is-white ' +
-                this.isActivePage(goResourcesList)
-              }
-              onClick={() => this.props.goResourcesList()}
-            >
-              Apps & resources
-            </a>
-            <a
-              className={
-                'navbar-item has-text-grey-lighter is-white ' +
-                this.isActivePage(goDelegatesList)
-              }
-              onClick={() => this.props.goDelegatesList()}
-            >
-              DelegatesHunt
-            </a>
-            <a
-              className={
-                'navbar-item has-text-grey-lighter is-white ' +
-                this.isActivePage(goNewToLisk)
-              }
-              onClick={() => this.props.goNewToLisk()}
-            >
-              New to Lisk?
+      <div className="hero-head">
+        <nav className="navbar  background-transparent">
+          <div className="navbar-brand">
+            <a className="nav-item " onClick={() => this.props.goHome()}>
+              <img src={logo} alt="LiskHunt" />
             </a>
 
             <div
-              className={
-                this.isActivePage(goBuildSomething) +
-                ' navbar-item has-text-grey-lighter is-hidden-desktop'
-              }
-              onClick={() => this.props.goBuildSomething()}
+              className="navbar-burger burger"
+              data-target="navMenubd-example"
             >
-              Build something
+              <span />
+              <span />
+              <span />
             </div>
-
-            <a
-              className={
-                'navbar-item has-text-grey-lighter is-white ' +
-                this.isActivePage(goCheers)
-              }
-              onClick={() => this.props.goCheers()}
-            >
-              <span role="img" aria-label="cheers">
-                🍻
-              </span>{' '}
-              Cheers
-            </a>
-            <span
-              className={
-                'navbar-item has-text-grey-lighter ' +
-                this.isActivePage(goSubmitHunt)
-              }
-              onClick={() => this.props.goSubmitHunt()}
-            >
-              <a className="navbar-item button is-info is-inverted">
-                <span className="icon">
-                  <i className="fa fa-github" />
-                </span>
-                <span>Submit hunt</span>
-              </a>
-            </span>
           </div>
-        </div>
-      </nav>
+
+          <div id="navMenubd-example" className="navbar-menu">
+            <div className="navbar-end has-text-grey-dark">
+              <a
+                className={
+                  'navbar-item has-text-grey-lighter ' +
+                  this.isActivePage(goHome)
+                }
+                onClick={() => this.props.goHome()}
+              >
+                Home
+              </a>
+              <a
+                className={
+                  'navbar-item has-text-grey-lighter is-white ' +
+                  this.isActivePage(goResourcesList)
+                }
+                onClick={() => this.props.goResourcesList()}
+              >
+                Apps & resources
+              </a>
+              <a
+                className={
+                  'navbar-item has-text-grey-lighter is-white ' +
+                  this.isActivePage(goDelegatesList)
+                }
+                onClick={() => this.props.goDelegatesList()}
+              >
+                DelegatesHunt
+              </a>
+              <a
+                className={
+                  'navbar-item has-text-grey-lighter is-white ' +
+                  this.isActivePage(goNewToLisk)
+                }
+                onClick={() => this.props.goNewToLisk()}
+              >
+                New to Lisk?
+              </a>
+
+              <div
+                className={
+                  this.isActivePage(goBuildSomething) +
+                  ' navbar-item has-text-grey-lighter is-hidden-desktop'
+                }
+                onClick={() => this.props.goBuildSomething()}
+              >
+                Build something
+              </div>
+
+              <a
+                className={
+                  'navbar-item has-text-grey-lighter is-white ' +
+                  this.isActivePage(goCheers)
+                }
+                onClick={() => this.props.goCheers()}
+              >
+                <span role="img" aria-label="cheers">
+                  🍻
+                </span>{' '}
+                Cheers
+              </a>
+              <span
+                className={
+                  'navbar-item has-text-grey-lighter ' +
+                  this.isActivePage(goSubmitHunt)
+                }
+                onClick={() => this.props.goSubmitHunt()}
+              >
+                <a className="navbar-item button is-info is-inverted">
+                  <span className="icon">
+                    <i className="fa fa-github" />
+                  </span>
+                  <span>Submit hunt</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </nav>
+      </div>
     );
   }
 }

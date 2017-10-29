@@ -1,13 +1,11 @@
-import app_settings from '../../../../config';
-
 import React, { Component } from 'react';
-import axios from 'axios';
 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { addVote } from '../../../../actions/index';
 
-import HighlightDetailsMobile from './mobile/Highlight_mobile'
-import HighlightDetailsDesktop from './desktop/Highlight_desktop'
-
-import { labels } from '../../../../lib/resources/resources';
+import HighlightDetailsMobile from './mobile/Highlight_mobile';
+import HighlightDetailsDesktop from './desktop/Highlight_desktop';
 
 class HighlightDetails extends Component {
   displayCaret = () => {
@@ -22,19 +20,15 @@ class HighlightDetails extends Component {
   };
 
   labelClassName = category => {
-    return `tag ${labels[category]}`;
+    return `tag ${this.props.labels[category]}`;
   };
 
   addUpVote = async () => {
     document
       .getElementById('upvote-btn')
       .classList.add('slide-out-elliptic-top-bck');
-    await axios
-      .get(`${app_settings.backend_url}/add_vote/${this.props.app_id}`)
-      .catch(function(error) {
-        console.error(error, 'error');
-      });
 
+    this.props.addVote(this.props.app_id);
     this.timeout = setTimeout(this.props.getVotes, 800);
   };
 
@@ -42,9 +36,7 @@ class HighlightDetails extends Component {
     let resource = this.props.resource;
     return (
       <div className="">
-
-        <
-          HighlightDetailsDesktop
+        <HighlightDetailsDesktop
           resource={resource}
           addUpVote={this.addUpVote}
           labelClassName={this.labelClassName}
@@ -53,8 +45,7 @@ class HighlightDetails extends Component {
           views={this.props.views}
         />
 
-        <
-          HighlightDetailsMobile
+        <HighlightDetailsMobile
           resource={resource}
           addUpVote={this.addUpVote}
           labelClassName={this.labelClassName}
@@ -62,12 +53,21 @@ class HighlightDetails extends Component {
           votes={this.props.votes}
           views={this.props.views}
         />
-
-
-
       </div>
     );
   }
 }
 
-export default HighlightDetails;
+const mapStateToProps = state => ({
+  labels: state.resources.labels,
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      addVote: id => addVote(id),
+    },
+    dispatch,
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(HighlightDetails);
