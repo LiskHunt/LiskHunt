@@ -23,7 +23,7 @@ In order to submit a new hunt, you will have to fill this form:
 
 #  Submit a cool delegate
 Are you a delegate? Join liskhunt, we are looking forward to hear from you!
-In order to do that, please fill in [this form](https://docs.google.com/forms/d/1dyQxuNRegH6mZZ_mcs-PzHDidKEVTwXZhEYW-JFjX6A/edit)
+In order to do that, please fill in [this form](https://goo.gl/forms/4iwUizm6PrcmMdIG2)
 
 
 # How does the coolness score work?
@@ -98,6 +98,7 @@ Open an issue on this repo :)
 ### I have an idea and I want to contribute to LiskHunt.
   
 This is awesome, feel free to propose your changes about LiskHunt on Github. We would be so proud of you!
+Please follow the `CONTRIBUTING.md` guideline.
 
 ### Contacts
 You can get in touch with carbonara on the lisk.chat or by email `carbonara [at] lisk.rocks`.
