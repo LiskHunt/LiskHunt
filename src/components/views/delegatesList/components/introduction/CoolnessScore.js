@@ -11,16 +11,11 @@ class CoolnessScore extends Component {
         if (this.state.expanded){
             return (<div>
                 <div className="coolness-section">
-                    <div className=" coolness-criteria">appsLikes</div>
-                    <div className=" coolness-arithmetic">+</div>
-                    <div className=" coolness-criteria">delegate.donations_1</div>
-                </div>
-                <div className="coolness-section">
+                    <div className="coolness-criteria">appsLikes</div>
                     <div className=" coolness-criteria">apps.length * 10</div>
-                    <div className=" coolness-arithmetic">+</div>
+                    <div className=" coolness-criteria">delegate.donations_1</div>
                     <div className=" coolness-criteria">delegate.donations_2 * 5</div>
-                    <div className=" coolness-arithmetic">+</div>
-                    <div className=" coolness-criteria">delegate.donations_2 * 5</div>
+                    <div className=" coolness-criteria">delegate.donations_3 * 7</div>
                 </div>
             </div>)
         }else{
@@ -41,15 +36,10 @@ class CoolnessScore extends Component {
                 <div className="coolness">
                     <span className="coolness-title">COOLNESS SCORE</span>
                     <div className="coolness-section">
-                        <div className=" coolness-criteria">appsLikes</div>
-                        <div className=" coolness-arithmetic">+</div>
+                        <div className="coolness-criteria">appsLikes</div>
                         <div className=" coolness-criteria">apps.length * 10</div>
-                        <div className=" coolness-arithmetic">+</div>
                         <div className=" coolness-criteria">delegate.donations_1</div>
-                    </div>
-                    <div className="coolness-section">
                         <div className=" coolness-criteria">delegate.donations_2 * 5</div>
-                        <div className=" coolness-arithmetic">+</div>
                         <div className=" coolness-criteria">delegate.donations_3 * 7</div>
                     </div>
                 </div>
@@ -61,7 +51,7 @@ class CoolnessScore extends Component {
                 <div className="coolness">
                     <div className="coolness-menu">
                         <span className="coolness-title">COOLNESS SCORE</span>
-                        <a onClick={() => this.expand()} className="arrow-down"></a>
+                        <a onClick={() => this.expand()} className="arrow-down">{' '}</a>
                     </div>
                     {this.renderScore()}
                 </div>

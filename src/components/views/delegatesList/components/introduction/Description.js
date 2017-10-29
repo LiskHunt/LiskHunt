@@ -15,6 +15,10 @@ class Description extends Component {
                     score. A super-duper index to show how the delegate is contributing to
                     the Lisk ecosystem.
                 </div >
+                <div className="delegate-hunt--description">
+                    The coolness score is calculated by adding the amount of Apps the delegate developed,
+                    the amount of received likes and the amount of donations made.
+                </div>
                 <div className="delegates-participate">
                     <span>Are you a lisk delegate? </span>
                     <div className="participate">

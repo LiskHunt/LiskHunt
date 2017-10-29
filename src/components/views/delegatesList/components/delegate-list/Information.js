@@ -4,7 +4,7 @@ const Information = ({ delegate }) => {
 
     const {name, coolness_score} = delegate;
     return (
-        <div className="delegate-content">
+        <div className="delegatecard-content">
             <div>
                 <div className="delegate-name">{name}</div>
                 <div>coolness: {coolness_score}</div>

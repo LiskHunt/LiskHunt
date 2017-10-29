@@ -3,7 +3,7 @@ import ReactImageFallback from "react-image-fallback";
 
 const ProfilePicture = ({ url }) => {
     return (
-        <div className="image">
+        <div className="image delegatecard-image">
             <ReactImageFallback
                 src={url}
                 fallbackImage="https://dummyimage.com/50x50/aaaaaa/aaaaaa.png"
