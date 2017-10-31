@@ -17,10 +17,6 @@ import {
 } from '../../../actions';
 
 class Recommended extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentWillMount() {
     this.props.setActivePage(goResourcesList);
       this.props.getResources();
