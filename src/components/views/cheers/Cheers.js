@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import AnimationsWrapper from '../../animations-wrapper/AnimationsWrapper';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { goCheers } from '../../router/routes';
-import { setActivePage } from '../../../actions';
+import React, { Component } from "react";
+import AnimationsWrapper from "../../animations-wrapper/AnimationsWrapper";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { goCheers } from "../../router/routes";
+import { setActivePage } from "../../../actions";
 
 class Cheers extends Component {
   componentWillMount() {
@@ -30,17 +30,17 @@ class Cheers extends Component {
             </p>
             <div>
               If you are enjoying this tool, we would be very glad if you would
-              like to donate to our App Development fund:
+              like to donate to:
               <br />
-              <strong>2247279626890654390L</strong>
+              <strong>17803167062369576486L</strong>
               <p>
-                Carbonara is also looking for votes, if you would like to keep
-                the mood of carbonara high, feel free to vote him :)
+                Carbonara and Endro are also looking for votes, if you would
+                like to keep our mood high. feel free to vote him :)
               </p>
             </div>
 
             <p className="top20">
-              Created by{' '}
+              Created by{" "}
               <a
                 href="https://github.com/xunga"
                 rel="noopener noreferrer"
@@ -48,6 +48,15 @@ class Cheers extends Component {
                 className="link"
               >
                 @Carbonara
+              </a>{" "}
+              and {" "}
+              <a
+                href="https://github.com/tomploem"
+                rel="noopener noreferrer"
+                target="_blank"
+                className="link"
+              >
+                @Endro
               </a>.
             </p>
           </div>
@@ -62,9 +71,9 @@ const mapStateToProps = state => ({});
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      setActivePage: page => setActivePage(page),
+      setActivePage: page => setActivePage(page)
     },
-    dispatch,
+    dispatch
   );
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cheers);
