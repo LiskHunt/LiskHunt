@@ -21,11 +21,13 @@ class Description extends Component {
           donations made.
         </div>
         <div className="delegates-participate">
-          <span>Are you a lisk delegate? </span>
+          <span> </span>
           <div className="participate">
-            <a onClick={() => this.props.goSubmitHunt()} className="underline">
-              Join our list !
-            </a>
+              <div className="level-item topbar-button">
+                  <a onClick={() => this.props.goSubmitHunt()}>
+                      <div className="topbar-button-label">SIGN UP</div>
+                  </a>
+              </div>
           </div>
         </div>
       </div>

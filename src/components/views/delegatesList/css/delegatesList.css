@@ -28,7 +28,7 @@
 }
 
 .delegatelist--banner {
-  width: 85%;
+  width: 90%;
   padding-top: 2rem;
   padding-bottom: 2rem;
   font-size: 1em;
@@ -54,7 +54,7 @@
 }
 
 .delegates-list--content {
-  width: 85%;
+  width: 90%;
   margin: auto;
   padding-top: 30px;
 }
@@ -132,10 +132,6 @@
   display: inline-block;
 }
 
-.participate:hover {
-  text-decoration: underline;
-}
-
 .coolness {
   width: 500px;
   margin-left: auto;
@@ -160,13 +156,12 @@
 }
 
 .coolness-criteria {
-  background-color: #f46e00;
+  background-color: #da552f;
   color: #fff;
   padding: 5px 15px;
   font-size: 0.9em;
   font-weight: bold;
   margin: 0 5px 5px 0;
-  margin-bottom: 5px;
 }
 
 .coolness-arithmetic {

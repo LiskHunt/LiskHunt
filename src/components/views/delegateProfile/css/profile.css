@@ -3,7 +3,6 @@
   color: #000;
   margin: 0;
   background-color: #eeeeee;
-
 }
 
 @media screen and (min-width: 769px) {
@@ -29,9 +28,9 @@
 }
 
 .main {
-  flex-basis: 100%;
   padding: 0;
-  margin-top: 0px;
+  width: 90%;
+  margin: 0px auto auto;
 }
 
 .topbar {
@@ -96,7 +95,7 @@
 }
 
 .topbar-button a {
-  background-color: #d64100;
+  background-color: #da552f;
   width: 160px;
   margin-right: 10px;
   margin-left: auto;
@@ -107,8 +106,9 @@
   padding: 10px 15px;
 }
 
-.ltopbar-button a:hover {
-  background-color: #ff5700;
+.topbar-button a:hover {
+  background-color: #ea532a;
+  text-decoration: none;
 }
 
 .topbar-button a div {

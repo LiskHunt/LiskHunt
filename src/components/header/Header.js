@@ -44,7 +44,7 @@ class Header extends Component {
       <div className="hero-head">
         <nav className="navbar  background-transparent">
           <div className="navbar-brand">
-            <a className="nav-item " onClick={() => this.props.goHome()}>
+            <a className="nav-item liskhunt-logo" onClick={() => this.props.goHome()}>
               <img src={logo} alt="LiskHunt" />
             </a>
 
@@ -60,15 +60,6 @@ class Header extends Component {
 
           <div id="navMenubd-example" className="navbar-menu">
             <div className="navbar-end has-text-grey-dark">
-              <a
-                className={
-                  'navbar-item has-text-grey-lighter ' +
-                  this.isActivePage(goHome)
-                }
-                onClick={() => this.props.goHome()}
-              >
-                Home
-              </a>
               <a
                 className={
                   'navbar-item has-text-grey-lighter is-white ' +
