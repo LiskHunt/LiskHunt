@@ -2,6 +2,14 @@
     display:inline-block;
 }
 
+body{
+    
+}
+
+.liskhunt-logo img{
+    max-height: 1.5rem;
+}
+
 .underlined {
     text-decoration: underline;
 }
@@ -59,4 +67,9 @@
 
 .max-size-limited {
     max-width: 950px;
+}
+
+.navbar{
+    width: 90%;
+    margin: auto;
 }
