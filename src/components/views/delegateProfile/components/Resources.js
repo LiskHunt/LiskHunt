@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ContentLabel from './ContentLabel';
 import Resource from './Resource';
+import PlaceholderNoResources from './PlaceholderNoResources';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -8,12 +9,12 @@ import { bindActionCreators } from 'redux';
 class Resources extends Component {
   renderResources() {
     const { resources } = this.props;
-    if (resources) {
+    if (resources && !!resources.length) {
       return resources.map(e => {
         return <Resource key={e.resource_id} resource={e} />;
       });
     } else {
-      return <div />;
+      return <PlaceholderNoResources />;
     }
   }
 
