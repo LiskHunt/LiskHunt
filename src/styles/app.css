@@ -73,3 +73,7 @@ body{
     width: 90%;
     margin: auto;
 }
+
+.is-centered-image {
+    margin-left: auto; margin-right: auto;
+}
