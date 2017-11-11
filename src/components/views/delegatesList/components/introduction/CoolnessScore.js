@@ -29,6 +29,8 @@ class CoolnessScore extends Component {
             <div className=" coolness-criteria">share_rewards * 2</div>
             <div className=" coolness-arithmetic">+</div>
             <div className=" coolness-criteria">ambassador === 50</div>
+            <div className=" coolness-arithmetic">+</div>
+            <div className=" coolness-criteria">chat moderator === 40</div>
           </div>
         </div>
       );
