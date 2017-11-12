@@ -54,13 +54,23 @@ class CoolnessScore extends Component {
         <div className="coolness-section">
           <div className="coolness-criteria">appsLikes</div>
           <div className=" coolness-arithmetic">+</div>
-          <div className=" coolness-criteria">apps.length * 10</div>
+          <div className=" coolness-criteria">apps.length * 100</div>
           <div className=" coolness-arithmetic">+</div>
-          <div className=" coolness-criteria">delegate.donations_1</div>
+          <div className=" coolness-criteria">donations * 0.01</div>
           <div className=" coolness-arithmetic">+</div>
-          <div className=" coolness-criteria">delegate.donations_2 * 5</div>
+          <div className=" coolness-criteria">public node === 10</div>
           <div className=" coolness-arithmetic">+</div>
-          <div className=" coolness-criteria">delegate.donations_3 * 7</div>
+          <div className=" coolness-criteria">snapshot_server === 40</div>
+          <div className=" coolness-arithmetic">+</div>
+          <div className=" coolness-criteria">github_commits</div>
+          <div className=" coolness-arithmetic">+</div>
+          <div className=" coolness-criteria">upvotes</div>
+          <div className=" coolness-arithmetic">+</div>
+          <div className=" coolness-criteria">share_rewards * 2</div>
+          <div className=" coolness-arithmetic">+</div>
+          <div className=" coolness-criteria">ambassador === 50</div>
+          <div className=" coolness-arithmetic">+</div>
+          <div className=" coolness-criteria">chat moderator === 40</div>
         </div>
       </div>
     );
