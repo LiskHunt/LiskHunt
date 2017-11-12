@@ -15,15 +15,6 @@ class NewHunt extends Component {
     this.props.setActivePage(goSubmitHunt);
   }
 
-  toggleHideManualSubmit = () => {
-    const manual = !this.props.hideManualSubmit;
-    this.props.setManuelSubmit(manual);
-  };
-
-  isManualSubmitHidden = () => {
-    return this.props.hideManualSubmit ? 'leave-transform' : 'enter-transform';
-  };
-
   render() {
     return (
       <AnimationsWrapper>
@@ -36,57 +27,36 @@ class NewHunt extends Component {
             </h2>
             <p className="">
               Basically everything that is a resource for the Lisk ecosystem can
-              be submitted. So let's say a (d)App, pool, guide, community can be
+              be submitted. So let&quot;s say a (d)App, pool, guide, community can be
               submitted to LiskHunt.<br />
-              In order to submit a new hunt, you can create a new{' '}
-              <strong>Pull-Request</strong> to our repository on Github. You'll
-              just need to add the app to <code>resource.json</code>, commit and
-              submit the PR.
             </p>
             <p className="top15">
-              If you want to hunt a <strong>new delegate</strong> or a{' '}
-              <strong>good action</strong> that a delegate did. You can still
-              submit it through Github or by email/lisk.chat.
+              If you want to hunt a <strong>new delegate</strong> or a{" "}
+              <strong>good resource</strong> that a delegate created. You can
+              submit it through our form.
             </p>
             <div className="top40 bottom40 columms">
               <div className="column is-half is-offset-one-quarter">
                 <a
                   className="button is-success right30 top15"
-                  href="https://github.com/xunga/Lisk-hunt"
+                  href="https://goo.gl/forms/aDsGQjV8KcIKediE2"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  {' '}
-                  <i className="fa fa-github right10" /> Submit on Github
+                  {" "}<i className="fa fa-user right10" /> Submit a delegate
                 </a>
                 <a
                   className="button is-primary top15"
-                  onClick={() => this.toggleHideManualSubmit()}
+                  href="https://goo.gl/forms/5QQ16GhrWRbF0Ggt1"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   <i
                     className="fa fa-puzzle-piece right10"
                     aria-hidden="true"
                   />
-                  Submit without Github
+                  Submit a resource
                 </a>
-              </div>
-            </div>
-            <div className={'content ' + this.isManualSubmitHidden()}>
-              No problem, please send an email to <br />
-              <code>carbonara [at] lisk.rocks</code>
-              <br /> covering the following fields:
-              <div className="column is-half is-offset-one-quarter has-text-left">
-                <blockquote className="top20 bottom20">
-                  <ul className="has-text-dark">
-                    <li>Resource Name</li>
-                    <li>Short description, max 120 chars</li>
-                    <li>Long description (In markdown please)</li>
-                    <li>Category [Pool, App, Script, Community, Bot]</li>
-                    <li>Author (if any)</li>
-                    <li>Images (Recommended: 720x540px)</li>
-                    <li>URL</li>
-                  </ul>
-                </blockquote>
               </div>
             </div>
             <h2 className="title is-size-3">
@@ -98,24 +68,20 @@ class NewHunt extends Component {
               The score takes in consideration about multiple factors, such as:<br
               />
               <ul>
-                <li>Resources developed</li>
-                <li>Likes in the applications</li>
-                <li>Donations ( To any cause related to Lisk )</li>
+                <li>Every application has a score of `100 points`</li>
+                <li>Every donated Lisk is `* 0.01`</li>
+                <li>Ambassador for Lisk `+ 70`</li>
+                <li>Moderator of the Lisk.chat `+ 70`</li>
+                <li>Having a public node `+ 10`</li>
+                <li>Hosting a Snapshot server `+ 40`</li>
+                <li>Github commits `+ 1 per commit`</li>
+                <li>Upvotes `+ 1 per upvote`</li>
+                <li>Marketing `50 per event`</li>
+                <li>Share rewards `* 2`</li>
               </ul>
-              Which:<br />
               <br />
-              Every application has a score of 10 points.<br />
-              <br />
-              Every like is 1 point.<br />
-              <br />
-              Donations are divided in 3 tiers, with different scoring.<br />
-              Donations from 0 to 100 Lisk are scored as 1 point.<br />
-              Donations from 100 to 500 Lisk are scored as 5 points.<br />
-              Donations from 500+ Lisk are scored as 7 points.<br />
-              <br />
-              In the calculation of Score, we will include in the soon future:
-              Ambassadors, Mods of the lisk chat and whatever cool idea will
-              come from the community.
+              In the calculation of Score, we will include in the soon future
+              more factors, such as the voting weight and so on.
             </div>
             <h2 className="title is-size-3">
               I have an idea and I want to contribute to LiskHunt.
@@ -132,20 +98,20 @@ class NewHunt extends Component {
 }
 
 NewHunt.contextTypes = {
-  router: PropTypes.object.isRequired,
+  router: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  hideManualSubmit: state.navigation.hideManualSubmit,
+  hideManualSubmit: state.navigation.hideManualSubmit
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       setActivePage: page => setActivePage(page),
-      setManuelSubmit: type => setManuelSubmit(type),
+      setManuelSubmit: type => setManuelSubmit(type)
     },
-    dispatch,
+    dispatch
   );
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewHunt);

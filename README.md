@@ -55,11 +55,11 @@ Which is a sum of:
  * Github commits `+ 1 per commit`
  * Upvotes `+ 1 per upvote`
  * Marketing `50 per event`
+ * Share rewards `* 2`
  
 #### Todo:
 Add in the score:
 
-[ ] Share rewards
 
 [ ] Long time investors and big wallets.
  

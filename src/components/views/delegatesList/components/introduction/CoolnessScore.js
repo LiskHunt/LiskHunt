@@ -82,7 +82,7 @@ class CoolnessScore extends Component {
         <div className="coolness-menu">
           <span className="coolness-title">COOLNESS SCORE</span>
           <a onClick={() => this.expand()} className="arrow-down">
-            {' '}
+            {" "}
           </a>
         </div>
         {this.renderScore()}
@@ -93,8 +93,12 @@ class CoolnessScore extends Component {
   render() {
     return (
       <div className="column">
-        <MediaQuery maxDeviceWidth={1024}>{this.renderMobile()}</MediaQuery>
-        <MediaQuery minDeviceWidth={1025}>{this.renderDesktop()}</MediaQuery>
+        <MediaQuery maxDeviceWidth={1024}>
+          {this.renderMobile()}
+        </MediaQuery>
+        <MediaQuery minDeviceWidth={1025}>
+          {this.renderDesktop()}
+        </MediaQuery>
       </div>
     );
   }
