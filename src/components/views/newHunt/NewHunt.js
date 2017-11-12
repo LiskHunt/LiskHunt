@@ -27,11 +27,11 @@ class NewHunt extends Component {
             </h2>
             <p className="">
               Basically everything that is a resource for the Lisk ecosystem can
-              be submitted. So let's say a (d)App, pool, guide, community can be
+              be submitted. So let&quot;s say a (d)App, pool, guide, community can be
               submitted to LiskHunt.<br />
             </p>
             <p className="top15">
-              If you want to hunt a <strong>new delegate</strong> or a{' '}
+              If you want to hunt a <strong>new delegate</strong> or a{" "}
               <strong>good resource</strong> that a delegate created. You can
               submit it through our form.
             </p>
@@ -43,8 +43,7 @@ class NewHunt extends Component {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  {' '}
-                  <i className="fa fa-user right10" /> Submit a delegate
+                  {" "}<i className="fa fa-user right10" /> Submit a delegate
                 </a>
                 <a
                   className="button is-primary top15"
@@ -81,7 +80,8 @@ class NewHunt extends Component {
                 <li>Share rewards `* 2`</li>
               </ul>
               <br />
-              In the calculation of Score, we will include in the soon future more factors, such as the voting weight and so on.
+              In the calculation of Score, we will include in the soon future
+              more factors, such as the voting weight and so on.
             </div>
             <h2 className="title is-size-3">
               I have an idea and I want to contribute to LiskHunt.
@@ -98,20 +98,20 @@ class NewHunt extends Component {
 }
 
 NewHunt.contextTypes = {
-  router: PropTypes.object.isRequired,
+  router: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  hideManualSubmit: state.navigation.hideManualSubmit,
+  hideManualSubmit: state.navigation.hideManualSubmit
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       setActivePage: page => setActivePage(page),
-      setManuelSubmit: type => setManuelSubmit(type),
+      setManuelSubmit: type => setManuelSubmit(type)
     },
-    dispatch,
+    dispatch
   );
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewHunt);
