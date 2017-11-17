@@ -60,18 +60,14 @@ body{
     background-color: transparent;
 }
 
-.is-active,.is-active:hover,.navbar-item:hover {
-    background-color: transparent!important;
-    color: white!important;
-}
 
 .max-size-limited {
     max-width: 950px;
 }
 
 .navbar{
-    width: 90%;
-    margin: auto;
+    width: 100%;
+    color: #3158af;
 }
 
 .is-centered-image {

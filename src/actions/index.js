@@ -240,3 +240,17 @@ export const setManuelSubmit = async type => {
     };
   }
 };
+
+export const setActiveResponsiveMenu = async active => {
+    try {
+        return {
+            type: 'SET_ACTIVE_RESPONSIVE_MENU',
+            payload: active,
+        };
+    } catch (error) {
+        return {
+            type: 'ERROR',
+            payload: error.message,
+        };
+    }
+};
