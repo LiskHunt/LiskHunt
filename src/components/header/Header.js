@@ -15,101 +15,75 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
+import MenuItem from './components/MenuItem';
+
+import './css/header-styles.css';
+import HamburgerIcon from './components/HamburgerIcon';
 
 class Header extends Component {
-  componentDidMount() {
-    let $navbarBurgers = Array.prototype.slice.call(
-      document.querySelectorAll('.navbar-burger'),
-      0,
-    );
-
-    if ($navbarBurgers.length > 0) {
-      $navbarBurgers.forEach(function($el) {
-        $el.addEventListener('click', function() {
-          let target = $el.dataset.target;
-          let $target = document.getElementById(target);
-          $el.classList.toggle('is-active');
-          $target.classList.toggle('is-active');
-        });
-      });
-    }
-  }
-
   isActivePage(page) {
     return this.props.active_page === page ? 'is-active' : '';
+  }
+
+  insertClassOnActiveMenu() {
+    return this.props.active_responsive_menu ? ' is-active' : '';
   }
 
   render() {
     return (
       <div className="hero-head">
-        <nav className="navbar  background-transparent">
+        <nav className="navbar background-transparent">
           <div className="navbar-brand">
-            <a className="nav-item liskhunt-logo" onClick={() => this.props.goHome()}>
+            <a
+              className="nav-item liskhunt-logo"
+              onClick={() => this.props.goHome()}
+            >
               <img src={logo} alt="LiskHunt" />
             </a>
-
-            <div
-              className="navbar-burger burger"
-              data-target="navMenubd-example"
-            >
-              <span />
-              <span />
-              <span />
-            </div>
+            <HamburgerIcon />
           </div>
 
-          <div id="navMenubd-example" className="navbar-menu">
+          <div
+            id="navMenubd-example"
+            className={'navbar-menu ' + this.insertClassOnActiveMenu()}
+          >
             <div className="navbar-end has-text-grey-dark">
-              <a
-                className={
-                  'navbar-item has-text-grey-lighter is-white ' +
-                  this.isActivePage(goResourcesList)
-                }
-                onClick={() => this.props.goResourcesList()}
-              >
-                Apps & resources
-              </a>
-              <a
-                className={
-                  'navbar-item has-text-grey-lighter is-white ' +
-                  this.isActivePage(goDelegatesList)
-                }
-                onClick={() => this.props.goDelegatesList()}
-              >
-                DelegatesHunt
-              </a>
-              <a
-                className={
-                  'navbar-item has-text-grey-lighter is-white ' +
-                  this.isActivePage(goNewToLisk)
-                }
-                onClick={() => this.props.goNewToLisk()}
-              >
-                New to Lisk?
-              </a>
+              <MenuItem
+                active_page={this.props.active_page}
+                goToPage={this.props.goResourcesList}
+                label="Apps & resources"
+                route={goResourcesList}
+              />
 
-              <div
-                className={
-                  this.isActivePage(goBuildSomething) +
-                  ' navbar-item has-text-grey-lighter is-hidden-desktop'
-                }
-                onClick={() => this.props.goBuildSomething()}
-              >
-                Build something
-              </div>
+              <MenuItem
+                active_page={this.props.active_page}
+                goToPage={this.props.goDelegatesList}
+                label="DelegatesHunt"
+                route={goDelegatesList}
+              />
 
-              <a
-                className={
-                  'navbar-item has-text-grey-lighter is-white ' +
-                  this.isActivePage(goCheers)
-                }
-                onClick={() => this.props.goCheers()}
-              >
-                <span role="img" aria-label="cheers">
-                  🍻
-                </span>{' '}
-                Cheers
-              </a>
+              <MenuItem
+                active_page={this.props.active_page}
+                goToPage={this.props.goNewToLisk}
+                label="New to Lisk?"
+                route={goNewToLisk}
+              />
+
+              <MenuItem
+                active_page={this.props.active_page}
+                goToPage={this.props.goBuildSomething}
+                label="Build something"
+                route={goBuildSomething}
+              />
+
+              <MenuItem
+                active_page={this.props.active_page}
+                goToPage={this.props.goCheers}
+                label="Cheers"
+                route={goCheers}
+                emoticon="🍻"
+              />
+
               <span
                 className={
                   'navbar-item has-text-grey-lighter ' +
@@ -134,6 +108,7 @@ class Header extends Component {
 
 const mapStateToProps = state => ({
   active_page: state.navigation.active_page,
+  active_responsive_menu: state.navigation.active_responsive_menu,
 });
 
 const mapDispatchToProps = dispatch =>

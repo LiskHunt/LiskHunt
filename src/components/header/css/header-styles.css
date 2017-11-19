@@ -1,0 +1,14 @@
+
+
+.navMenubd-example{
+
+}
+
+.is-active,.is-active:hover,.navbar-item:hover, .navbar-brand  {
+    background-color: transparent!important;
+    color: white!important;
+}
+
+@media only screen and (max-width: 1024px) {
+
+}
