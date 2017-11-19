@@ -10,10 +10,14 @@ class HamburgerIcon extends Component {
         this.props.setActiveResponsiveMenu(!this.props.active_responsive_menu);
     }
 
+    insertClassOnActiveMenu() {
+        return this.props.active_responsive_menu ? ' is-active' : '';
+    }
+
     render(){
         return (
             <div onClick={() => this.hamburgerClick()}
-                className="navbar-burger burger" data-target="navMenubd-example">
+                className={ "navbar-burger burger " + this.insertClassOnActiveMenu() }  data-target="navMenubd-example">
                 <span />
                 <span />
                 <span />
